@@ -17,7 +17,7 @@
           </div>
         </div> -->
 		<div class="pricing-header-wrapper text-center">
-	<h1>About HiConnect  </h1>
+	<h1>About HiConnectt  </h1>
 <p>"Our mission is to help businesses, professionals, and people develop deeper, longer-lasting relationships by providing real-time information that nurtures networking and personal relationships."</p>	
 </div>
       </div>
