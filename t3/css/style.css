@@ -1,0 +1,366 @@
+a{display:block}
+a{color:#ff4a17;text-decoration:none}
+a:hover{color:#ff724a;text-decoration:none}
+section{padding:15px 0}
+ul,li {list-style:none;}
+@media screen and (max-width:768px){
+[data-aos-delay]{transition-delay:0!important}
+}
+#header{transition:all .5s;z-index:997;padding:20px 0 0}
+section{padding:5px 0;overflow:hidden}
+.request-loader{position:relative;border-radius:100%;z-index:2;box-shadow:0 0 7px 0 rgba(223,39,114,.99)}
+.request-loader span{position:relative;font-size:72px;top:5px;left:-5px}
+.request-loader::after{opacity:0;display:flex;flex-direction:row;justify-content:center;align-items:center;position:absolute;top:0;left:0;right:0;bottom:0;content:"";height:100%;width:100%;border:8px solid rgba(223,39,114,.52);border-radius:100%;-webkit-animation-name:ripple;animation-name:ripple;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:cubic-bezier(0.65,0,0.34,1);animation-timing-function:cubic-bezier(0.65,0,0.34,1);z-index:-1}
+.request-loader::before{opacity:0;display:flex;flex-direction:row;justify-content:center;align-items:center;position:absolute;top:0;left:0;right:0;bottom:0;content:"";height:100%;width:100%;border:8px solid rgba(223,39,114,.52);border-radius:100%;-webkit-animation-name:ripple;animation-name:ripple;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-delay:.5s;animation-delay:.5s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:cubic-bezier(0.65,0,0.34,1);animation-timing-function:cubic-bezier(0.65,0,0.34,1);z-index:-1}
+@-webkit-keyframes ripple{
+from{opacity:1;transform:scale3d(.75,.75,1)}
+to{opacity:0;transform:scale3d(1.5,1.5,1)}
+}
+@keyframes ripple{
+from{opacity:1;transform:scale3d(.75,.75,1)}
+to{opacity:0;transform:scale3d(1.5,1.5,1)}
+}
+.modalzz {border:none !important}
+.wel-abphone{position:absolute;right:24px;bottom:25px;z-index:9}
+.share-button a {background:rgb(224, 40, 112); display:block; color:#fff; width:52px; height:52px; text-align:center;border-radius:100%;font-size: 27px;display: flex;align-items: center;justify-content: center;}
+.wel-phone{height:30px;line-height:20px;display:block;padding:4px 7px 5px;font-style:normal;border-radius:8px;font-size:14px}
+.wel-phone:hover{color:#fff!important}
+.wel-phone{background-image:linear-gradient(to right,#348f50 0,#56b4d3 51%,#348f50 100%);color:#fff;transition:.5s;background-size:200% auto;box-shadow:0 0 9px rgba(238,238,238,.39)}
+.wel-phone:hover{background-position:right center;color:#fff;text-decoration:none}
+.social-btnq{cursor:pointer;height:30px;width:40px;color:#333;background-image:linear-gradient(to right,#ff512f 0,#dd2476 51%,#ff512f 100%);color:#fff;transition:.5s;background-size:200% auto;box-shadow:0 0 9px rgba(238,238,238,.39);border-radius:8px}
+.social-btnq span{width:0;overflow:hidden;transition:1s;text-align:center}
+.social-btnq:hover{width:150px;border-radius:5px;background-position:right center;color:#fff;text-decoration:none}
+.social-btnq:hover span{padding:2px;width:max-content}
+.flex-centerq{display:flex;justify-content:center;align-items:center}
+.social-linksq{display:flex}
+.viewsz{position:absolute;right:195px;bottom:25px;z-index:9;font-size:14px;font-style:normal}
+.viewszz{position:absolute;right:10px;bottom:25px;z-index:9}
+.containerz,.top-hdr{margin:0 auto}
+.contact .php-email-form{box-shadow:0 0 30px rgba(214,215,216,.6);padding:30px}
+.contact .php-email-form .error-message{display:none;color:#fff;background:#ed3c0d;text-align:left;padding:15px;font-weight:600}
+.contact .php-email-form .sent-message{display:none;color:#fff;background:#18d26e;text-align:center;padding:15px;font-weight:600}
+.contact .php-email-form .loading{display:none;background:#fff;text-align:center;padding:15px}
+.contact .php-email-form .loading:before{content:"";display:inline-block;border-radius:50%;width:24px;height:24px;margin:0 10px -6px 0;border:3px solid #18d26e;border-top-color:#eee;-webkit-animation:animate-loading 1s linear infinite;animation:animate-loading 1s linear infinite}
+.contact .php-email-form input,.contact .php-email-form textarea{border-radius:0;box-shadow:none;font-size:14px;border-radius:4px}
+.contact .php-email-form input:focus,.contact .php-email-form textarea:focus{border-color:#ff4a17}
+.contact .php-email-form input{padding:10px 15px}
+.contact .php-email-form textarea{padding:12px 15px}
+.contact .php-email-form button[type=submit]{background:#ff4a17;border:0;padding:10px 24px;color:#fff;transition:.4s;border-radius:4px}
+.contact .php-email-form button[type=submit]:hover{background:#ff5e31}
+.containerz{max-width:810px!important;position:relative}
+header{background:url('images/header-bg.jpg') no-repeat;background-size:cover;max-width:810px;height:auto;padding-bottom:25px}
+#header.header-inner-pages,#header.header-scrolled{background:url('images/header-bg.jpg') no-repeat;background-size:cover;padding:20px 0 0}
+.header-card{width:100%;height:213px;color:#fff;font-family:'Hammersmith One',sans-serif;background:0 0!important;border:none!important}
+.webly-intro h5{font-size:19px;font-family:'Hammersmith One',sans-serif}
+.webly-intro h2{font-size:24px;font-family:'Hammersmith One',sans-serif}
+.webly-intro p{font-size:12px;font-family:'Hammersmith One',sans-serif}
+.webly-avatar img{height:45px;width:45px;border-radius:100%;border:2px solid #000}
+.card-dataz{height:213px;position:relative}
+#top-social{width:100%;background:#fff;border-radius:36px 36px 0 0}
+#top-social img{height:52px}
+#user-datas{width:100%;background:#fff}
+.user-datas{width:89px;height:89px;background:#55a7b8;border-radius:25px;color:#fff;padding-top:1rem}
+.user-datas p{margin-top:0}
+.user-datas img{height:33px}
+.user-datas a {color:#fff;}
+.vcardbtn {background:none; border:none}
+.containerz h4{padding-left:10px;margin:0;font-weight:600}
+.webly-product{width:175px;height:175px;background:#e5ebeb;border-radius:8px;text-align:center}
+.product-img{max-height:125px;margin-top:-25px;transition:all .4s ease-in-out}
+.webly-product:hover .product-img{transform:scale(1.07)}
+/*!.mnop img:nth-child(odd) {float: left;}
+.mnop img:nth-child(even) {float: right;}*/
+.webly-product h4{text-align:left;padding-left:14px;font-size:16px;margin-bottom:1px;color:#707070}
+.webly-product p{text-align:left;padding-left:14px;font-size:20px;color:#55a7b8}
+.webly-payments{font-family:'Hammersmith One',sans-serif;color:#086468;background:#f2f2f2;border-radius:8px;height:125px;margin:14px 0 0;text-align:center}
+.webly-wallet img{height:77px}
+.webly-wallet p{font-size:18px;margin:0 0 0 10px}
+.wallet-copy p{font-size:15px;margin:0}
+.wallet-copy img{height:52px}
+#webly-payments,#webly-products{background:#fff}
+.bord-2{border-radius:0!important;border:2px solid #050505}
+.contact .php-email-form button[type=submit]{background:#3e562e;background:-moz-linear-gradient(top,#3e562e 0,#74cad5 0,#48a4b0 100%);background:-webkit-linear-gradient(top,#3e562e 0,#74cad5 0,#48a4b0 100%);background:linear-gradient(to bottom,#3e562e 0,#74cad5 0,#48a4b0 100%)}
+.contact .php-email-form button[type=submit]:hover{background:#3e562e;background:-moz-linear-gradient(top,#3e562e 0,#48a4b0 0,#74cad5 100%);background:-webkit-linear-gradient(top,#3e562e 0,#48a4b0 0,#74cad5 100%);background:linear-gradient(to bottom,#3e562e 0,#48a4b0 0,#74cad5 100%)}
+.sh-whats{color:#fff;border:none;padding:0}
+.sh-whats{background:url("images/whatsapp-send.png") no-repeat;height:39px;width:39px;background-size:39px}
+.webly-qr img{height:199px}
+.user-share{color:#55a7b8}
+.user-share img{height:44px}
+.light-sky{width:100%;background:#e8f7f9;border-radius:53px}
+.qrs p{color:#55a7b8;text-align:center}
+.contact .php-email-form{box-shadow:none;padding:14px}
+.webly-contact{background-color:#fff}
+#webly-education{background:#fff;font-family:'Hammersmith One',sans-serif;color:#000}
+.webly-educate{background:#d9eef4;border-radius:32px;padding:18px 10px 7px 21px}
+.webly-educate h5{font-family:'Hammersmith One',sans-serif;font-size:17px}
+.webly-educate p{font-size:15px;margin-bottom:9px}
+.deleter{background:#ccc}
+.share-top{border-radius:32px 32px 0 0;background:#fff;padding-top:27px}
+.in-number{width:100%}
+.in-send{display:flex;align-items:center}
+#webly-achievements{background:#fff}
+.webly-achievement{background:#d9eef4;border-radius:13px;padding:14px 10px 7px 18px}
+.webly-achievement h5{font-family:'Hammersmith One',sans-serif;font-size:17px;margin-bottom:3px}
+.webly-achievement p{font-size:16px;margin-bottom:9px}
+#webly-services{background:#fff;padding:5px 0 104px}
+.webly-service{background:#c4e7f0;border-radius:32px;padding:18px 10px 7px 21px;font-family:'Hammersmith One',sans-serif}
+.webly-service h5{font-family:'Hammersmith One',sans-serif;font-size:16px;color:#206e80}
+.webly-service p{font-size:16px;margin-bottom:9px;color:#206e80}
+.wallet-copy a,.webly-service a{font-size:16px;float:right;display:block;color:#fff;border-radius:8px;padding:10px 22px;background:#73cad5;background:-moz-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:-webkit-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:linear-gradient(to bottom,#73cad5 0,#49a4b1 100%);margin:0 9px 14px}
+.wallet-copy a{padding:4px 12px 2px;margin:0}
+.wallet-copy a:hover,.webly-service a:hover{background:#49a4b1;background:-moz-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:-webkit-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:linear-gradient(to bottom,#49a4b1 0,#73cad5 100%)}
+#webly-testimonials{background:#fff}
+
+
+.btnqxd,.tooltipped {position:relative;font-size:16px;float:right;display:block;color:#fff;border-radius:8px;padding:10px 22px;background:#73cad5;background:-moz-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:-webkit-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:linear-gradient(to bottom,#73cad5 0,#49a4b1 100%);margin:0 9px 14px;border:none;}
+.btnqxd,.tooltipped{padding:4px 0 2px;margin:0}
+.btnqxd:hover,.tooltipped:hover{background:#49a4b1;background:-moz-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:-webkit-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:linear-gradient(to bottom,#49a4b1 0,#73cad5 100%)}
+.btnqxd img {width:50px; height:50px;}
+.wallet-copy {position:relative}
+.dzp-none {position:absolute; left:999em; bottom:225em;}
+.snippet1 .btnqxd {background: none !important;}
+
+/*
+.btnqxd,.tooltipped {font-size:16px;float:right;display:block;color:#fff;border-radius:8px;padding:10px 22px;background:#73cad5;background:-moz-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:-webkit-linear-gradient(top,#73cad5 0,#49a4b1 100%);background:linear-gradient(to bottom,#73cad5 0,#49a4b1 100%);margin:0 9px 14px;border:none;}
+.btnqxd,.tooltipped{padding:4px 12px 2px;margin:0}
+.btnqxd:hover,.tooltipped:hover{background:#49a4b1;background:-moz-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:-webkit-linear-gradient(top,#49a4b1 0,#73cad5 100%);background:linear-gradient(to bottom,#49a4b1 0,#73cad5 100%)}
+*/
+
+
+
+.webly-testimonial{border-bottom:1px solid #edeef1;padding-bottom:7px}
+.webly-testimonial h5{font-family:'Hammersmith One',sans-serif;font-size:16px}
+.webly-testimonial p{font-size:15px;margin-bottom:9px;color:#000}
+.ratingz{padding:0 0 4px}
+.datez{color:#868686;font-size:13px;font-style:italic}
+#users-profile{background:#fff}
+#user-header{padding:14px 0;height:162px}
+#user-photo{position:absolute;width:108px;height:122px;bottom:-52px}
+#user-photo p{position:absolute;top:43px;text-align:right;width:355px;right:122px;font-family:'Hammersmith One',sans-serif;font-size:18px;color:#fff}
+#user-photo img{height:122px;border:5px solid #fff}
+#user-address{width:100%;background:#eaefef;border-radius:14px}
+.user-details{width:100%;margin-bottom:18px}
+.white-bg{position:absolute;width:100%;height:100%;top:0;padding:0;left:0;z-index:0;bottom:0}
+.white-bg img{height:100%}
+.rltv{position:relative;height:162px;z-index:99}
+.details-icons{width:89px;height:89px;background:#55a7b8;color:#fff}
+.details-icons a{height:100%;width:100%}
+.details-icons img{height:33px}
+.details-data p{margin:0}
+.user-client{width:100%;padding-top:54px}
+.user-client h2{font-size:22px;margin:0;font-weight:600}
+.user-client p{font-size:18px;color:#55a7b8;margin:0;font-weight:600}
+#about-datas{width:100%;background:#55a7b8;border-radius:0 14px 14px 14px;color:#fff;font-family:'Hammersmith One',sans-serif}
+#about-datas h5{color:#fff;font-size:27px}
+.company-details{width:100%;padding:10px 0;font-size:16px}
+.tpbtn{padding:0;position:absolute;left:14px;top:14px;z-index:999;background:#ffff!important;opacity:1;width:35px;height:35px;border-radius:25px}
+.share-fixed{width:68px;height:68px;z-index:5555;background:#f7f7f7;color:#fff;position:fixed;right:14px;bottom:221px;-webkit-box-shadow:1px 1px 9px 0 rgba(0,0,0,.52);-moz-box-shadow:1px 1px 9px 0 rgba(0,0,0,.52);box-shadow:1px 1px 9px 0 rgba(0,0,0,.52)}
+.share-fixed a{height:100%;width:100%}
+.share-fixed img{height:33px}
+.ftr-menu{text-align:center}
+.ftr-menu a{height:100%;width:100%}
+.ftr-menu img{height:33px;display:block}
+.ftr-menu span{color:#000;display:block;padding:7px 0 5px}
+#footer{position:fixed;bottom:0;width:100%;font-size:14px;background:#fff;z-index:99}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#f1f1f1}
+::-webkit-scrollbar-thumb{background:#888}
+::-webkit-scrollbar-thumb:hover{background:#555}
+.lightbox-gallery{overflow-x:hidden}
+.lightbox-gallery p{color:#fff}
+.lightbox-gallery h2{font-weight:700;margin-bottom:40px;padding-top:40px;color:#fff}
+@media (max-width:768px){
+.lightbox-gallery h2{margin-bottom:25px;padding-top:25px;font-size:24px}
+#top-social img{height:40px}
+.user-datas img{height:27px}
+.user-datas p{font-size:14px;margin-top:0}
+.user-datas{width:75px;height:75px;padding-top:9px}
+.webly-wallet img{height:52px}
+.webly-payments{height:77px}
+.webly-wallet p{font-size:16px}
+.e-enquiry .icon-tabler-copy{width:32px}
+.wallet-copy a{padding:0 9px 0}
+.details-icons{width:63px;height:63px}
+.webly-qr img{max-height:127px}
+}
+.lightbox-gallery .intro{font-size:16px;max-width:500px;margin:0 auto 40px}
+.lightbox-gallery .intro p{margin-bottom:0}
+.lightbox-gallery .photos{padding-bottom:20px}
+.lightbox-gallery .item{padding-bottom:5px}
+.lightbox-gallery .item a{height:100%;width:100%}
+.img-fluid{height:100%;width:100%;border-radius:10px}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 48}
+.webly-wallet{display:flex;align-items:center}
+.material-symbols-outlined{color:red}
+#modalScrollableCenter{opacity:1;transition:all .7s ease;transition:background .6s linear;z-index:9999}
+#modalScrollableCenter .modal-dialog{margin:auto 0 0 0;height:100vh!important;position:relative;transition:none;transition:all .7s ease;transform:none}
+.modalz{position:absolute;background:#fff;z-index:-1;transition:all .5s ease-in-out;left:-104%;height:100vh;border-radius:0}
+.modal.show .modalz{visibility:visible;z-index:1075;opacity:1;left:0}
+#shareQRcode{opacity:1;transition:all .7s ease;transition:background .6s linear;z-index:9999}
+#shareQRcode .modal-dialog{margin:auto;height:100vh!important;position:relative;transition:none;transition:all .7s ease;transform:none}
+.modalzz{position:absolute;background:#fff;z-index:-1;transition:all .5s ease-in-out;bottom:-104%;border-radius:0}
+.modal.show .modalzz{visibility:visible;z-index:1075;opacity:1;bottom:0}
+#whatsappshare{opacity:1;transition:all .7s ease;transition:background .6s linear;z-index:9999}
+#whatsappshare .modal-dialog{margin:auto;height:100vh!important;position:relative;transition:none;transition:all .7s ease;transform:none}
+.modalsz{position:absolute;background:#fff;z-index:-1;transition:all .5s ease-in-out;top:-104%;border-radius:0;border-radius:9px}
+.modal.show .modalsz{visibility:visible;z-index:1075;opacity:1;top:25%}
+.wtpn{top:5px;left:5px}
+.vcardbtn{
+  background: none;
+  border: none;
+}
+/* Share Form in modal Start*/
+.share-modal {
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+}
+.share-form {
+    background-color: #F1F1F1;
+}
+
+.share-form .share-form-header {
+    position: relative;
+    padding: 20px 0;
+}
+
+.share-form .share-form-header .share-form-header-text {
+    padding-top: 12px;
+    margin: 0;
+}
+
+.share-form .share-form-header .close {
+    top: 18px;
+    color: #555555;
+}
+
+.share-form-buttons-container {
+    margin-bottom: 40px;
+}
+
+.share-buttons-heading {
+    position: relative;
+    padding: 0 60px;
+}
+
+.share-buttons-heading .share-buttons-arrow {
+    position: absolute;
+    left: 35px;
+    top: 16px;
+    width: 30px;
+    transform: rotateZ(15deg);
+}
+
+.share-buttons-heading .share-buttons-heading-text {
+    text-align: left;
+    font-family: Shadows Into Light;
+    line-height: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    color: #D34544;
+    margin: 10px 0;
+}
+
+.share-buttons {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    padding: 0 60px;
+    margin: 0;
+}
+
+.share-buttons .share-button {
+    padding: 4px;
+    list-style: none;
+}
+
+.share-buttons .share-button i {
+    background-image: none;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    line-height: 1.1em;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-buttons.inprofile {
+    padding: 0;
+    justify-content: flex-end;
+    margin: -4px;
+}
+
+.share-buttons.inprofile .share-button {
+    padding: 3px;
+}
+
+.share-buttons.inprofile .share-button i {
+    padding: 0;
+    height: 52px;
+    width: 52px;
+    font-size: 30px;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 251, 251, 0.1) inset;
+}
+
+.share-button-whatsapp {
+    background-color: #29a71a;
+}
+
+.share-button-sms {
+    background-color: #1598d5;
+}
+
+.share-button-facebook {
+    background-color: #3b5998;
+}
+
+.share-button-twitter {
+    background-color: #2ba9e1;
+}
+
+.share-button-skype {
+    background-color: #00aff0;
+}
+
+.share-button-pinterest {
+    background-color: #cb2027;
+}
+
+.share-button-linkedin {
+    background-color: #007bb6;
+}
+
+.share-button-telegram {
+    background-color: #0088CC;
+    font-size: 15px;
+}
+
+.share-button-instagram {
+    background-color: #F18644;
+}
+
+.share-button-youtube {
+    background-color: #E63631;
+}
+
+.share-button-mail {
+    background-color: #939598;
+}
+/* Share Form in modal Completed*/
+
+.infoimg{
+  color: #fff;
+}

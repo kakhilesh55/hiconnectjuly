@@ -1,0 +1,115 @@
+22-07-2022, 07:02 - stdClass Object
+(
+    [id] => 1
+    [user_id] => 2
+    [qr_image] => 83909817.png
+    [qr_text] => http://localhost/card/?shiv.k.achari
+)
+
+22-07-2022, 07:08 - 
+22-07-2022, 10:08 - 
+22-07-2022, 10:08 - 
+22-07-2022, 10:29 - stdClass Object
+(
+    [id] => 1
+    [user_id] => 2
+    [qr_image] => 637087483.png
+    [qr_text] => https://hiconnect.co.in/shiv.k.achari
+)
+
+22-07-2022, 10:33 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+23-07-2022, 06:26 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+23-07-2022, 10:26 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+23-07-2022, 11:15 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+23-07-2022, 11:16 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+23-07-2022, 11:18 - SELECT *
+FROM `company`
+WHERE `company_id` = '8'
+25-07-2022, 20:46 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+25-07-2022, 20:48 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+25-07-2022, 20:49 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+25-07-2022, 20:49 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+25-07-2022, 20:49 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+25-07-2022, 20:49 - SELECT *
+FROM `company`
+WHERE `company_id` = '3'
+26-07-2022, 05:30 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+26-07-2022, 05:37 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+26-07-2022, 05:37 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+27-07-2022, 13:37 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+30-07-2022, 13:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+30-07-2022, 13:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+31-07-2022, 16:16 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+02-08-2022, 05:56 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+02-08-2022, 10:38 - SELECT *
+FROM `company`
+WHERE `company_id` = '8'
+24-08-2022, 06:21 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+27-08-2022, 08:59 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+27-08-2022, 09:00 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+29-08-2022, 03:31 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+29-08-2022, 03:32 - SELECT *
+FROM `company`
+WHERE `company_id` = '9'
+13-10-2022, 13:18 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+13-10-2022, 13:18 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+27-10-2022, 04:22 - SELECT *
+FROM `company`
+WHERE `company_id` = '7'
+14-01-2023, 06:47 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+14-01-2023, 06:48 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-01-2023, 06:48 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL

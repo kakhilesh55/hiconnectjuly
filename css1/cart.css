@@ -1,0 +1,162 @@
+.product-detailz {}
+hr {width:100%; margin: 0;}
+.crt-img {width:77px; height:77px; border: 1px solid rgb(213, 213, 213); border-radius: 4px;}
+.crtc-img {width:33px; border-radius: 4px;}
+.crtc-img img {width: 100%;}
+.crt-img img {width: 100%;}
+#hi-hello {background-color: rgb(249, 245, 255);box-sizing: border-box;-moz-box-flex: 1;flex-grow: 1;padding: 0.3rem 1rem 1.5rem;/*position: sticky;top: calc(64px + 2rem);*/width: 100%;box-shadow: 0 0 3px rgb(213, 213, 213); border-radius: 8px;;}
+.hi-billing {background: #fff; border-radius: 8px; margin-top: 14px;}
+#hi-bill {overflow:inherit;}
+.hi-tabs h3 {font-size: 16px;padding:1px 0 9px}
+.hi-cost {font-size: 16px; padding: 5px 0;}
+.hi-costs {font-size: 16px; font-weight: 600; border-top: 1px solid rgb(214, 214, 214);padding: 10px 0 0; margin-top: 14px;}
+.br-rigt {border-radius:8px;}
+.card-select {}
+.already-acc {border: none; background: none; color:#e03a3c; font-size: 18px; font-weight: 500;}
+.grey-bg {/*background:rgb(249, 249, 249); border:1px solid rgb(213, 213, 213);*/ border-radius:8px;}
+#hi-login {display: none;}
+.card-slt {width: 100%;background: #fff; border: 2px solid #bbb; padding: 10px; border-radius: 8px;}
+.card-slt option {padding: 10px}
+.login-intro p {font-size: 15px;}
+.crt-card-img img {max-height: 225px;}
+.hi-cart-price h2 {padding:25px 0 22px; font-size: 18px; font-weight: 600; font-family: 'Poppins' !important;}
+.card-p {line-height: 25px;}
+.hi-tabs .card-p p{font-size: 15px; line-height: 22px;}
+.hic-package {border:1px solid rgb(213, 213, 213);border-radius: 8px;}
+.package {padding: 10px  13px; border-bottom:1px solid rgb(213, 213, 213);}
+.discountz {padding: 10px 0;}
+.cpn-success {height: 36px; width:100%; background: #e5efe5; border: 1px solid #c1f1c1;padding-left: 12px;border-radius:3px; color: green;}
+.cpn-error {height: 36px; width:100%; background: #e5efe5; border: 1px solid #ece6e6;padding-left: 12px;border-radius:3px; color: red;}
+
+.hi-cart-menu {background: url("images/shopping-cart.png") no-repeat; background-position: 0 7px; background-size: 23px; padding: 23px 14px 5px 25px; font-weight: 500; font-size: 18px; display: inline-block; color: #111; position: relative;}
+.cart-number {background: #2c4bff; min-width:23px; height: 23px; line-height: 23px; display: inline-block; text-align: center; border-radius: 100%; color: #fff; position: absolute; top: -3px; right: -2px;font-size: 16px;}
+a:focus, a:hover {text-decoration:none !important;}
+
+
+
+.hi-cart {border: 1px solid rgb(213, 213, 213); border-radius: 8px;}
+.hico-product {font-size: 16px; font-weight: 600;}
+.hi-edit a {font-size: 16px; font-weight: 600; color: #e03a3c;}
+.hi-edit a:hover {color: #0f1e35;}
+.hi-qty {font-size: 16px;}
+.hi-pce {font-size: 18px;}
+.hic-address p {font-size: 16px; margin-bottom: 2px;}
+.pdt-grand {font-size: 25px;}
+.pdt-grand span {font-size: 14px; font-weight: 400; padding-left: 9px;}
+.hi-free-d {border-top: 1px solid rgb(213, 213, 213)}
+.hi-address {border: 1px solid rgb(213, 213, 213); border-radius: 8px;}
+.pdt-price {border-bottom: 1px solid rgb(213, 213, 213)}
+.clicking {background: rgb(249, 249, 249) none repeat scroll 0% 0%; padding: 10px; border-radius: 8px;}
+.hi-dl-svg {height:20px;width:20px;cursor:inherit;}
+.hi-tabs h5, .hi-tabs a {font-size: 16px; font-weight: 600;display: inline-block;}
+.hi-tabs a {color: #2c4bff;}
+.hi-tabs a:hover {color: #000;color:#2c4bff;}
+.hi-dlry{color:rgb(51, 51, 51);font-weight:600;font-size:16px;line-height:20px;margin:0px;
+display:flex;-webkit-box-align:center;align-items:center;padding:12px 16px;background:rgb(249, 249, 249); border-radius:8px 8px 0 0; border-bottom:1px solid rgb(213, 213, 213);}
+.hi-dlry svg{margin-right:8px;}
+.package strong {font-weight: 600;font-size: 18px;}
+.entr-coupon {border:1px solid rgb(213, 213, 213)}
+.hi-cart-steps {width:41%; margin: auto;}
+.hi-steps {position: relative; z-index: 1; padding:0 !important;}
+.hi-steps li {z-index: 99; padding: 0; text-align: center; position: relative;}
+
+
+
+.hi-steps .nav-link {width:25px; height: 25px;border: 2px solid rgb(44, 75, 255); border-radius: 100%; margin: 0 auto;   background: rgb(214, 219, 252); box-shadow: 0 0 0 10px #fff;position:relative; color:rgb(44, 75, 255);}
+
+
+
+
+.hi-steps .nav-link.active {border: 2px solid #2c4bff; background: #2c4bff;}
+.hi-steps .nav-link.active h4 {color:#fff;}
+.hi-steps:before{content:"";position:absolute;border:1px dotted rgb(44, 75, 255);height:1px;left:0;width:100%;top:50%;}
+.fstl:before {content: "";position: absolute;height: 25px; width: 50%;left:0; background: #fff;display: inline-block; top:0; bottom: 0; margin: auto; z-index: -2;}
+.lstr:before {content: "";position: absolute;height: 25px; width: 50%;right:0; background: #fff;display: inline-block; top:0; bottom: 0; margin: auto; z-index: -2;}
+.hi-steps .nav-link h4 {color:rgb(44, 75, 255); font-family:'Poppins' !important;position:absolute;left:0;right:0;}
+.hi-steps .nav-link.active {color:#fff;}
+.hi-steps .nav-link:hover {border-color:rgb(44, 75, 255);}
+.form-full {width:100%;}
+.form-fifty {width:50%; float: left;}
+.address-edit {width: 100%; height: 117px; border: 1px solid rgba(0,0,0,0.1);border-radius: 8px;padding: 14px;}
+.address-fm {margin: 0 auto;width: 100%;max-width: 455px;background: #f9f9f9;padding: 12px 27px 7px;border-radius: 8px;}
+.bx-map {font-size: 23px; padding-right: 5px;}
+.plan-editz {width:75%; margin: auto; padding-top: 10px !important;}
+.plnse {border-radius:8px !important;padding: 32px 20px 0 45px !important;}
+.tpbtnz {background: none !important;font-size: 34px; margin:10px 23px 0 auto;z-index: 99;}
+.login-fm input,.address-fm input {font-size: 16px;}
+.hi-pin {border: 1px solid rgb(234, 234, 236); border-radius: 8px;}
+.hi-pin h5 {margin: 0;}
+.bxs-none {box-shadow: none !important;}
+.delete-item {height: 16px;}
+.hi-remove {text-align: center;}
+.hi-pin a,.hic-edit {display: block; background: rgb(214, 219, 252); line-height: 38px; padding: 0 18px;color: rgb(44, 75, 255) !important; border: 1px solid rgb(44, 75, 255) !important; border-radius: 3px; font-size: 16px;}
+.hi-pin a:hover,.hic-edit:hover {background:#2c4bff; border-color:#2c4bff;color:#fff !important;}
+.hi-product-price h2 {margin: 0; font-size: 16px;}
+.hi-product-price p {text-decoration: line-through; margin: 0; font-size: 14px;}
+.hi-product-price h3 {margin: 0; font-size: 14px; font-weight: 400;}
+.get-price h2 {font-size: 16px; color: rgb(9, 117, 122);}
+.get-price h3 {font-size: 16px; text-decoration: line-through;}
+.hi-getit a {color: #000; line-height: 38px; padding: 0 14px; border: 1px solid #000;}
+.hi-recommended {background: rgb(245, 247, 248); border-top: 1px solid rgb(214, 214, 214); border-bottom: 1px solid rgb(214, 214, 214); padding: 14px 0 14px 18px;}
+.hi-addto {border: 1px solid rgb(214, 214, 214); border-radius: 8px;}
+.hi-coupon {}
+.hi-check h5 {font-weight: 400;}
+.hi-billing h2 {font-size: 16px; margin: 0; padding-bottom: 13px;}
+.hi-billing h4 {font-size: 16px; margin: 0; color: #e03a3c;}
+.hi-billing h3 {font-size: 16px; margin: 0; color: #0ea685; padding: 0;}
+.hi-billing p  {font-size: 16px; margin: 0; text-decoration: line-through; padding-right: 14px;}
+.hi-nice {background: rgb(245, 247, 248); text-align: center; padding: 18px 0; border-radius: 8px;}
+.hi-satisfaction {background: rgb(245, 247, 248); text-align: center; padding: 18px 0; margin-top: 14px; border-radius: 8px;}
+.hi-satisfaction p {font-size: 16px; line-height: 18px;}
+.hi-apply {text-align: center; font-size: 16px;}
+.hic-apply a {font-weight: 600;display: inline-block; display: block; line-height: 38px; padding: 0 18px; border: 1px solid #e03a3c; border-radius: 3px; font-size: 16px; color: #e03a3c;}
+
+.pin-coupon  {line-height: 40px; padding: 0 14px; text-align: center; font-size: 16px; border-radius: 30px; font-weight: 600;font-family:Raleway,sans-serif;letter-spacing:1px;display:inline-block;transition:.5s;}
+.pin-coupon {background: none; border:none; color: #e03a3c !important;position: absolute; top: 0; right: 0;}
+.pin-coupon:hover{color: #fff;}
+.check-pin {position: relative;}
+.hico-apply {position: absolute; bottom:0; left:0; width:100%; text-align: center; padding: 10px 0 10px; box-shadow: 0 -1px 12px 0 rgba(0,0,0,.15);}
+.coupon-title {position: absolute; left:0; top:0; padding: 20px 0 20px 25px; border-bottom: 1px solid #eaeaec; width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
