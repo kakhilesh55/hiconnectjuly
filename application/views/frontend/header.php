@@ -6,11 +6,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Hi Connect</title>
+  <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>css1/images/fav-icon.png">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="erp/assets/img/Icon.png" rel="icon">
+  <!-- <link href="erp/assets/img/Icon.png" rel="icon"> -->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   
@@ -40,7 +41,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between col-xl-9 baorx">
       <!--<h1 class="logo me-auto"><a href="index.php">Hi<span>Connect</span></a></h1>-->
-      <a href="index.php" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo.png" alt=""></a>
+      <a href="index.php" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo-tm-hiconnect.png" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
 

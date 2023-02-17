@@ -1,13 +1,31 @@
 <!-- ======= Footer======-->
-  <footer id="footer">
+<section id="hi-peoples" class="hi-peoples">
+<div class="container col-xl-9" data-aos="fade-up">
+  <div class="hi-people">
+    <h2>140,000+ people like you use HiConnect to build their brand on social media every month.</h2>
+    <a href="">Start your free trial</a>
+  </div>
+</div>  
+</section> 
+<footer id="footer">
 
     <div class="footer-top">
       <div class="container col-xl-9 col-sm-12 ftr-boxx">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 col-sm-12 footer-qr pb-5 pt-5">
-            <img class="ftr-logo" src="<?php echo base_url(); ?>css1/images/logo.png" alt=""><br>
-            <img class="ftr-qr" src="<?php echo base_url(); ?>css1/images/hi-connect-qr-code.png" alt="">
+            <img class="ftr-logo" src="<?php echo base_url(); ?>css1/images/logo-tm-hiconnect.png" alt=""><br>
+            <!--<img class="ftr-qr" src="<?php echo base_url(); ?>css1/images/hi-connect-qr-code.png" alt="">-->
+    <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+          Copyright &copy; 2023 HiConnect
+        </div>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links pt-5">
@@ -47,23 +65,21 @@
       </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+    <!--<div class="container d-md-flex py-4">
 
       <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Hi Connect</span></strong>. All Rights Reserved
-        </div>
-        <!--<div class="credits">
+       
+        <div class="credits">
           Designed by <a href="https://mellowthemes.com/">MellowThemes.com</a>
-        </div>--> 
+        </div>
       </div>
-      <div class="social-links text-center text-md-end pt-3 pt-md-0">
+      <!--<div class="social-links text-center text-md-end pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
+      </div>-->
     </div>
   </footer> <!-- Footer -->
 

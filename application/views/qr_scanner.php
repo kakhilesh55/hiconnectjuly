@@ -15,7 +15,7 @@
     <div class="container" style="margin-top:200px;">
     <div class="row">
       
-        <div class="col-md-6">
+        <div class="preview-take">
     <video id="preview" style="width: 100%;"> </video>
 </div>
 <div class="col-md-6">

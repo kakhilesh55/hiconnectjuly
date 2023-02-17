@@ -273,8 +273,8 @@ Once everything looks good, we’ll get to work creating your card.
                 </div>
               </div><!-- # Faq item-->
         
-        <div class="section-header">
-          <h3 id="compatibility">Compatibility
+        <div id="compatibility" class="section-header">
+          <h3 >Compatibility
 </h3>
 
         </div>

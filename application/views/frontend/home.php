@@ -83,19 +83,19 @@ rel="stylesheet" id="bootstrap-css">
             </a>
           </li>
           <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
               <i class="ri-body-scan-line"></i>
               <h4 class="d-none d-lg-block">Capture Leads</h4>
             </a>
           </li>
           <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
               <i class="ri-sun-line"></i>
               <h4 class="d-none d-lg-block">Export to Excel</h4>
             </a>
           </li>
           <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
               <i class="ri-store-line"></i>
               <h4 class="d-none d-lg-block">Grow Faster</h4>
             </a>
@@ -145,7 +145,7 @@ rel="stylesheet" id="bootstrap-css">
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/tab-card.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Share.png" alt="" class="img-fluid">
               </div>
 
 
@@ -197,7 +197,7 @@ rel="stylesheet" id="bootstrap-css">
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/tab-card.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Capture_leads.png" alt="" class="img-fluid">
               </div>
 
 
@@ -250,7 +250,7 @@ rel="stylesheet" id="bootstrap-css">
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/tab-card.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Export_to_excel.png" alt="" class="img-fluid">
               </div>
               </div>
             </div>
@@ -298,7 +298,7 @@ rel="stylesheet" id="bootstrap-css">
                 </div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/tab-card.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Grow_faster.png" alt="" class="img-fluid">
               </div>
               </div>
             </div>
@@ -407,15 +407,17 @@ rel="stylesheet" id="bootstrap-css">
                <a href="<?php echo base_url()."/Products/product_details_view/".$id ?>">
                  <img class="image<?php echo $data['id'] ?>" src="<?php echo base_url(); ?>uploads/manage_products/<?php echo $data['image'];?>" alt="" name="image" rel="<?php echo $data['image'] ?>" ></a>
                </div>
-               <div class="card-body">
+               <div class="card-body p-0">
                
-                 <p class="name<?php echo $data['id'] ?>" 
+                 <p class="name<?php echo $data['id'] ?> pdt-name" 
 rel="<?php echo $data['id'] ?>"><?php echo $data['product_name'] ?></p>
-
+<p class="prdt-price"><span>1500</span>₹<?php echo $data['sale_price'];?><i>33% Off</i></p>
+<p class="fr-dlvry">Free Delivery</p>
 <button type="button" class="hi-add-cart align-items-center" data-label="Add to Cart" onclick="javascript:addtocart(<?php echo $data['id'] ?>)"> 
-        <span class="hi-add-txt">Add to Cart </span>     
-        <span class="hi-add-price price<?php echo $data['id'] ?>" 
-rel="<?php echo $data['sale_price'] ?>"> <?php echo $data['sale_price'];?></span>
+        <span class="hi-add-txt">ADD </span>     
+        <!--<span class="hi-add-price price<?php echo $data['id'] ?>" 
+rel="<?php echo $data['sale_price'] ?>"> </span>-->
+<svg class="_1KOMV2" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path class="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
       </button>
 
 
@@ -549,7 +551,7 @@ Check Out Our Tutorial or Feel Free To Reach Out.</h2>
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
                     <i class="bi bi-question-circle question-icon"></i>
-                    Is Hi Connect available for free?
+                    <span>1</span>Is Hi Connect available for free?
                   </button>
                 </h3>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
@@ -563,14 +565,14 @@ Check Out Our Tutorial or Feel Free To Reach Out.</h2>
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
                     <i class="bi bi-question-circle question-icon"></i>
-                    How to create free digital business cards? 
+                    <span>2</span>How to create free digital business cards? 
                   </button>
                 </h3>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
                      1. Sign up with Hi Connect to create your FREE digital business card.
                    <br>					
-2. Customize your digital business card to add the details.
+                   2. Customize your digital business card to add the details.
 <br>
 3. Share your digital business card using QR Code, unique URL, and more to enjoy easy networking.
 <br>
@@ -584,7 +586,7 @@ Check Out Our Tutorial or Feel Free To Reach Out.</h2>
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
                     <i class="bi bi-question-circle question-icon"></i>
-                     Who is it for?
+                    <span>3</span>Who is it for?
                   </button>
                 </h3>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
@@ -598,7 +600,7 @@ Check Out Our Tutorial or Feel Free To Reach Out.</h2>
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
                     <i class="bi bi-question-circle question-icon"></i>
-                    What phones can my Hi Connect product and Hi Connect QR code share too?
+                    <span>4</span>What phones can my Hi Connect product and Hi Connect QR code share too?
                   </button>
                 </h3>
                 <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
@@ -617,7 +619,7 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
                     <i class="bi bi-question-circle question-icon"></i>
-                     Can a Hi Connect card be sent to people that do not have the app installed?
+                    <span>5</span>Can a Hi Connect card be sent to people that do not have the app installed?
                   </button>
                 </h3>
                 <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
@@ -643,7 +645,8 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
 
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact pt-0">
+    <!--
+      <section id="contact" class="contact pt-0">
       <div class="container col-xl-9" data-aos="fade-up">
 
         <div class="section-title ds-table">
@@ -687,8 +690,7 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
-
+    </section>--><!-- End Contact Section -->
   </main><!-- End #main -->
   <script type="text/javascript">
     function addtocart(p_id)

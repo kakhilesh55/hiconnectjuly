@@ -8,7 +8,7 @@ ul,li {list-style: none;}
 .wi-auto {display: table;margin: auto;}
 .btn-gets {width:130px; height: 46px; line-height: 46px; padding: 0; text-align: center; font-size: 16px; border-radius: 30px; font-weight: 600;}
 .hic-logo {display: block;padding: 1px 1px 1px 0;}
-.hic-logo img {width:128px}
+.hic-logo img {width:50px}
 .lgn-btn {padding: 20px; color: #111; font-family:'Poppins'; font-size:18px; font-weight: 500;}
 .lgn-btn:hover {color: #2c4bff;}
 #hero{width:100%;height:100vh; background:#ffff;position:relative;padding-top:82px;/*background-image: url(https://cdn.shopify.com/s/files/1/0257/5315/7735/files/new_desktop_bg.webp?v=1653325648);height: 95vw;width: 100%;top: -17%;left: 50%;transform: translate(-50%);background-repeat: no-repeat;background-size: cover;    pointer-events: none;*/}
@@ -32,7 +32,7 @@ ul,li {list-style: none;}
 .sli-btn {width:235px;}
 .bx-sh-n {box-shadow: none !important;}
 .btn-sm-red {min-width:200px; padding: 0 45px;}
-.ftr-logo {width:172px;}
+.ftr-logo {width:100px;}
 .ftr-qr {width:175px; margin-top: 45px;}
 .tab-b-btn {background:#111 !important;}
 .tab-b-btn:hover {background:#e03a3c !important;}
@@ -40,7 +40,7 @@ ul,li {list-style: none;}
 .hi-vdo-box {width:85%; margin-left:auto;}
 .hi-vdo {position: relative;}
 .hi-vdo-abso {width:100%;}
-.tab-smi img {width:50px;}
+.tab-smi img {width:41px;}
 .hi-share-social a {color: #fff; background: #e03a3c; font-size: 25px; display: inline-block; text-align: center; width:45px; height: 45px; line-height: 48px;border-radius: 50%;}
 @media screen and (max-width:768px){
 .sli-left {padding-top:99px;}
@@ -54,13 +54,13 @@ ul,li {list-style: none;}
     #hero h1{font-size:28px}
     #hero h2{font-size:18px;line-height:24px}
     .dsn-mob {display: none;}
-    .lgn-mob {margin-left:5px;border:2px solid #e03a3c;color:#e03a3c;white-space:nowrap;transition:.3s;display:inline-block; font-weight: 500; font-size:18px; font-family:'Poppins'; padding:7px 14px; border-radius: 36px;}
-    .lgn-mob:hover {background:#e03a3c;color:#fff}
+    .lgn-mob {margin-left:5px;border:2px solid #2c4bff;color:#2c4bff;white-space:nowrap;transition:.3s;display:inline-block; font-weight: 500; font-size:14px; font-family:'Poppins'; padding:7px 14px; border-radius: 36px;}
+    .lgn-mob:hover {background:#2c4bff;color:#fff}
     .hdr-act {padding-right: 14px;}
     .hi-vdo-box {width:100%;}
     .hdr-act {margin-left: auto;}
     .footer-qr {text-align: center;}
-    .footer-links {margin: 0 !important;padding-left: 39px;}
+    .footer-links {margin: 0 !important;}
     .hi-purchase {text-align: center;}
     .just-md, .prdt-price {justify-content: center;}
     .tab-step-none {display: block; padding-top: 30px; width:77% !important;}
@@ -84,12 +84,13 @@ section{padding:80px 0;overflow:hidden;}
 }
 .faq{padding-top:80px;}
 .faq .accordion-item{border:0;margin-bottom:10px;}
-.faq .accordion-collapse{border:0; background: #2c4bff; color: #fff; max-width: 81%; margin:0 auto; border-radius: 0 0 14px 14px;padding-top: 13px;margin-top: -18px;}
-.faq .accordion-button{padding:36px 30px 36px 4%;font-weight:500;border:0;font-size:18px;color:#fff;text-align:left;background:#2c4bff; border-radius:14px !important; max-width: 81%; margin: 0 auto;box-shadow:none;}
+.faq .accordion-collapse{border:0; background: #fff; color: #444; max-width: 81%; margin:0 auto; border-radius: 0 0 14px 14px;padding-top: 13px;margin-top: -18px;}
+.faq .accordion-button{padding:14px 30px 14px 4%;font-weight:500;border:0;font-size:18px;color:#444;text-align:left;background:#fff; border-radius:14px !important; max-width: 81%; margin: 0 auto;box-shadow:none;}
+.accordion-button span {font-weight: bold; padding-right: 12px;}
 .faq .accordion-button:focus{box-shadow:none;}
 .faq .question-icon{position:absolute;top:14px;left:25px;font-size:20px;color:var(--color-primary);color: #e03a3c; display: none;}
-.faq .accordion-button:after{position:absolute;right:5%;top:0; bottom: 0;margin: auto; font-size: 34px; line-height: 30px;}
-.faq .accordion-body{padding:0 10% 25px 10%;border:0;background:rgba(14, 29, 52, 0.03);border-radius:5px;line-height: 24px; text-align: justify; font-size:16px}
+.faq .accordion-button:after{position:absolute;right:0;top:0; bottom: 0;margin: auto; font-size: 34px; line-height: 30px;}
+.faq .accordion-body{padding:18px 10% 25px 10%;border:0;/*background:rgba(14, 29, 52, 0.03);*/border-radius:5px;line-height: 32px; text-align: justify; font-size:16px}
 .accordion-button::after{flex-shrink:0;width:33px;height:30px;margin-left:auto;font-family:boxicons !important;content: "\ecae";/*background-image:url("images/faq-arrow.svg");*/background-repeat:no-repeat;background-size:1.25rem;transition:transform .2s ease-in-out}
 .accordion-button:not(.collapsed)::after{transform:rotate(-180deg)}
 /*======= FAQ FAQ FAQ FAQ FAQ ===================================================*/
@@ -119,14 +120,18 @@ section{padding:80px 0;overflow:hidden;}
 .tab-infoz h3 {font-weight: 600 !important;font-size: 23px !important;}
 .tab-infoz p {}
 .tab-btn {}
-
+.pdt-name {margin: 0; padding-top: 9px;font-size: 18px;} 
+.prdt-price {margin: 0; font-weight:bold; font-size: 16px;}
+.prdt-price span {text-decoration: line-through; padding-right: 9px;color: rgb(135, 135, 135);font-weight:normal;}
+.prdt-price i {color: green; font-weight: normal; padding-left: 9px; font-style: normal;}
+.fr-dlvry {margin: 0;padding-bottom: 12px; font-size: 14px;}
 .red-boxx {background: #fff; color: #000; margin: 0 auto; width:85%;border-radius: 8px;padding: 10px 0 0;overflow: hidden; box-shadow:0 12px 31px #0000001f;}
 .red-boxx h3 {font-size: 16px;}
 .red-boxx p {font-size: 14px;}
-#footer{color:#fff;font-size:14px;background:#091322}
-#footer .footer-top{padding:0 0 0 0;background:#0f1e35}
+#footer{color:#fff;font-size:14px;background:#fff; padding:34px 0 27px;}
+#footer .footer-top{padding:0 0 0 0;background:#0f1e35; background:#fff;}
 .footer-qr {position: relative;z-index: 1;}
-.footer-qr::before {content:"";position:absolute;background: #efefef; height: 100%; width:999px; top: 0;right: 27px;z-index: -1;}
+.footer-qr::before {content:"";position:absolute;background: #efefef; background: #fff; height: 100%; width:999px; top: 0;right: 27px;z-index: -1;}
 /*=================== ABOUT ============================================*/
 .about-box {width:462px; height: 280px;margin: auto;}
 .about-red {height: 140px; background: #f84848; border-radius: 8px 8px 0 0;}
@@ -157,10 +162,10 @@ section{padding:80px 0;overflow:hidden;}
 .tabs .nav-tabs {padding-bottom:27px;}
 .why-intro {}
 .why-intro p {max-width: 899px; margin: 0 auto;}
-#footer .social-links a{font-size:18px;display:inline-block;background:#2c4bff;color:#fff;line-height:1;padding:8px 0;margin-right:4px;border-radius:99px;text-align:center;width:36px;height:36px;transition:.3s}
-#footer .social-links a:hover{background:#f84848;color:#fff;text-decoration:none}
-
-
+#footer .social-links a{font-size:25px;display:inline-block;color:#fff;line-height:1;padding:8px 0;margin-right:18px;border-radius:99px;text-align:center;width:auto;height:36px;transition:.3s}
+#footer .social-links a:hover{text-decoration:none}
+.social-links {padding:67px 0 18px;}
+.copyright {color: #000;}
 .pricing .box{padding:20px 20px 20px 45px;background:#ffffff;border-radius:32px;position:relative;overflow:hidden;border:2px solid rgba(0,0,0,.08)}
 .pricing .box h3{font-weight:400;padding:15px;font-size:18px;text-transform:uppercase;font-weight:600}
 .pricing .box h4{font-size:42px;font-weight:500;font-family:"Open Sans",sans-serif;margin-bottom:20px}
@@ -336,87 +341,10 @@ textarea:focus,input:focus[type='text'],input:focus[type='password'],input:focus
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @keyframes fadein{
     from{opacity:0}
     to{opacity:1}
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
