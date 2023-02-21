@@ -406,11 +406,15 @@
 .font-48{font-size:48px!important}
 .font-49{font-size:49px!important}
 .font-50{font-size:50px!important}
+.swal-modal {position: fixed !important;left: 0; top:14%; right:0;}
+.wi-hun .fa-copy {position: absolute; right: -18px; top: 9px;right: -25px;top:0;background: #d2dde4;
+padding: 7px;border-radius: 0 5px 5px 0;}
+.wi-hun #card_link {border-radius: 5px 0 0 5px !important;}
 .swal-title {padding:0 !important;margin:0 !important}
 .swal-icon {margin:11px auto 5px !important;}
 .swal-modal {padding-top:5px;width:391px !important}
 .swal-footer {margin-top:0 !important; padding-top:0 !important;}
-#header{background:#fff;transition:all .5s;z-index:997;padding:5px 0}
+#header{background:#fff;transition:all .5s;z-index:997;padding:23px 0 5px;}
 #header.header-scrolled{padding:12px 0;box-shadow:0 2px 15px rgba(0,0,0,.1)}
 #header .logo{font-size:30px;margin:0;padding:0;font-weight:600;}
 #header .logo a{color:#111}
@@ -418,10 +422,10 @@
 #header .logo img{max-height:40px}
 .login-fm .form-check-label {padding-left:36px !important;width:100%;font-size: 14px;padding-top: 2px;}
 .btn-gets {width:110px; height: 38px; line-height: 35px; padding: 0; text-align: center; font-size: 16px; border-radius: 30px; font-weight: 600;}
-.get-started-btn{margin-left:5px!important;border:2px solid #e03a3c!important;color:#e03a3c!important;white-space:nowrap!important;transition:.3s!important;display:inline-block!important; font-weight: 500!important; font-size:16px!important; font-family:'Poppins'!important;}
-.get-started-btn:hover{background:#e03a3c;color:#fff !important}
+.get-started-btn{margin-left:5px!important;border:2px solid #2c4bff !importasnt;color:#2c4bff !important;white-space:nowrap!important;transition:.3s!important;display:inline-block!important; font-weight: 500!important; font-size:16px!important; font-family:'Poppins'!important;}
+.get-started-btn:hover{background:#2c4bff;color:#fff !important}
 .hic-logo {display: block;padding: 1px 1px 1px 0;}
-.hic-logo img {width:128px}
+.hic-logo img {width:50px}
 .pull-left{float:left}
 .pull-right{float:right}
 .align-left{text-align:left}
@@ -625,7 +629,7 @@ table th {border:1px solid #eee !important;}
 .width-per-98{width:98%}
 .width-per-99{width:99%}
 .width-per-100{width:100%}
-.wi-hun {width:100% !important}
+.wi-hun {width:100% !important;padding-top: 2px;}
 .wi-sev {width:75% !important}
 .btn:active,.btn:active:focus,.btn:focus,.custom-select:focus,.form-control:focus{box-shadow:none!important;outline:0}
 a{color:#6777ef;font-weight:500;transition:all .5s;-webkit-transition:all .5s;-o-transition:all .5s}
@@ -861,6 +865,10 @@ textarea.form-control{height:64px!important}
 }
 @media (max-width:767.98px){
 .card .card-header{height:auto;flex-wrap:wrap}
+.btn-gets {width: 90px; font-size:14px !important;
+    height: 32px;
+    line-height: 32px;}
+    .form-inline {width: 59%;}
 .card .card-header h4+.card-header-action,.card .card-header h4+.card-header-form{flex-grow:0;width:100%;margin-top:10px}
 }
 @media (min-width:768px) and (max-width:991.98px){
@@ -1039,7 +1047,7 @@ h6 .badge{font-size:11px;padding:3px 8px}
 .navbar-bg{content:" ";position:absolute;top:0;left:0;width:100%;height:70px;z-index:-1}
 .navbar{align-items:center}
 .navbar .navbar-brand{color:#fff;text-transform:uppercase;letter-spacing:3px;font-weight:700}
-.navbar .form-inline .form-control{background-color:#fff;border-color:transparent;padding-left:20px;padding-right:0;margin-right:-6px;height:36px;font-weight:500;border-radius:3px 0 0 3px;transition:all 1s}
+.navbar .form-inline .form-control{background-color:#fff;border-color:transparent;padding-left:20px;padding-right:0;margin-right:-6px;height:28px;font-weight:500;border-radius:3px 0 0 3px;transition:all 1s}
 .navbar .form-inline .form-control:focus,.navbar .form-inline .form-control:focus+.btn{position:relative;z-index:9001}
 .navbar .form-inline .form-control:focus+.btn+.search-backdrop{opacity:.6;visibility:visible}
 .navbar .form-inline .form-control:focus+.btn+.search-backdrop+.search-result{opacity:1;visibility:visible;top:80px}
@@ -1364,7 +1372,7 @@ body.layout-3 .main-footer{padding-left:0;padding-right:0}
 
 
 
-.header-logo{width:110px}
+.header-logo{width:50px}
 .sidebar-mini .sidebar-brand {display:none;}
 
 .sidebar-brand-icon {display:none; text-align:center;padding:18px 0 14px;}
@@ -2260,18 +2268,18 @@ to{opacity:.6}
 .theme-white .custom-radio .custom-control-input:checked~.custom-control-label::before{background-color:#6777ef}
 .theme-white .list-group-item.active{color:#fff;background-color:#6777ef;border-color:#6777ef}
 .theme-white .navbar.active{background-color:#6777ef}
-.theme-white .form-control:focus{border-color:#e03a3c}
+.theme-white .form-control:focus{border-color:#2c4bff}
 .theme-white .alert.alert-primary{background-color:#6777ef}
-.theme-white .card.card-primary{border-top:2px solid rgb(224, 58, 60)}
+.theme-white .card.card-primary{border-top:2px solid #2c4bff}
 .login-fm {margin: 0 auto;width:100%; max-width: 455px; background: #fff;padding:22px 18px 0;border: 1px solid #ccc;border-radius: 8px;box-shadow:none !important}
-.forg a {color: #e03a3c;}
+.forg a {color: #2c4bff;}
 .forg a:hover {color: #000;}
 .login-intro {text-align: center;}
 .login-intro p {font-size:15px; margin:0}
 .login-intro h3 {margin:0;}
 .btn-hi  {height: 45px; width:100%; max-width:175px; line-height: 44px; padding: 0; text-align: center; font-size: 20px; border-radius: 30px; font-weight: 600;font-family:Raleway,sans-serif;letter-spacing:1px;display:inline-block;transition:.5s;margin-top:12px;}
-.btn-red {background:#e03a3c; border: 1px solid #e03a3c; color: #fff !important}
-.btn-red:hover{background:#000; color: #fff;border: 1px solid #000;}
+.btn-red {background:#2c4bff; border: 1px solid #2c4bff; color: #fff !important}
+.btn-red:hover{background:#1f35b3; color: #fff;border: 1px solid #1f35b3;}
 .kked {background-color: #e03a3c !important; border: 1px solid #e03a3c !important;width:23px !important; height: 18px;padding: 0;margin-right: 10px;margin-left: 9px !important;}
 .form-check-input:checked[type="checkbox"] {background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");}
 .hi-fm-reg .form-group {margin: 0;padding-top: 10px;}

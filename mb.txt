@@ -113,3 +113,9 @@ WHERE `company_id` IS NULL
 17-01-2023, 06:48 - SELECT *
 FROM `company`
 WHERE `company_id` IS NULL
+17-02-2023, 12:54 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-02-2023, 12:54 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
