@@ -24,6 +24,7 @@ Kerala'); ?>
             $rdate=$dat['register_date'];
             $total=$total+$dat['price'];
             $coupon_amount = $dat['cpn_amt'];
+            $state=$dat['state'];
         }
             ?>
         <td style="text-align:right;"><b>Billing Address:</b><br/><?php echo $getInfo->name; ?><br/><?php echo nl2br($address); ?><br/></td>
@@ -67,8 +68,8 @@ Kerala'); ?>
         
             <tr style="font-weight: bold;border:1px solid #cccccc;background-color:#f2f2f2;">
                 <td style="border:1px solid #cccccc;width:50px;">Sl. No.</td>
-                <td style="border:1px solid #cccccc;width:160px;">Product</td>
-                <td style = "border:1px solid #cccccc;width:105px">Package</td>
+                <td style="border:1px solid #cccccc;width:160px;">Item Details</td>
+               <!-- <td style = "border:1px solid #cccccc;width:105px">Package</td>-->
                 <td style = "border:1px solid #cccccc;width:100px;">Amount</td>
                 <td style = "border:1px solid #cccccc;width:95px;">Discount</td>
                 <td style = "text-align:right;border:1px solid #cccccc;width:120px;">Subtotal</td>
@@ -79,13 +80,20 @@ Kerala'); ?>
             $i=1;
             foreach ($getInfo as $dat)
         {
-
+            if($dat['product_name']!="")
+            {
+                $item=$dat['product_name'];
+            }
+else if($dat['pk']!="")
+{
+    $item=$dat['pk'];
+}
           
             ?>
             <tr> 
                 <td style="border:1px solid #cccccc;"><?php echo $i;?></td>
-                <td style="border:1px solid #cccccc;"><?php echo $dat['product_name']; ?></td>
-                <td style="border:1px solid #cccccc;"><?php echo $dat['pk']; ?></td>
+                <td style="border:1px solid #cccccc;"><?php echo $item; ?></td>
+               <!-- <td style="border:1px solid #cccccc;"><?php echo $dat['pk']; ?></td>-->
                 <td style = "text-align:right; border:1px solid #cccccc;"><?php echo number_format($sub_total-$tax_price, 2); ?></td>
                 <td style = "text-align:right; border:1px solid #cccccc;"><?php echo $coupon_amount; ?></td>
                 <td style = "text-align:right; border:1px solid #cccccc;"><?php echo number_format($sub_total-$tax_price-$coupon_amount, 2); $sub_total; ?></td>
@@ -108,16 +116,37 @@ foreach ($orderItemResult as $k => $v) {
 } */
 ?>
 <tr style = "font-weight: bold;">
-    <td colspan="5" style = "border:1px solid #cccccc;text-align:left;">Total</td>
+    <td colspan="4" style = "border:1px solid #cccccc;text-align:left;">Total</td>
     <td style = "border:1px solid #cccccc;text-align:right;"><?php echo  number_format($sub_total-$tax_price-$coupon_amount, 2) ?></td>
 </tr>
-<tr style="font-weight:bold;">
-    <td colspan="5" style = "border:1px solid #cccccc;text-align:left;">Tax(18%) </td>
-    <td style = "border:1px solid #cccccc;text-align:right;"><?php echo number_format($tax_price, 2); ?></td>
-</tr>
 
+
+<?php if($state=="Kerala")
+{
+    
+?>
 <tr style="font-weight:bold;">
-    <td colspan="5" style = "border:1px solid #cccccc;text-align:left;">Grand Total </td>
+    <td colspan="4" style = "border:1px solid #cccccc;text-align:left;">CGST </td>
+    <td style = "border:1px solid #cccccc;text-align:right;"><?php echo number_format($tax_price, 2)/2; ?></td>
+</tr>
+<tr style="font-weight:bold;">
+    <td colspan="4" style = "border:1px solid #cccccc;text-align:left;">SGST </td>
+    <td style = "border:1px solid #cccccc;text-align:right;"><?php echo number_format($tax_price, 2)/2; ?></td>
+</tr>
+<?php
+}
+else
+{
+    ?>
+   <tr style="font-weight:bold;">
+    <td colspan="4" style = "border:1px solid #cccccc;text-align:left;">IGST(18%) </td>
+    <td style = "border:1px solid #cccccc;text-align:right;"><?php echo number_format($tax_price, 2); ?></td>
+</tr> 
+<?php
+}
+?>
+<tr style="font-weight:bold;">
+    <td colspan="4" style = "border:1px solid #cccccc;text-align:left;">Grand Total </td>
     <td style = "border:1px solid #cccccc;text-align:right;"><?php echo number_format($sub_total-$tax_price-$coupon_amount+$tax_price, 2) ?></td>
 </tr>
 <tr style = "font-weight: bold;">

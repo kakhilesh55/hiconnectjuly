@@ -1,6 +1,4 @@
-
-<br><br><br>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<div class="top-space"></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
 rel="stylesheet" id="bootstrap-css">-->
@@ -9,12 +7,14 @@ rel="stylesheet" id="bootstrap-css">-->
       <div class="container col-xl-9" data-aos="fade-up">
 	<div class="pricing-header-wrapper text-center">
 	<h1>Subscription plans</h1>
-	<p class="subheading">Choose the subscription that works for 
+	<p class="subheading">
+	Don't miss out on this <strong>risk-free</strong> opportunity - try it for 30 days and get <strong>your money back</strong> if it's not for you.
+	<!--Choose the subscription that works for 
 	<strong>you</strong>
 	 or your 
 	 <strong>team/business</strong>.<br>If you have any questions, email us at 
-	 <a href="mailto:support@hiconnect.com" class="bold-link">support@hiconnect.com</a>
-	 .</p>
+	 <a href="mailto:support@hiconnect.com" class="bold-link">support@hiconnect.com</a>-->
+</p>
 </div>
         <div class="row">
 		<?php /*<div class="col-lg-4 col-md-6">
@@ -76,16 +76,23 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 
 
 
-					<div class="full-black team">per card<br>per month</div>
+					<div class="full-black team">Per<br>Year</div>
 				</div>
 					<!--<div class="trialz">30-day free trial included<br>3 card minimum, billed annually<br></div>-->
 			</div>
 			<div class="pricing-card-button">
 
-        <?php if($package['sale_price']>0) { ?> <a href="#" onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"  class="button w-button" > Try it now</a><?php } 
+        <?php if($package['sale_price']>0) { ?> <a href="#" onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"  class="button w-button" > <div id="spinner namee<?php echo $package['package_id'] ?>" class="spinner-border namee<?php echo $package['package_id'] ?>" role="status" style="display:none" rel="<?php echo $package['package_id'] ?>">
+  <span class="sr-only"></span>
+  
+</div><span class="bt<?php echo $package['package_id']?>" rel="<?php echo $package['package_id'] ?>"">Try it now</span></a><?php } 
                                     else { ?>
                                 
-        <a href="<?php echo base_url()."auth/registration?package=".$package['package_id'] ?>"  class="button light w-button">Get Started</a>
+        <a href="<?php echo base_url()."auth/registration?package=".$package['package_id'] ?>"  class="button light w-button">
+            
+            
+            
+            Get Started</a>
                                 <?php } ?>
 
 
@@ -156,12 +163,12 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
                     <i class="bi bi-question-circle question-icon"></i>
-                    Is Hi Connect available for free?
+                    <span>1</span> What happens after I sign up for a paid subscription?
                   </button>
                 </h3>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Yes, absolutely! With Hi Connect you can create free basic accounts for a lifetime.
+                   Once you sign up for a paid subscription, you will gain access to all of the features and benefits of our digital business card platform. This includes the ability to create and customize your digital business card, manage leads, and easily share your card with others.
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -170,19 +177,11 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
                     <i class="bi bi-question-circle question-icon"></i>
-                    How to create free digital business cards? 
-                  </button>
+                    <span>2</span> What is your refund policy?
                 </h3>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                     1. Sign up with Hi Connect to create your FREE digital business card.
-                   <br>         
-2. Customize your digital business card to add the details.
-<br>
-3. Share your digital business card using QR Code, unique URL, and more to enjoy easy networking.
-<br>
-4. You can also upgrade your account to get access to more features and get a Hi Connect SMART CARD.  
- </i>
+                     We offer a 30-day money-back guarantee for all paid subscriptions. If for any reason you are not satisfied with our service within the first 30 days of your subscription, you can request a full refund. After 30 days, we do not offer refunds.
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -191,12 +190,12 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
                     <i class="bi bi-question-circle question-icon"></i>
-                     Who is it for?
+                    <span>3</span> How do I cancel my subscription?
                   </button>
                 </h3>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                     Hi Connect is for companies, professionals, and people that required a digital, real-time solution for staying in touch with the ever-changing contact details of external customers, suppliers, and business relations.
+                     If you wish to cancel your subscription, simply log in to your account and navigate to the "Renewals & Billing" section. From there, you can choose to cancel your subscription. Please note that if you cancel your subscription, you will lose access to all of the features and benefits of our digital business card platform.
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -205,17 +204,13 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
                     <i class="bi bi-question-circle question-icon"></i>
-                    What phones can my Hi Connect product and Hi Connect QR code share too?
+                   <span>4</span> Will I be charged if I cancel my subscription?
                   </button>
                 </h3>
                 <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
                     <i class="bi bi-question-circle question-icon"></i>
-                    Hi Connect products use NFC technology and can share with any iPhone XR, XS, 11, 12, 13, or SE (2nd generation) with just a single tap.
-          <br>
-          Hi Connect products can also share with most Androids on the market today, as long as the Android has NFC turned on.
-<br>  
-Hi Connect QR codes can share with all iPhones and every Android that can read QR codes. Hi Connect QR Codes are very consistent, have unlimited scans, and can be customized.
+                    No, you will not be charged if you cancel your subscription before the end of your billing cycle. However, please note that we do not offer prorated refunds for unused portions of your subscription.
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -224,12 +219,26 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
                     <i class="bi bi-question-circle question-icon"></i>
-                     Can a Hi Connect card be sent to people that do not have the app installed?
+                     <span>5</span> How long does it take to process a refund?
                   </button>
                 </h3>
                 <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                   Yes. That’s why we call it easy networking. Hi Connect cards can be shared with anyone, regardless of whether they are a Hi Connect user themselves. Your profile opens in their browser, which every smartphone has.
+                   Refunds are typically processed within 5-7 business days from the date of your refund request. However, it may take longer for the refund to appear on your credit card or bank statement, depending on your financial institution.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+			  
+			  <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-6">
+                    <i class="bi bi-question-circle question-icon"></i>
+                     <span>6</span> Can I switch to a different subscription plan?
+                  </button>
+                </h3>
+                <div id="faq-content-6" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                   Yes, you can upgrade or downgrade your subscription plan at any time. Simply log in to your account and navigate to the "Renewals & Billing" section. From there, you can choose to upgrade or downgrade your subscription plan. Please note that if you upgrade your plan, you will be charged the difference in price between your current plan and the new plan. If you downgrade your plan, you will not receive a refund for the difference in price.
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -246,7 +255,8 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
     <script type="text/javascript">
     function addtocart(p_id)
     {
-  
+     var spinn   = $('.namee'+p_id).show();
+        var bt   = $('.bt'+p_id).hide();
         var price = $('.price'+p_id).attr('rel');
         var image = $('.image'+p_id).attr('rel');
        var price1 = $('.price1'+p_id).attr('rel');
@@ -260,6 +270,8 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
                     url: "<?php echo site_url('welcome/add');?>",
                     data: "id="+id+"&image="+image+"&name="+name+"&price="+price+"&qty="+qty+"&price1="+price1+"&des="+des,
                     success: function (response) {
+                          $('.namee'+p_id).hide();
+                             var bt   = $('.bt'+p_id).show();
                        $(".cartcount").text(response);
                     }
                 });
@@ -274,7 +286,7 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
                   data: "",
                   success: function (response) {
             //  redirect('frontend/onbording');
-              window.location="welcome/opencart";
+              window.location="https://hiconnect.co.in/welcome/opencart";
                   }
               });
   }

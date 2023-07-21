@@ -46,28 +46,39 @@
 
                       <div class="form-group col-md-4">
                         <label for="price">Length</label>
-                        <input type="text" class="form-control" id="length" name="length" value="<?php echo isset($product->length)?$product->units:'';?>">
+                        <input type="text" class="form-control" id="length" name="length" value="<?php echo isset($product->length)?$product->length:'';?>">
                       </div>
 
                       <div class="form-group col-md-4">
                         <label for="price">Breadth</label>
-                        <input type="text" class="form-control" id="breadth" name="breadth" value="<?php echo isset($product->breadth)?$product->units:'';?>">
+                        <input type="text" class="form-control" id="breadth" name="breadth" value="<?php echo isset($product->breadth)?$product->breadth:'';?>">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="price">Height</label>
-                        <input type="text" class="form-control" id="height" name="height" value="<?php echo isset($product->height)?$product->units:'';?>">
+                        <input type="text" class="form-control" id="height" name="height" value="<?php echo isset($product->height)?$product->height:'';?>">
+                      </div>
+                       <div class="form-group col-md-4">
+                        <label for="price">Colour</label>
+                        <input type="text" class="form-control" id="clr" name="clr" value="<?php echo isset($product->colour)?$product->colour:'';?>">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="price">Video Url</label>
-                        <input type="file" name="video" id="image" class="form-control"/>                      </div>
+                        <input type="text" name="video" id="image" class="form-control" value="<?php echo isset($product->video)?$product->video:'';?>"/>                      </div>
                       <div class="form-group col-md-4">
-                      <label for="image">Image</label>
-                          <input type="file" name="image" id="image" class="form-control"/>
+                      <label for="image">Thumb Image</label>
+                          <input type="file" name="image" id="image" class="form-control" multiple=""/>
                           <?php if(!empty($product->image)){ ?>
                         <div class="img-box">
                             <img src="<?php echo base_url('uploads/manage_products/'.$product->image); ?>" height="100px" width="100px">
                         </div>
                     <?php } ?>
+                      </div>
+                       <div class="form-group col-md-4">
+                      <label for="image">Image</label>
+                                <input type="file" class="form-control" name="files[]" multiple/>
+
+                      
+                   
                       </div>
                        <div class="form-group col-md-8">
                         <label for="desc">Short Description</label>
@@ -106,6 +117,8 @@
                             <th>Sale Price</th>
                             <th>Short Description</th>
                             <th>Full Description</th>
+                           <th>Status</th>
+
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -126,8 +139,12 @@
                            <td><?php echo $product['sale_price'];?></td>
                            <td><?php echo $product['short_description'];?></td>
                            <td><?php echo $product['long_description'];?></td>
+                           <td><?php if($product['status']==1){;?><span class="badge badge-danger">Not Active</span><?php } else {?><span class="badge badge-success">Active</span><?php }?></td>
                             <td><a href="<?php echo site_url('manage_products/product_details/'.$product['id'])?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></a> 
-                             <a href="<?php echo site_url('manage_products/delete_product/'.$product['id'])?>" class="btn btn-icon btn-danger" title="Delete"><i class="fa fa-times"></i></a></td>
+                             <a href="<?php echo site_url('manage_products/delete_product/'.$product['id'])?>" class="btn btn-icon btn-danger" title="Delete"><i class="fa fa-times"></i></a>
+                             <a href="<?php echo site_url('manage_products/dis_product/'.$product['id'])?>" class="btn btn-icon btn-info" title="Discontinue"><i class="fa fa-edit"></i></a>
+                             
+                             </td>
                           </tr>
                            <?php  
                           $slno++;

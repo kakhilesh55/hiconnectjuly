@@ -33,7 +33,7 @@ class Front extends CI_Controller
        // $data['products'] = $this->Products_Model->get_manageproduct();
         
        // $data['products'] = $this->cart_model->get_all();
-        $this->load->view('frontend/privacy',$data);
+        $this->load->view('frontend/privacy');
         $this->load->view('frontend/footer');
       
     }
@@ -118,6 +118,15 @@ class Front extends CI_Controller
        
         $this->load->view('frontend/header');
         $this->load->view('frontend/about');
+      
+        $this->load->view('frontend/footer');
+    }
+      public function features()
+    {
+      
+       
+        $this->load->view('frontend/header');
+        $this->load->view('frontend/features');
       
         $this->load->view('frontend/footer');
     }

@@ -23,7 +23,7 @@
                           <tr>
                             <th class="text-center">Sl No. </th>
                         
-                            <th>Order ID</th>
+                            <th>Order IDt</th>
                             <th>Package</th>
                        
                          

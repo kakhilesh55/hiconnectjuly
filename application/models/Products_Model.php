@@ -37,6 +37,11 @@
 			$query = $this->db->get('manage_products');
 			return $query->row();
 		}
+			public function edit_manageproductimg($id){
+			$this->db->where('product_id', $id);
+			$query = $this->db->get('files');
+			return $query->result_array();
+		}
 		public function update_product($id,$data){
 			$this->db->where('product_id', $id);
 			$res = $this->db->update('products', $data);

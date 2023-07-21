@@ -67,7 +67,7 @@
                           ?>
                           <tr>
                             <td><?php echo $slno;?></td>
-                            <td><?php echo $user['order_id'];?></td>
+                            <td><?php echo $user['order_no'];?></td>
                             <td><?php echo $user['name'];?></td>
                             
                             <td><?php echo $user['user_id'];?></td>

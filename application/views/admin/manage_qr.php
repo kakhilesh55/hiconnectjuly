@@ -15,30 +15,47 @@
                  
                   </div>
                   <?php } ?>
-                  <form name="products" method="post" action="<?= base_url('Qrimages/qr_generater') ?>" enctype="multipart/form-data">
-                  <div class="card-body">
-                    <div class="form-row">
-                      <div class="form-group col-md-4">
-                        <label for="name">No Of Qr</label>
-                        <input type="text" class="form-control" id="product_name" name="qr" value="" required="">
-                      </div>
-                
+                 
+                <div class="container">
+                  <div class="row">
+                      <div class="col-md-3"><button type="button" class="btn btn-primary">
+                       Total <span class="badge badge-transparent"><?php $query = $this->db->query('SELECT * FROM qr_images');
+echo $query->num_rows();?></span>
+                      </button></div>
+                                            <div class="col-md-3"><button type="button" class="btn btn-success">
+                       Downloaded <span class="badge badge-transparent"><?php $query = $this->db->query('SELECT * FROM qr_images where status=1');
+echo $query->num_rows();?></span>
+                      </button></div>
+
+                      <div class="col-md-3"><button type="button" class="btn btn-warning">
+                        Remaining <span class="badge badge-transparent"><?php $query = $this->db->query('SELECT * FROM qr_images where status=0');
+echo $query->num_rows();?></span>
+                      </button></div>
+
+                      <div class="col-md-3"><button type="button" class="btn btn-danger btn-icon icon-left">
+                        User Assigned <span class="badge badge-transparent"><?php $query = $this->db->query('SELECT * FROM qr_images where user_id!=0');
+echo $query->num_rows();?></span>
+                      </button></div>
+
+                  </div>
                   </div>
                   <div class="card-footer">
-                  
-                   <input type="submit" name="submit" id="submit" class="btn btn-primary" value="<?php echo isset($edit_id)?'UPDATE':'CREATE';?>">
-                  </div>
-                </form>
+                 
                 <div class="row">
               <div class="col-12">
                   <div class="card-body">
+                      <div class="col-md-6" style="float:left"> <input type="submit" name="download" class="btn btn" value="Download" /></div>
+ <div class="col-md-6" style="float:right"> <a href="#" id="<?php echo $id;?>" data-bs-toggle="modal" data-bs-target="#exampleModal22" class="btn btn-primary update" title="Edit">Create QR</i></a></div>
                     <div class="table-responsive">
+                        <form method="post" action="<?php echo base_url(); ?>Qrimages/download1">
+ 
                       <table class="table table-striped" id="table-1">
                         <thead>
                           <tr>
                             <th class="text-center">
-                              #
+                            <input type="checkbox" id="allcb" name="allcb" class="form-control"/>
                             </th>
+                            <th></th>
                             <th>Qr Image</th>
                             <th>Id</th>
                             <th>User</th>
@@ -54,6 +71,8 @@
                           foreach($products as $product) : 
                           ?>
                           <tr>
+                              <td>    <input type="checkbox" name="images[]" class="select" value="<?php echo $product['qr_image'];?>" />
+</td>
                            <td><?php echo $slno;?></td>
                            <td><?php if($product['qr_image']!=''){ ?>
                             <img src="<?php echo base_url('uploads/qr_image/'.$product['qr_image']); ?>" width="100px" height="100px">
@@ -82,13 +101,42 @@
                               endif;?>
                         </tbody>
                       </table>
+                    <!--  <div align="center">
+   <input type="submit" name="download" class="btn btn-primary" value="Download" />
+  </div>-->
+  </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            
+
+            
+            
+            <script>
+               $('#allcb').change(function(){
+    if($(this).prop('checked')){
+        $('tbody tr td input[type="checkbox"]').each(function(){
+            $(this).prop('checked', true);
+        });
+    }else{
+        $('tbody tr td input[type="checkbox"]').each(function(){
+            $(this).prop('checked', false);
+        });
+    }
+});
+            </script>
 <script type="text/javascript">
-        
+    $('#selectAll').click(function(e) {
+    if($(this).hasClass('checkedAll')) {
+      $('input').prop('checked', false);   
+      $(this).removeClass('checkedAll');
+    } else {
+      $('input').prop('checked', true);
+      $(this).addClass('checkedAll');
+    }
+});
 function ab(user)
 {
     
@@ -111,3 +159,32 @@ e.preventDefault();
               </div>
             </section>
           </div>
+                                          <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Create Qr</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      
+      
+       <form name="products" method="post" action="<?= base_url('Qrimages/qr_generater') ?>" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="name">No Of Qr</label>
+                        <input type="text" class="form-control" id="product_name" name="qr" value="" required="">
+                      </div>
+                
+                  </div>
+                   
+                   <input type="submit" name="submit" id="submit" class="btn btn-primary" value="<?php echo isset($edit_id)?'UPDATE':'CREATE';?>">
+                  </div>
+                </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+

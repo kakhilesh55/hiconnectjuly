@@ -2,10 +2,20 @@
 	class Coupon_Model extends CI_Model{
 
 		public function add_coupon(){
+		    if($this->input->post('show')=="")
+		    {
+		        $show=0;
+		    }
+		    else
+		    {
+		        $show=1;
+		    }
 			$data = array('coupon_name' => $this->input->post('coupon_name'),
 			'percentage' => $this->input->post('percentage'),
 			'start_date' => $this->input->post('start_date'),
 			'end_date' => $this->input->post('end_date'),
+			'description' => $this->input->post('description'),
+			'view_status' => $show,
 			'coupon_status' => $this->input->post('coupon_status'));
 			$res=  $this->db->insert('coupon', $data);
 		}

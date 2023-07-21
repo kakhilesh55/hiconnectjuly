@@ -8,6 +8,7 @@ class Qrimages extends CI_Controller {
         parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Qr_Model');
+	
     }
 	
 	public function index()
@@ -40,6 +41,49 @@ class Qrimages extends CI_Controller {
 		$data['main'] = 'qrcode';
         $this->load->view('layout/main_view',$data);
 	}
+	function download()
+ {
+     
+  if($this->input->post('images'))
+  {
+   $this->load->library('zip');
+   $images = $this->input->post('images');
+   foreach($images as $image)
+   {
+       echo $image;
+    $this->zip->read_file($image);
+   }
+   ob_end_clean();
+   $this->zip->download(''.time().'.zip');
+  }
+ }
+ 	function download1()
+ {
+      $this->load->helper('url');
+
+     // Load zip library
+     $this->load->library('zip');
+     $images = $this->input->post('images');
+
+   foreach($images as $image)
+   {
+       $data['status']=1;
+        	$this->db->where('qr_image', $image);
+			$res = $this->db->update('qr_images', $data);
+       $filepath1 = FCPATH.'/uploads/qr_image/'.$image;
+    $this->zip->read_file($filepath1);
+   }
+    // $filepath1 = FCPATH.'/uploads/qr_image/558981360.png';
+   
+
+        // Add file
+      //  $this->zip->read_file($filepath1);
+    
+
+        // Download
+        $filename = "backup.zip";
+        $this->zip->download($filename);
+ }
 	public function qr_generater()
 	{
 		$num= $this->input->post('qr');

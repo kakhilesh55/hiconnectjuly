@@ -1,7 +1,4 @@
-
-
-  <section id="about-us" class="mt-5">
-<br><br>
+<div class="top-space"></div><section id="about-us" class="mt-5">
   <div class="container-fluid">
     <div class="container col-xl-9" data-aos="fade-up" data-aos-delay="100">
       <div class="row">
@@ -17,8 +14,8 @@
           </div>
         </div> -->
 		<div class="pricing-header-wrapper text-center">
-	<h1>About HiConnectt  </h1>
-<p>"Our mission is to help businesses, professionals, and people develop deeper, longer-lasting relationships by providing real-time information that nurtures networking and personal relationships."</p>	
+	<h1>About HiConnect</h1>
+<p>“Our mission is to help businesses, professionals, and individuals establish more meaningful long-lasting connections by providing up-to-date information that encourages networking and personal relationships”</p>	
 </div>
       </div>
     </div>
@@ -29,8 +26,8 @@
         <div class="row d-flex align-items-center">
           <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-init aos-animate hi-abt-content" data-aos="fade-up" data-aos-delay="100">
             <h2>Who We Are ?</h2>
-            <p>We're a group of adventurous individuals who value healthy relations. So we research and develop the solutions to make deep and sustainable networking.</p>
-              <p>We will continue to innovate and expand developing new solutions and designs using our cutting-edge technology and integrations to reshape how the business world connects. </p> 
+            <p>We at hiConnect are a group of seasoned professionals who are enthusiastic about offering cutting-edge and creative networking and branding solutions.</p>
+              <p>We specialize in developing user-friendly, customizable digital business solutions that make it simple for people and companies to share contact information and promote their brands.</p> 
 			 
           </div>
           <div class="col-lg-6 order-1 order-lg-2 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
@@ -56,8 +53,7 @@
         <div class="row d-flex align-items-center">
           <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-init aos-animate  hi-abt-content" data-aos="fade-up" data-aos-delay="100">
             <h2>Hi Connect </h2>
-            <p>Hi Connect is a networking platform that helps professionals and businesses worldwide to modernise networking. </p>
-<p>Unlike other solutions on the market, Hi Connect is not just a business card to share your info, we encourage more in-person interactions to form authentic connections with those around us.  </p>
+            <p>hiConnect is a digital business card platform that enables users to create, customize, and share their digital business cards easily and conveniently. The platform allows users to add their contact information, social media profiles, and other relevant details to their digital business card, as well as customize the design to make it unique and eye-catching. Additionally, hiConnect offers features such as NFC products for easy sharing, theme customization, adding products and services, and payment information, as well as analytics to track engagement and interactions with the digital business card.</p>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <img src="<?php echo base_url(); ?>css1/images/black-mobile.png" alt="">

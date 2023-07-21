@@ -41,17 +41,35 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between col-xl-9 baorx">
       <!--<h1 class="logo me-auto"><a href="index.php">Hi<span>Connect</span></a></h1>-->
-      <a href="index.php" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo-tm-hiconnect.png" alt=""></a>
+      <a href="<?php echo base_url(); ?>" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo-tm-hiconnect.png" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
+		<li class="ps-3 pe-3 pb-3 lgn-no">
+		     <?php if ($this->session->userdata('user_id')) {
+		         ?>
+		<div class="d-flex justify-content-end align-items-center">
+    <a  class="d-flex" href="https://hiconnect.co.in/users/dashboard">
+    <i class="ri-user-fill"></i>
+		  <p>Hey, <?php echo $this->session->userdata('username');?> </p>
+</a>
+		</div>
+		<?php  }else {?>
+		<div class="d-flex justify-content-end">
+		  <a class="btn-white btn-hi hi-m-nav" href="<?php echo base_url(); ?>auth">Login</a>
+		  <a class="btn-red btn-hi hi-m-nav" href="<?php echo base_url(); ?>pricing">Register</a>
+		  
+		</div>
+		<?php
+		}?>
+		  </li>
 		<!--<li><a class="nav-link scrollto active" href="products.php">Home</a></li>-->
-		<li class="dropdown"><a href="#"><span>Company</span> <i class="bi bi-chevron-down"></i></a>
+		<li class="dropdown"><a href="#"><span>Explore</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="<?php echo base_url(); ?>about">About Us</a></li>
-			<li><a href="<?php echo base_url(); ?>how">How It Works</a></li>
+              <li><a href="<?php echo base_url(); ?>#">Features</a></li>
+			<li><a href="<?php echo base_url(); ?>front/how">How It Works</a></li>
               <!--<li class="dropdown"><a href="#"><span>Company</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Contact Us</a></li>
@@ -63,7 +81,7 @@
 			</li>
           <li><a class="nav-link scrollto" href="<?php echo base_url(); ?>products">Products</a></li>
           <li><a class="nav-link scrollto " href="<?php echo base_url(); ?>pricing">Pricing</a></li>
-			<li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+		  <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="<?php echo base_url(); ?>tutorial">Tutorials</a></li>
 			<li><a href="<?php echo base_url(); ?>contact">Support</a></li>
@@ -73,9 +91,25 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <div class="hdr-act">
-      <a href="<?php echo base_url(); ?>auth" class="lgn-btn lgn-mob">Login</a>
+<div class="hdr-process">
+    <?php if ($this->session->userdata('user_id')) {
+        ?>
+<div class="d-flex justify-content-end align-items-center desk-on pe-3">
+<a  class="d-flex" href="https://hiconnect.co.in/users/dashboard">
+<i class="ri-user-fill"></i>
+		  <p>Hey! <?php echo $this->session->userdata('username');?></p>
+		  </a>
+		</div>
+	 	<?php
+    }
+    else
+    {
+    ?>
+      <a href="<?php echo base_url(); ?>auth" class="lgn-btn lgn-mob lgn-nn">Login</a>
+     <?php
+    }?>
       <a href="#" onclick="javascript:opencart()" class="hi-cart-menu"> <span class="cart-number cartcount"><?php echo count($this->cart->contents());  ?></span></a>
-   
+    </div>   
     </div>
    <div class="resultx"> 
    <div id="result"></div></div>

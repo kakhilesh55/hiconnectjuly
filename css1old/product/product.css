@@ -1,0 +1,133 @@
+#product-image-container{width:350px;text-align:center;position:relative;float: left;}
+#product-image-carousel-container{margin-right:15px;float: left;}
+.elastislide-wrapper {width:100%;min-width: 100%;}
+.elastislide-vertical ul li{display:block; margin-bottom: 10px;}
+.elastislide-vertical nav span.elastislide-next{bottom:-12.5px;top:auto;background-position:-1px -25px; background: url("images/arrow-down.png") no-repeat !important; display: block !important;}
+
+.elastislide-vertical nav span.elastislide-next::after {content:"\ed91"; content:"\ecae";font-family:boxicons !important; font-size:25px;color:#fff;}
+
+.product-zoom img {border-radius: 8px;}
+
+
+
+
+
+
+
+.elastislide-carousel img {padding: 0;border-radius: 8px; padding: 0 !important;}
+.elastislide-vertical nav span.elastislide-next:hover{background-position:-31px -25px}
+.elastislide-wrapper nav span{position:absolute;width:24px;height:25px;border-radius:3px;cursor:pointer;background-color:#fafafa;text-indent:-9999px;box-shadow:inset 0 1px 1px rgba(255,255,255,.5);-webkit-box-shadow:inset 0 1px 1px rgba(255,255,255,.5);background-image:url(../images/sprites/product-nav.png);background-position:-1px 0}
+.elastislide-wrapper nav span:hover{background-color:#ff530d;border-color:#ff530d}
+.elastislide-vertical nav span{top:-22.5px;margin-left:-11px;}
+.elastislide-vertical nav span.elastislide-prev{background: url("images/arrow-up.png") no-repeat; left:0; right: 0; margin: 0 auto; display: block !important; font-family:boxicons !important; content:"\ecae"}
+.elastislide-vertical nav span.elastislide-prev:hover{background-position:-31px 0}
+.elastislide-vertical nav span.elastislide-next{bottom:-12.5px;right:0; left:0;margin: 0 auto; background-position:-1px -25px}
+.elastislide-wrapper{position:relative;min-height:77px;}
+.elastislide-vertical{padding:0}
+.hi-share-social a {float: left;padding: 9px; margin-right: 14px; border-radius: 50%; display: block; color: #fff; transition: all .3s; font-size: 22px;font-size:20px;}
+.hi-share-social a:hover {background: #e03a3c; color: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

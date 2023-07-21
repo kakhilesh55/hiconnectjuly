@@ -187,11 +187,22 @@ private $url = 'https://apiv2.shiprocket.in/v1/external/';
     function add()
     {
     // Set array for send data.
+    
     if (count($this->cart->contents())>0){
     foreach ($this->cart->contents() as $item){
-      
+  
                         if ($item['id']==$this->input->post('id')){
-                         
+                         //echo "df";
+                         echo $this->input->post('id');
+                        echo $item['id'];
+                        echo "no";
+                        $data = array(
+        'id' => $item['id'],
+      
+        'qty' => 1
+        );
+    $this->cart->update($data);
+                        
                         }
                         else
                         {
@@ -206,6 +217,12 @@ private $url = 'https://apiv2.shiprocket.in/v1/external/';
                 );
          
     // This function add items into cart.
+      $data = array(
+        'id' => $item['id'],
+      
+        'qty' => 1
+        );
+    $this->cart->update($data);
     $this->cart->insert($insert_data);
                         }
     }
@@ -373,6 +390,7 @@ $post['weight'] = 1;
     {
         $data['cart']  = $this->cart->contents();
      $data['packages'] = $this->Package_Model->get_packages();
+     $data['cpn'] = $this->Package_Model->get_cpn();
 
         $this->load->view("frontend/onbording", $data);
     }

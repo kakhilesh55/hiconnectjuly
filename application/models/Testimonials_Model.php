@@ -18,6 +18,14 @@
 			return $query->result_array();
 		}
 
+		public function gettestimonial($id){
+		    $user_id = $this->session->userdata('id');
+			$this->db->where('testimonial_id',$id);
+			$this->db->where('user_id', $user_id);
+			$query = $this->db->get('testimonials');
+		  	return $query->result(); 
+		}
+
 		public function edit_testimonial($id){
 			$this->db->where('testimonial_id', $id);
 			$query = $this->db->get('testimonials');

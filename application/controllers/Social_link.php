@@ -19,8 +19,7 @@ class Social_link extends CI_Controller {
     public function social_links($id = NULL)
 	{
 		$edit_id = $id;
-		if ($this->input->post('action') == 'create') 
-		{
+	
 			$data['title'] = 'Add Social Link';
 
 			$this->form_validation->set_rules('social_link_type', 'Social Link Type', 'required');
@@ -29,8 +28,8 @@ class Social_link extends CI_Controller {
 			if($this->form_validation->run() === FALSE){
 				$data['social_links'] = $this->Social_link_Model->get_social_links();
 				$data['social_link_types'] = $this->Social_Model->get_social_link_types();
-				$messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
-				$this->session->set_flashdata('item',$messge );
+			//	$messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
+				//$this->session->set_flashdata('item',$messge );
 
 				$data['main'] = 'users/social_links';
 				$this->load->view('layout/main_view',$data);
@@ -42,8 +41,8 @@ class Social_link extends CI_Controller {
 				$this->session->set_flashdata('item', $messge);
 				redirect('social_link/social_links');
 			}
-		}
-		else
+	
+	/*	else
 		{
 			$edit_id = $this->input->post('action');
 			$data['title'] = 'Update Social Link';
@@ -70,7 +69,7 @@ class Social_link extends CI_Controller {
 				$this->session->set_flashdata('item',$messge );
 				redirect('social_link/social_links');
 			}
-		}
+		}*/
 	}
 
 	public function delete_social_link($id)

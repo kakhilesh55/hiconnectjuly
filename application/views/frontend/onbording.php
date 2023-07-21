@@ -31,6 +31,18 @@
   <link href="<?php echo base_url(); ?>assets1/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>css1/style.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>css1/cart.css" rel="stylesheet">
+	<style>
+	  .tabs .ac{
+	        display:none!important;
+	    }
+	    .fd{
+    display: block!important;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+	</style>
 </head>
 
 <body>
@@ -38,28 +50,34 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center onb-header p-0">
     <div class="container d-flex align-items-center col-xl-9">
-      <a href="index.html" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo.png" alt=""></a>
-      <div class="tabs hi-cart-steps tab-top-none">
+      <a href="<?php echo base_url(); ?>" class="hic-logo"><img src="<?php echo base_url(); ?>css1/images/logo-tm-hiconnect.png" alt=""></a>
+      <div class="tabs hi-cart-steps">
       <div class="container">
         <ul class="nav nav-tabs row d-flex hi-steps">
           <li class="nav-item col-3 fstl">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1" id="t1">
               <h4 class="d-lg-block">1</h4>
+              <p class="p-dark">Cart</p>
             </a>
           </li>
           <li class="nav-item col-3">
-            <a  href="#tab-2" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-26">
+            <a  href="#tab-2" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-26" id="t2">
               <h4 class="d-lg-block">2</h4>
+              <p class="p-light">Register</p>
             </a>
+            
           </li>
           <li class="nav-item col-3">
-            <a  href="#tab-38" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-389">
+            <a  href="#tab-38" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-389" id="t3">
               <h4 class="d-lg-block">3</h4>
+              <p class="p-light">Address</p>
             </a>
+            
           </li>
           <li class="nav-item col-3 lstr">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-46">
               <h4 class="d-lg-block">4</h4>
+              <p class="p-light">Summary</p>
             </a>
           </li>
         </ul>
@@ -67,11 +85,11 @@
     </div>
   </header><!-- End Header -->
 
-<section id="hi-cart-steps" class="pt-0">
+<section id="hi-cart-steps" class="pt-0 pb-0">
 <hr>
-<div class="tabs hi-cart-steps tab-step-none">
+    <!--<div class="tabs hi-cart-steps tab-step-none">
       <div class="container">
-        <ul class="nav nav-tabs row d-flex hi-steps">
+        <ul class="nav nav-tabs row d-flex hi-steps bvbvvvvvvvvvvvvvvv">
           <li class="nav-item col-3 fstl">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
               <h4 class="d-lg-block">1</h4>
@@ -94,24 +112,15 @@
           </li>
         </ul>
 </div>
-    </div>
+    </div>-->
 
 <div class="container col-xl-9">
 <div class="row">
 
-<section id="tabs" class="pt-0">
+<section id="tabs" class="pt-0 pb-0">
 <div class="tab-content">
 <div class="tab-pane active show hi-tabs" id="tab-1">
-<section id="hi-cart">
-
-
-
-
-
-
-
-
-
+<section id="hi-cart" class="pb-0">
 <div class="container col-xl-12">
 <div class="row grey-bg pb-4">
   <!--
@@ -123,10 +132,19 @@ Estimated Delivery by Monday, 01st Aug</div>
 <div class="card-select mt-4">
 
 
-  <div class="d-flex justify-content-between p-3 align-self-center hi-pin pb-3 pt-3 mb-3">
-    <div class="d-flex  align-self-center hi-check"><h5>Check delivery time & services</h5></div>
-    <div>
-  <a href="#PlanEdit" role="button" class="hic-edit" data-bs-toggle="modal">Enter Pin Code</a>
+  <div class="d-flex justify-content-between p-3 align-self-center hi-pin pb-3 pt-3 mb-3 pi" id="td_id">
+    <div class="d-flex  align-self-center hi-check"><h5 id="pinch">Check delivery time & services</h5></div>
+    <div class="bizx">
+  <a href="#PlanEdit" role="button" class="hic-edit" data-bs-toggle="modal" id="ent">ENTER PIN CODE</a>
+  </div>
+  </div>
+   <div class="d-flex justify-content-between p-3 align-self-center hi-pin pb-3 pt-3 mb-3" id="pinn" style="display:none!important;">
+    <div style="display:none!important;" id="suu" class="d-flex  align-self-center hi-check"><h5>Delivery postcode  serviceable.</h5></div>
+        <div style="display:none!important;" id="fa" class="d-flex  align-self-center hi-check"><h5>Delivery postcode not serviceable.</h5></div>
+
+
+    <div class="bizx">
+  <a href="#PlanEdit" role="button" class="hic-edit" data-bs-toggle="modal">CHANGE ADDRESS</a>
   </div>
   </div>
 
@@ -158,13 +176,14 @@ Estimated Delivery by Monday, 01st Aug</div>
  
 
 
-
+<?php echo validation_errors(); ?>
 
 
 <?php 
         if(isset($cart) && is_array($cart) && count($cart)){
         $i=1;
          $dism=0;
+         
         foreach ($cart as $key => $data) { 
             $d=$data['price1']-$data['price'];
            $dism+= $d;
@@ -173,21 +192,21 @@ Estimated Delivery by Monday, 01st Aug</div>
 
 
 
-  <div class="hi-cart-intro d-flex pe-3 justify-content-between">
-		<div class="product-image p-3 pe-0 d-flex">
+  <div class="hi-cart-intro d-flex justify-content-between">
+		<div class="product-image p-2 pe-0 d-flex col-10">
 			<div class=" d-flex align-self-start crt-img">
 				<img src="<?php echo base_url(); ?>uploads/manage_products/<?php echo $data['image'] ?>" 
                                                 alt="<?php echo $data['id'] ?>" class="stars">
 			</div>
-      <div class="product-detailz pt-3 pe-3 ps-4">
+      <div class="product-detailz pt-3 pe-2 ps-2 col-9">
         <div class="d-flex justify-content-between pb-2">
-          <div class="hico-product pe-2"><a href="http://tezcode.com/hiconnect//Products/product_details_view/<?php echo $data['id']; ?>"><?php echo $data['name'] ?></a></div>
+          <div class="hico-product pe-2"><a href="https://hiconnect.co.in//Products/product_details_view/<?php echo $data['id']; ?>"><?php echo $data['name'] ?></a></div>
           <!--<div class="hi-edit">
             <a href="#ProductEdit" role="button" class="hic-edit" data-bs-toggle="modal">Edit</a>
           </div>-->
         </div>
         <div class="d-flex align-items-center hi-qty pb-2">
-    <div><?php echo $data['des']; ?></div>
+    <div class="pdt-des"><p><?php echo $data['des']; ?></p></div>
         </div>
         <!--<div class="d-flex align-items-center hi-pce pb-2">
           <div><strong>$25</strong></div>
@@ -195,11 +214,11 @@ Estimated Delivery by Monday, 01st Aug</div>
       </div>
 		</div>
 		
-    <div class="hi-product-price pt-3 pb-3">
-      <h2 class="price<?php echo $data['rowid'] ?> "><?php echo $data['price'] ?></h2>
+    <div class="hi-product-price pt-3 pb-3 col-2">
+      <h2 class="price<?php echo $data['rowid'] ?> "><?php echo $data['price'];?></h2>
        <p class="price<?php echo $data['rowid'] ?> "><?php echo $data['price1']; ?></p>
             <p id="mrpdiss" style="display:none"><?php echo $dism;?></p>
-      <p style="display:none;" class="subtotal subtotal<?php echo $data['rowid'] ?>"><?php echo $data['subtotal'] ?></p>
+      <p style="display:none;" class="subtotal subtotal<?php echo $data['rowid'] ?>"><?php echo $data['price']/1 ?></p>
       <?php $d=$data['price1']-$data['price'];
       if($d==0)
       {
@@ -231,7 +250,7 @@ Estimated Delivery by Monday, 01st Aug</div>
         if($package['sale_price']!=0)
         {
        ?>
-      <div class="hi-cart mb-4 mt-4">
+      <div class="hi-cart mb-4 mt-4 pe-3">
 
 <div class="col-lg-4 col-md-6 pricebox" style="display:none;">
             <div class="box" data-aos="fade-up" data-aos-delay="100">
@@ -283,13 +302,11 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
             </div>
           </div>
 
-  <div class="hi-cart-intro d-flex pe-3 justify-content-between">
-		<div class="product-image p-3 pe-0 d-flex">
+  <div class="hi-cart-intro d-flex justify-content-between">
+		<div class="product-image hi-onboard pe-0 d-flex">
 			<div class=" d-flex align-self-start">
-			
-                                                
 			</div>
-      <div class="product-detailz pt-3 pe-3 ps-4">
+      <div class="product-detailz pt-3 pe-3 ps-3">
         <div class="d-flex justify-content-between pb-2">
           <div class="hico-product pe-2"><a href="http://tezcode.com/hiconnect//Products/product_details_view/<?php echo $data['id']; ?>">	<?php echo $package['package'];?></a></div>
           <!--<div class="hi-edit">
@@ -297,7 +314,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
           </div>-->
         </div>
         <div class="d-flex align-items-center hi-qty pb-2">
-    <div><?php echo $package['description'];?></div>
+    <div class="pdt-des"><p><?php echo $package['description'];?></p></div>
         </div>
         <!--<div class="d-flex align-items-center hi-pce pb-2">
           <div><strong>$25</strong></div>
@@ -305,14 +322,14 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       </div>
 		</div>
 		
-    <div class="hi-product-price pt-3 pb-3">
+    <div class="hi-product-price hi-onprice pt-3 pb-3 ps-0">
       <h2 class="price<?php echo $data['rowid'] ?> "><?php echo "₹".$package['sale_price'];?></h2>
        <p class="price<?php echo $data['rowid'] ?> "><?php echo "₹".$package['regular_price'];?></p>
            
      
      
-      <div class="hi-remove">
-         <a href="#"  onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"   >Add to Cart</a>
+      <div class="hi-remove hi-addc">
+         <a href="#"  onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"   >ADD TO CART</a>
       </div>
     </div>
 	</div>
@@ -357,17 +374,63 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
     <div class="hi-coupon d-flex justify-content-between">
       <div class="product-image">
         <div class=" d-flex align-self-start crtc-img">
-          <img src="css/images/coupons.png" alt="" class="stars">
+          <img src="<?php echo base_url() ?>css1/images/coupons.png" alt="" class="stars">
         </div>
       </div>
-      <div class="product-detailz d-flex align-self-center pe-3">
-        <div class="pb-2">
+      <div class="add product-detailz align-self-center pe-3" >
+        <div class="pb-2" >
           <div class="hi-apply ps-2">Apply Coupons</div>	
+        </div>
+      </div>
+      <div class="add1 hi-getit  align-self-center" id="add1">
+        <div class="hic-apply pe-3">
+          <a href="#ApplyCoupon" role="button" class="hic-edit" data-bs-toggle="modal">APPLY</a>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+       <div class="product-detailz d-flex align-self-center pe-3 rm" id="b" style="display:none!important;">
+        <div class="pb-2">
+          <div class="hi-apply ps-2">Remove Coupons</div>	
+        </div>
+      </div>
+      <div class="hi-getit d-flex align-self-center rm1" id="a" style="display:none!important;">
+        <div class="hic-apply pe-3">
+          <a href="#" onclick="getcoupon11()" role="button" class="hic-edit" data-bs-toggle="modal">Remove</a>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    <div class="hi-coupon d-flex justify-content-between" style="display:none!important;">
+      <div class="product-image">
+        <div class=" d-flex align-self-start crtc-img">
+          <img src="https://hiconnect.co.in/css1/images/coupons.png" alt="" class="stars">
+        </div>
+      </div>
+      <div id="cp" class="product-detailz d-flex align-self-center pe-3" >
+        <div class="pb-2">
+          <div class="hi-apply ps-2">1 Coupon Applied</div>	
+          <!--<p class="ps-2">You saved additional &#x20b9;100</p>-->
         </div>
       </div>
       <div class="hi-getit d-flex align-self-center">
         <div class="hic-apply pe-3">
-          <a href="#ApplyCoupon" role="button" class="hic-edit" data-bs-toggle="modal">Apply</a>
+          <a href="#ApplyCoupon" role="button" class="hic-edit" data-bs-toggle="modal">EDIT</a>
         </div>
       </div>
     </div>
@@ -379,7 +442,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       <h2>Product Details </h2>
 			<div class="d-flex justify-content-between hi-cost">
 				<div>Total MRP</div>
-				<div class="grandtotal">₹</div>
+				<div class="grandtotal" id="new">₹</div>
 			</div>
 			<div class="d-flex justify-content-between hi-cost">
 				<div>Discount on MRP</div>
@@ -401,15 +464,18 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 	</div>
 </section>
 <div class="card-t-price text-center pb-3 pt-1">
-	<a href="#" class="btn-red btn-hi sli-btn bxs-none" onclick="conti()">Continue</a>
+ <div class="hi-fixd d-flex justify-content-between">
+     <a href="javascript:window.history.go(-1);" class="btn-white btn-hi sli-btn flo-left">BACK</a>
+	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="conti()">CONTINUE</a>
+	</div>
 </div>
 <div class="hi-nice">
   <svg class="uxicon-svg-container" height="24" width="24" role="img"><use fill="currentColor" xlink:href="#svg-container-gd-the-go"></use></svg>
-  <strong> Nice!</strong>You saved ₹ <p id="mrpdiscount"> <?php echo  $dism;?> </p>on your order.
+  <strong> Nice!</strong> You saved  <span id="mrpdiscount">₹ <?php echo  $dism;?> </span>on your order.
 </div>
 <div class="hi-satisfaction">
-  <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet molestias quia excepturi eum veritatis autem velit odio hic.</p>
+  <h6>Your Safety, Our Priority</h6>
+  <p>We make sure that your package is safe at every point of contact.</p>
 </div>
 </div>
 
@@ -420,32 +486,39 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 <div id="PlanEdit" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content modalz">
-                    <button type="button" class="btn-close tpbtnz" data-bs-dismiss="modal">
+                <div class="position-relative">
+        <div class="coupon-title">
+      Enter Delivery Pin Codec
+    </div>        
+                    <button type="button" class="btn-close tpbtnz close-btnz" data-bs-dismiss="modal">
 					<i class='bx bx-x-circle'></i>
 					</button>
                 <div class="modal-body p-0">
-<div class="plan-editz pricing pt-5">
+<div class="plan-editz pricing pt-5 pd-topv pe-4 ps-4">
 <div class="pb-4 check-pin">				
-    <input type="text" id="pin" name="pin" class="coupon-pin" placeholder="Enter PIN Code">
-    <button class="pin-coupon" onclick="javascript:pincheck()">CHECK NOW</button>
+    <input type="text" id="pin" name="pin" class="coupon-pin" placeholder="Enter Pin Code">
+    <button class="pin-coupon" onclick="javascript:pincheck()">CHECK</button>
+    <span class="invalid-feedback" id="invalid-feedback1">
+                      
+                    </span>
  </div>
  <div class="pt-2 pdt-grand">
   <div class="cpn-success d-flex align-items-center " id="suu" style="display:none!important;">
 <i class='bx bxs-badge-check' ></i>
-<span>Delivery postcode  serviceable.</span></div>
+<span>Delivery postcode  serviceablegggg.</span></div>
 <div class="cpn-error d-flex align-items-center " id="fa" style="display:none!important;">
 <i class='bx bxs-x-circle'></i>
 <span>Delivery postcode not serviceable.</span></div>
 </div>
 </div>
-                </div>
+                </div></div>
             </div>
         </div>
 </div>
 <!-- =================================================================================== -->
 <div id="ApplyCoupon" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content modalsz position-relative">
+      <div class="modal-content modalsz position-relative coupnz">
               <button type="button" class="btn-close tpbtnz" data-bs-dismiss="modal">
     <i class='bx bx-x-circle'></i>
     </button>
@@ -453,12 +526,12 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       APPLY COUPON
     </div>
           <div class="modal-body p-0">
-<div class="plan-editz pricing pt-5">
-  <div class="pb-4 check-pin mt-4">				
+<div class="plan-editz pricing p-4 pb-3">
+  <div class="check-pin mt-4">				
     <input type="text" id="coupon_code" class="coupon-pin" placeholder="Enter Coupon Code">
-    <button class="pin-coupon" onclick="getcoupon1(coupon_code.value)">Check Now</button>  
+    <button class="pin-coupon" onclick="getcoupon1(coupon_code.value)">CHECK</button>  
  </div>
- <div class="pt-2 pdt-grand">
+ <div class="pt-1 pdt-grand">
   <div style="display:none;" class="cpn-success  align-items-center " id="su">
 <i class='bx bxs-badge-check' ></i>
 <span>Your coupon was successfully applied</span></div>
@@ -473,13 +546,38 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 <span>Your coupon was invalid</span></div>
 </div>
  <div class="hico-apply">
-  <a href="#" class="btn-red btn-hi sli-btn bxs-none" onclick="getcoupon(coupon_code.value)">Apply Now</a>
+  <a href="#" class="btn-red btn-hi sli-btn bxs-none" onclick="getcoupon(coupon_code.value)">APPLY NOW</a>
+
 </div>
 </div>
+<div class="hi-unlock">UNLOCK COUPONS</div>
+<div class="hi-scroll-pn">
+<?php foreach($cpn as $cp)
+{
+    ?>
 
+   
+ <div class="d-flex ps-4 pe-4 pb-2 pt-3">
+  <div class="chk-box">
+      <input type="checkbox" id="coupon_code1" class="coupon-pin"  value="<?php echo $cp['coupon_name'];?>">
+  </div>
+  <div class="hi-ccode">
+      <div class="hi-dashed">
+         <?php echo $cp['coupon_name'];?>
+      </div>
+  </div>
+ </div>
+  <div class="save-couponz p-4 pt-0 pb-3">
+      <h5><?php echo round($cp['percentage']);?></h5>
+     <p><?php echo $cp['description'];?></p>
+  </div>
+  
 
-
-
+ 
+   <?php
+  }
+  ?>
+   </div>
           </div>
       </div>
   </div>
@@ -491,7 +589,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
           <div class="tab-pane hi-tabs" id="tab-2">
 
 
-<section id="hi-register">
+<section id="hi-register" class="pb-0 reg-padd">
       <div class="container col-xl-9">
         <div class="row">
           <div class="already">
@@ -505,31 +603,58 @@ Already have an account? <button onclick="asd(1)" class="already-acc">Login Now<
 <form method="POST" name="onboarding" class="needs-validation" novalidate="">
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="text" required="" id="name" class="form-control" placeholder="Name" required/>
-     <div class="invalid-feedback">
-                      Please fill in your User ID
-                    </div>
+    <input type="text" required="" id="name" class="form-control" placeholder="First Name" tabindex="1" required autofocus/>
+     <span class="invalid-feedback" id="invalid-feedback2">
+                 
+                    </span>
   </div>
-
+<div class="form-outline mb-4">
+    <input type="text" required="" id="lname" name="lname" class="form-control" placeholder="Last Name" required />
+     <span class="invalid-feedback" id="invalid-feedback3">
+                     
+                    </span>
+  </div>
   <!-- Password input -->
   <div class="form-outline mb-4">
     <input type="email" id="email" placeholder="Email" class="form-control" required/>
+    <span class="invalid-feedback" id="invalid-feedback4">
+                     
+                    </span>
   </div>
   <div class="form-outline mb-4">
-    <input type="text" id="phone" placeholder="Phone" required name="phone" class="form-control" />
-      <div class="invalid-feedback">
-                      Please fill in your full phone
-                    </div>
+    <input type="text" id="phone" placeholder="Phone" name="phone" class="form-control" required />
+      <span class="invalid-feedback" id="invalid-feedback5">
+                     
+                    </span>
   </div>
   <div class="form-outline mb-4">
     <input type="password" required id="password1" placeholder="Password" class="form-control" />
+    <span class="invalid-feedback" id="invalid-feedback6">
+                     
+                    </span>
   </div>
   <div class="form-outline mb-4">
     <input type="password" required id="form2Example2" placeholder="Confirm Password" class="form-control" />
+    <span class="invalid-feedback" id="invalid-feedback7">
+                     
+                    </span>
   </div>
   <!-- Submit button -->
-  <div class="text-center fm-button">
-  <a href="#" class="btn-red btn-hi sli-btn" onclick="sub()">Continue</a>
+  <div class="form-group">
+                    <div class="custom-control custom-checkbox rstr-chk">
+<input type="checkbox" id="vehicle1" name="test" value="1">
+  <label for="vehicle1">By continuing, you agree to our <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Terms of Service</a></label><br>
+  <span class="invalid-feedback" id="invalid-feedback8">
+                     
+                    </span>
+                    </div>
+                  </div>
+<div class="card-t-price text-center pb-3 pt-1">
+ <div class="hi-fixd d-flex justify-content-between">
+     <a href="#" class="btn-white btn-hi sli-btn flo-left" onclick="tab1()">BACK</a>
+	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="sub()">CONTINUE</a>
+	
+	</div>
 </div>
   <!-- Register buttons -->
   
@@ -545,6 +670,7 @@ Already have an account? <button onclick="asd(1)" class="already-acc">Login Now<
   </div>-->
 </form>
 </div>
+<div class="rgr-btm"></div>
 </div>
 </div>
 </section>
@@ -561,7 +687,7 @@ function asd(a)
 	  }
 }
 </script>
-<section id="hi-login">
+<section id="hi-login" class="pb-0">
       <div class="container col-xl-9">
         <div class="row">
           <div class="already">
@@ -572,19 +698,26 @@ Don't have an account? <button onclick="asd(2)" class="already-acc">Register Now
     <h3>Welcome Back!</h3>
     <p>Login to continue</p>
 </div>
-<form method="POST" name="onboarding">
+<form method="POST" name="onboarding" >
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="text" id="user_id" class="form-control" name="user_id"  placeholder="User ID" />
+    <input type="text" id="user_id" class="form-control" name="user_id"  placeholder="User ID" required />
+      <span class="invalid-feedback" id="invalid-feedback11">
+                      
+                    </span>
   </div>
   <div class="form-outline mb-4">
-    <input type="password" name="password" id="password" placeholder="Password" class="form-control" />
+    <input type="password" name="password" id="password" placeholder="Password" class="form-control" required/>
+    <span class="invalid-feedback"  id="invalid-feedback21">
+                      
+                    </span>
   </div>
   <!-- Submit button -->
-  <div class="text-center fm-button">
- <a href="#" class="btn-red btn-hi sli-btn" onclick="subb()">Continue</a>
-</div>
-
+ <div class="hi-fixd d-flex justify-content-between">
+     <a href="#" class="btn-white btn-hi sli-btn flo-left"  onclick="tab1()">BACK</a>
+	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="subb()">CONTINUE</a>
+	
+	</div>
 </form>
 </div>
 </div>
@@ -630,7 +763,7 @@ Shipping Address</div>
 	            $nearby=$result['nearby'];
 	            }
 ?>
-<form method="POST" name="onboarding"  action="<?php echo base_url() ?>Payment/checkout">
+<form method="POST" name="onboarding"  action="<?php echo base_url() ?>Payment/checkout"  class="needs-validation" novalidate="">
 
 
 <div class="form-full pb-4">
@@ -642,15 +775,57 @@ Shipping Address</div>
     <input type="text" id="form2Example2" placeholder="Pin Code" name="pincode" class="form-control" value="<?php if($this->session->userdata('pincode')!="") echo $this->session->userdata('pincode');?>" required/>
   </div>
   <div class="form-outline form-fifty mb-4 ps-2">
-    <input type="text" required id="form2Example2" placeholder="State" name="state" class="form-control" value="<?php if($this->session->userdata('state')!="") echo $this->session->userdata('state');?>" />
+   <!-- <input type="text" required id="form2Example2" placeholder="State" name="state" class="form-control" value="<?php if($this->session->userdata('state')!="") echo $this->session->userdata('state');?>" />-->
+     <select class="form-control" id="inputState" placeholder="State" name="state" class="form-control" >
+                        <option value="SelectState">Select State</option>
+                        <option value="Andra Pradesh" <?php if($this->session->userdata('state') == "Andra Pradesh") { ?> selected="selected"<?php } ?>>Andra Pradesh</option>
+                        <option value="Madya Pradesh"  <?php if($this->session->userdata('state') == "Madya Pradesh") { ?> selected="selected"<?php } ?>>Madya Pradesh</option>
+                        <option value="Arunachal Pradesh" <?php if($this->session->userdata('state') == "Arunachal Pradesh") { ?> selected="selected"<?php } ?>>Arunachal Pradesh</option>
+                        <option value="Assam" <?php if($this->session->userdata('state') == "Assam") { ?> selected="selected"<?php } ?>>Assam</option>
+                        <option value="Bihar" <?php if($this->session->userdata('state') == "Bihar") { ?> selected="selected"<?php } ?>>Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala" <?php if($this->session->userdata('state') == "Kerala") { ?> selected="selected"<?php } ?>>Kerala</option>
+                        <option value="Madya Pradesh">Madya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadeep">Lakshadeep</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                      </select>
   </div>
+  
 </div>
 <input type="hidden" id="cust" name="cust" value="<?php if($this->session->userdata('user_id')!="") echo $this->session->userdata('user_id');?>">
 <input type="hidden" id="tot1" name="tot" >
 <input type="hidden" id="coupon" name="coupon" >
 <input type="hidden" id="amt" name="amt" >
 	<div class="form-outline mb-4">
-    <input type="text" id="form2Example2" required placeholder="Nearby" class="form-control" name="nearby" value="<?php if($this->session->userdata('nearby')!="") echo $this->session->userdata('nearby');?>"/>
+    <input type="text"  tabindex="1" required autofocus id="form2Example2" required placeholder="Nearby" class="form-control" name="nearby" value="<?php if($this->session->userdata('nearby')!="") echo $this->session->userdata('nearby');?>"/>
   </div>
   <!-- Submit button -->
   <!-- Register buttons -->
@@ -673,10 +848,10 @@ Shipping Address</div>
     <div class="hico-product" id="tot"></div>
   </div>
   <div class="clicking mt-2 mb-2">Clicking on ‘Continue’ will not deduct any money</div>
-  <div class="text-center">
-  <input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn" value="Continue">
-  </div>
-  
+   <div class="hi-fixd d-flex justify-content-between">
+     <a href="#" class="btn-white btn-hi sli-btn flo-left"  onclick="tab2()">BACK</a>
+	<input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn m-0 flo-right" value="Continue">
+	</div>
 </div>	
 </div>
 
@@ -775,7 +950,8 @@ $.ajax({
   
  function getcoupon1(coupon_code)
     {
-        
+        var coupon_code=$("#coupon_code").val();
+       // alert(coupon_code);
       
         $.ajax({
             url:"<?php echo base_url() ?>Products/getcupon",
@@ -797,13 +973,14 @@ $.ajax({
        else
        {
            $("#ss").show();
+           $("#cp").show();
        }
                 
               
 
             }
             else if(data['count']==0){
-                alert("f");
+               // alert("f");
                 $('.cpn-success').hide();
                 $('.cpn-error').show();
                 //$('.coupon').hide();
@@ -817,15 +994,47 @@ $.ajax({
       });
     }
  
+ 
+ function getcoupon11()
+ {
+           $('.rm').hide();
+                 $('.rm1').hide();
+                 //document.getElementById("rm").value=hide;
+                  $("#a").removeClass('d-flex').addClass('ad');
+                   $("#b").removeClass('d-flex').addClass('ha');
+                   var numVal1 = document.getElementById("new").innerHTML;
+
+    // alert(numVal1);
+                //     document.getElementById("coupon").value=data['coupon_id'];
+
+                document.getElementById("discount_amount").innerHTML = 0;
+            
+               document.getElementById("grandtotal1").innerHTML =numVal1;
+                $('.add').show();
+                    // $('.add').css('display', 'show!important');
+                 $('.add1').show();
+          
+ }
 
     function getcoupon(coupon_code)
     {
+        if($("#coupon_code").val()=="")
+        {
+             var coupon_code3=$("#coupon_code1").val();
+        }
+        else
+        {
+                var coupon_code=$("#coupon_code").val();
         
+        }
+         var coupon_code3=$("#coupon_code1").val();
+          var coupon_code=$("#coupon_code").val();
+  
       
         $.ajax({
             url:"<?php echo base_url() ?>Products/getcupon",
           method:"POST",
-          data:{coupon_code:coupon_code},
+          data:{coupon_code:coupon_code3},
            dataType: "json",
            success:function(data){
             if(data['count']>0)
@@ -847,15 +1056,23 @@ $.ajax({
                // document.getElementById("mrpdiscount").innerHTML = mrp_amount.toFixed(2);
                var ds=Number(discount_amount)+Number(num);
                // document.getElementById("grandtotal10").innerHTML =1;
+              
                 $('#grandtotal1').text(numVal1-discount_amount);
                  $('#mrpdiscount').text(ds);
                 if(percentage!=0)
                 {
+             
+                     $('.add').hide();
+                    // $('.add').css('display', 'none!important');
+                   $('.add1').hide();
+                $('.rm').show();
+                 $('.rm1').show();
                 $("#err").hide();
                 $("#errr").hide();
                  $("#ss").hide();
-                $('.cpn-success').show();
-                
+                //$('.cpn-success').show();
+                $("#ApplyCoupon").modal('toggle');
+                 
                 }
                 else
                 {
@@ -865,7 +1082,7 @@ $.ajax({
 
             }
             else if(data['count']==0){
-                alert("f");
+               // alert("f");
                 $('.cpn-success').hide();
                 $('.cpn-error').show();
                 //$('.coupon').hide();
@@ -877,7 +1094,37 @@ $.ajax({
           }
 
       });
+      
+   
     }
+    function tab1()
+    {
+         document.getElementById("tab-1").classList.add("active");
+              document.getElementById("tab-2").classList.remove("active");
+               document.getElementById("t1").classList.add("active");
+                document.getElementById("t2").classList.remove("active");
+              document.getElementById("tab1").classList.add("active");
+              document.getElementById("tab2").classList.add("active");
+    }
+    function tab2()
+    {
+        document.getElementById("tab-2").classList.add("active");
+              document.getElementById("tab-38").classList.remove("active");
+                document.getElementById("t2").classList.add("active");
+                 document.getElementById("t3").classList.remove("active");
+              document.getElementById("tab1").classList.remove("active");
+                document.getElementById("tab2").classList.remove("active");
+              document.getElementById("tab3").classList.add("active");
+    }
+    $(document).ready( function () {
+              var ct = document.getElementById("cust").value;
+              if(ct!="")
+              {
+                   document.getElementById("t2").classList.add("ac");
+              }
+              
+
+});
     function conti()
       {
 
@@ -898,13 +1145,17 @@ $.ajax({
             
               document.getElementById("tab-1").classList.remove("active");
               document.getElementById("tab-2").classList.add("active");
+               document.getElementById("t2").classList.add("active");
+                document.getElementById("t1").classList.remove("active");
               document.getElementById("tab1").classList.remove("active");
               document.getElementById("tab2").classList.add("active");
                 }
                 else
                 {
-                    //alert(data['count']);
+                   // alert(data['count']);
+                    //$('[href="#tab-26"]').tab('hide');
                     $('[href="#tab-38"]').tab('show');
+                   document.getElementById("t2").classList.add("ac");
 var numVa = document.getElementById("grandtotal1").innerHTML;
               var numVal1 =Number(numVa) ;
               var numVal11 = document.getElementById("grandtotal1").innerHTML;
@@ -941,10 +1192,31 @@ var numVa = document.getElementById("grandtotal1").innerHTML;
       function subb()
       {
         
-      //$('[href="#tab-38"]').tab('show');
-
-                var password= $("#password").val();
+       
+       var password= $("#password").val();
                 var user_id= $("#user_id").val();
+         
+         
+  if (user_id == "") {
+   
+      $("#invalid-feedback11").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback11").innerHTML="Please fill in your User ID";
+    return false;
+  }
+   else if (password == "") {
+   
+      $("#invalid-feedback21").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback21").innerHTML="Please fill in your Password";
+       
+    return false;
+  }
+  
+     
+     
+     
+         else
+         {
+             
    
                 $.ajax({
                     type: "POST",
@@ -953,62 +1225,72 @@ var numVa = document.getElementById("grandtotal1").innerHTML;
                     dataType: "json",
                     success: function(data) {
                    var custid=data['count'];
-                 // alert(custid);
-                  if(custid!=null){
-                     //alert(custid);
-                   
-                 /*   document.getElementById("tab-2").classList.remove("active");
-              document.getElementById("tab-38").classList.add("active");
-              document.getElementById("tab1").classList.remove("active");
-                document.getElementById("tab2").classList.remove("active");
-              document.getElementById("tab3").classList.add("active");*/
-                     
-                  
-                
-                       
-                  
-                    var numVa = document.getElementById("grandtotal1").innerHTML;
-               // var numVa = document.getElementById("grandtotal").innerText;
-         // alert(custid);
+                 
+              document.getElementById('cust').value= custid;
+             
+             //  alert(custid);  
+          if(custid!="")
+          {
+     
+          var numVa = document.getElementById("grandtotal1").innerHTML;
+     
+       //   document.getElementById('custid').value= numVal1;
               var numVal1 =Number(numVa) ;
               var numVal11 = document.getElementById("grandtotal1").innerHTML;
               var numVal111 =Number(numVal11) ;
-
+           
+           
               var am=document.getElementById("discount_amount").innerHTML; 
               var am1 =Number(am) ;
-
+    
               document.getElementById("tot1").value=numVal111;
-              document.getElementById('cust').value= custid;
-              document.getElementById('amt').value= am1;
+        document.getElementById('amt').value= am1;
               
                document.getElementById("tot").innerHTML =  numVal1.toFixed(2);
-                document.getElementById("total_sale_pricefinal").innerHTML =  numVal1.toFixed(2);
-                document.getElementById("total_sale_pricefinal1").innerHTML = numVal1.toFixed(2);
-                document.getElementById('tot').value= numVal1;
-     
-                  //  e.preventDefault();
-            
+               // document.getElementById("total_sale_pricefinal").innerHTML =  numVal1.toFixed(2);
+               // document.getElementById("total_sale_pricefinal1").innerHTML = numVal1.toFixed(2);
+               document.getElementById('tot').value= numVal1;
+                callback(custid);
+              
+                  
+        
+               // return custid;
+           
+        
+          
+                   
+                    }
+                     else
+                    {
+                        
                     }
                     }
+                   
                 });
- document.getElementById("tab-2").classList.remove("active");
-              document.getElementById("tab-38").classList.add("active");
-              document.getElementById("tab1").classList.remove("active");
-                document.getElementById("tab2").classList.remove("active");
-              document.getElementById("tab3").classList.add("active");
+              
+
+         
+             
       }
       
       
       
       
       
+      }
       
       
       
       
       
-      
-      
+      var return_first;
+function callback(response) {
+      $('#tab-38').addClass('active');
+          $('#tab3').addClass('active');
+          $('#tab-2').removeClass('active');
+            $('#tab1').removeClass('active'); 
+               $('#tab2').removeClass('active');    
+}
       
       
       
@@ -1026,25 +1308,32 @@ var numVa = document.getElementById("grandtotal1").innerHTML;
         
       
 var name= $("#name").val();
+var lname= $("#lname").val();
                 var password= $("#password1").val();
                 var email= $("#email").val();
                 var phone= $("#phone").val();
+                    var term= $("#vehicle1").val();
+                    
               if(name!="" && email!="" && password!="" && phone!="")
-{
-    $('[href="#tab-38"]').tab('show');
-}
+              
+             
+             {
+     
+   // alert("trr");
+   // $('[href="#tab-38"]').tab('show');
+
                 $.ajax({
 
                     type: "POST",
                     url: "<?php echo base_url() ?>Products/newregister",
-                    data: "name=" + name+ "&password=" + password+"&email="+email+ "&phone="+phone,
+                    data: "name=" + name+ "&password=" + password+"&email="+email+ "&phone="+phone+"&lname="+lname,
                     dataType: "json",
                     success: function(data) {
                    var custid=data['count'];
                
                     var numVa = document.getElementById("grandtotal1").innerHTML;
                // var numVa = document.getElementById("grandtotal").innerText;
-         // alert(custid);
+         //alert(numVal1);
               var numVal1 =Number(numVa) ;
               var numVal11 = document.getElementById("grandtotal1").innerHTML;
               var numVal111 =Number(numVal11) ;
@@ -1066,22 +1355,49 @@ var name= $("#name").val();
                 });
  document.getElementById("tab-2").classList.remove("active");
               document.getElementById("tab-38").classList.add("active");
+                document.getElementById("t3").classList.add("active");
+                 document.getElementById("t2").classList.remove("active");
               document.getElementById("tab1").classList.remove("active");
                 document.getElementById("tab2").classList.remove("active");
               document.getElementById("tab3").classList.add("active");
+      
+             }
+           
+      else
+      {
+             $("#invalid-feedback2").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback2").innerHTML="Please fill the Filed";
+ 
+    $("#invalid-feedback3").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback3").innerHTML="Please fill the Filed";
+ 
+ 
+    $("#invalid-feedback4").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback4").innerHTML="Please fill the Filed";
+ 
+    $("#invalid-feedback5").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback5").innerHTML="Please fill the Filed";
+ 
+    $("#invalid-feedback6").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback6").innerHTML="Please fill the Filed";
+ 
+    $("#invalid-feedback7").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback7").innerHTML="Please fill the Filed";
+      }
       }
 </script>
 
     <script type="text/javascript">
     function addtocart(p_id)
     {
-  
+
         var price = $('.price'+p_id).attr('rel');
         var image = $('.image'+p_id).attr('rel');
        var price1 = $('.price1'+p_id).attr('rel');
      var des = $('.des'+p_id).attr('rel');
         var name  = $('.name'+p_id).text();
         var id    = $('.name'+p_id).attr('rel');
+       // alert(id);
         var qty   = 1;
             $.ajax({
                     type: "POST",
@@ -1095,9 +1411,21 @@ var name= $("#name").val();
     }
      function pincheck()
     {
-  
+          
+   // $("#pinn").show();
+   //  $(".pi").hide();
+   //  $("#td_id").removeClass('d-flex').addClass('a');
         var id1=$("#pin").val();
+       
 //var id1=12;
+if(id1=="")
+{
+        $("#invalid-feedback1").removeClass('invalid-feedback').addClass('fd');
+ document.getElementById("invalid-feedback1").innerHTML="Please Enter pincode";
+}
+else
+{
+$("#ent").html("Change Address");
             $.ajax({
                     type: "POST",
                     url: "<?php echo site_url('welcome/add1');?>",
@@ -1105,23 +1433,42 @@ var name= $("#name").val();
                     
                     success: function (response) {
                       // $(".cartcount").text(response);
-                       // alert(response);
+                      
                         if(response!="")
                         {
+                      
                           // $("#suu").hide();
-                            $("#fa").show();
+                         
+                          $("#PlanEdit").modal('toggle');
+                            //$("#fa").show();
+                             $("#pinch").html("<p>Delivery postcode Not serviceable.</p>");
+                             $("#pinch").val("Dolly Duck");
+                              
                         }
                         else
                         {
-                           $("#suu").show();
-                           // $("#fa").hide(); 
+                               $("#PlanEdit").modal('toggle');
+                              //  $("#suu").removeClass('d-flex').addClass('a');
+                              // $("#suu").removeClass('d-flex').addClass('ad');
+                          //$("#suu").hide();
+                          $("#pinch").html("<p>Delivery postcode  serviceable.</p>");
+                       
                         }
+                        // location.reload();
                     }
                 });
     }
 
+}
 
-
+</script>
+<script>
+  $('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
+</script>
+<script>
+    
 </script>
   <!-- ======= Footer======-->
   <footer id="footer">

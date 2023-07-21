@@ -8,14 +8,14 @@ $ar = sizeof($page);
 if($ar>1)
 {
 //$card_id ="niya";
-$card_id =$page[3];
+$card_id =$page[2];
 
 
 //$user_id = $_GET['user_id'];
 if($card_id!='')
 {
 
-$user_details =mysqli_fetch_assoc(mysqli_query($con, "select * from users where name='$card_id'"));
+$user_details =mysqli_fetch_assoc(mysqli_query($con, "select * from users where user_id='$card_id'"));
 $userid =  $user_details['id'];
 
 session_start();

@@ -15,7 +15,12 @@
 			$query = $this->db->get('package');
 			return $query->result_array();
 		}
-
+	public function get_cpn(){
+			$this->db->order_by('coupon_id ');
+			$this->db->where('view_status', 1);
+			$query = $this->db->get('coupon');
+			return $query->result_array();
+		}
 		public function edit_package($id){
 			$this->db->where('package_id', $id);
 			$query = $this->db->get('package');

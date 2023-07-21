@@ -1,6 +1,4 @@
-
-<br><br>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<div class="top-space"></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
 rel="stylesheet" id="bootstrap-css">
@@ -41,18 +39,34 @@ onclick="javascript:opencart()" >
                  
                  <p class="name<?php echo $data['id'] ?> pdt-name" 
 rel="<?php echo $data['id'] ?>"><?php echo $data['product_name'] ?></p>
-<p class="prdt-price"><span>1500</span>₹<?php echo $data['sale_price'];?><i>33% Off</i></p>
+<p class="prdt-price"><span><?php echo $data['regular_price'];?></span>₹<?php echo $data['sale_price'];?><i><?php $d=$data['regular_price']-$data['sale_price'];
+      if($d==0)
+      {
+          $disct=0.00; 
+      }
+      else
+      {
+      $ds=$d/$data['regular_price'];
+      $disct=$ds*100;
+      }
+     echo round($disct); ?>% Off</i></p>
 <p class="fr-dlvry">Free Delivery</p>
-<button type="button" class="hi-add-cart align-items-center" data-label="Add to Cart" onclick="javascript:addtocart(<?php echo $data['id'] ?>)"> 
-        <span class="hi-add-txt">ADD </span>     
-        <!--<span class="hi-add-price price<?php echo $data['id'] ?>" 
-rel="<?php echo $data['sale_price'] ?>"> </span>-->
-<svg class="_1KOMV2" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path class="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
+<button type="button" class="hi-add-cart align-items-center hi-atcr" data-label="Add to Cart" onclick="javascript:addtocart(<?php echo $data['id'] ?>)">
+
+<div id="spinner namee<?php echo $data['id'] ?>" class="spinner-border namee<?php echo $data['id'] ?>" role="status" style="display:none" rel="<?php echo $data['id'] ?>">
+  <span class="sr-only"></span>
+</div>
+        <span class="hi-add-txt add<?php echo $data['id'] ?>" rel="<?php echo $data['id'] ?>"">ADD </span>     
+        <span class="hi-add-price price<?php echo $data['id'] ?>" 
+rel="<?php echo $data['sale_price'] ?>"> </span>
+<span class="hi-add-price1 price1<?php echo $data['id'] ?>" 
+rel="<?php echo $data['regular_price'] ?>"> </span>
+<svg class="_1KOMV2 bt<?php echo $data['id'] ?>"" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path class="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
       </button>
 
 
             <div style="display:none;" class="price-tag des<?php echo $data['id'] ?>" 
-rel="<?php echo $data['long_description'] ?>"><?php echo $data['long_description	'];?></div>
+rel="<?php echo $data['short_description'] ?>"><?php echo $data['short_description'];?></div>
                  </div><!-- Card -->
                </div>
                </div>
@@ -69,7 +83,10 @@ rel="<?php echo $data['long_description'] ?>"><?php echo $data['long_description
     <script type="text/javascript">
     function addtocart(p_id)
     {
-  
+
+          var spinn   = $('.namee'+p_id).show();
+    var add   = $('.add'+p_id).hide();
+      var bt   = $('.bt'+p_id).hide();
         var price = $('.price'+p_id).attr('rel');
         var image = $('.image'+p_id).attr('rel');
      var price1 = $('.price1'+p_id).attr('rel');
@@ -84,6 +101,10 @@ rel="<?php echo $data['long_description'] ?>"><?php echo $data['long_description
                     data: "id="+id+"&image="+image+"&name="+name+"&price="+price+"&qty="+qty+"&price1="+price1+"&des="+des,
                     success: function (response) {
                        $(".cartcount").text(response);
+                  //  $("#spinner").hide();
+                    $('.namee'+p_id).hide();
+                        var add   = $('.add'+p_id).show();
+      var bt   = $('.bt'+p_id).show();
                     }
                 });
     }

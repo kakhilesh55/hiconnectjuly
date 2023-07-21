@@ -26,6 +26,9 @@ class Coupon extends CI_Controller {
 			$this->form_validation->set_rules('percentage', 'Percentage', 'required');
 			$this->form_validation->set_rules('start_date', 'From Date', 'required');
 			$this->form_validation->set_rules('end_date', 'To Date', 'required');
+			//$this->form_validation->set_rules('description', 'Description', 'required');
+			//$this->form_validation->set_rules('show', 'Show', 'required');
+
 
 			if($this->form_validation->run() === FALSE){
 				$data['coupons'] = $this->Coupon_Model->get_coupons();

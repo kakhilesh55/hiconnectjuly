@@ -112,7 +112,13 @@ class Auth extends CI_Controller
         
                  $user_id = $this->input->post('user_id');
                 $encrypt_password = md5($this->input->post('password'));
- 
+  $this->form_validation->set_rules('user_id', 'User ID', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+           redirect('welcome/opencart');
+        } else {
+        
                 $this->load->model('User_Model');
                 $user = $this->User_Model->login($user_id, $encrypt_password);
                
@@ -143,7 +149,7 @@ class Auth extends CI_Controller
                 
                	
 					
-			
+        }
             
         }
 
@@ -351,13 +357,15 @@ class Auth extends CI_Controller
                 $url.= "&coupon=".$coupon;
             
             $this->form_validation->set_rules('name', 'Name', 'required');
+             $this->form_validation->set_rules('lname', 'Last Name', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'required');
             $this->form_validation->set_rules('password1', 'Password', 'required');
-            //$this->form_validation->set_rules('password2', 'Confirm Password', 'required');
+            $this->form_validation->set_rules('password2', 'Confirm Password', 'required');
             $this->form_validation->set_rules('package', 'Package', 'required');
             if($this->input->post('product') && $this->input->post('product')!=0)
                 $this->form_validation->set_rules('product', 'Product', 'required');
+                  $this->form_validation->set_rules('test', 'Please Check Terms and Conditions', 'required');
             if($this->form_validation->run() === FALSE){
                 $messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
                 $this->session->set_flashdata('item',$messge );
@@ -377,6 +385,7 @@ class Auth extends CI_Controller
                     //Encrypt Password
                     $encrypt_password = md5($this->input->post('password1'));
                     $data['name'] = $this->input->post('name'); 
+                      $data['lname'] = $this->input->post('lname'); 
                     $data['email'] = $this->input->post('email');
                     $data['phone'] = $this->input->post('phone');
                     $data['user_id'] = $this->input->post('email');
@@ -403,10 +412,12 @@ class Auth extends CI_Controller
                     else
                         $data['coupon_id'] = 0;
                     // insert form data into database
+                    if(isset($_POST['test']))
+                    {
                     $id = $this->User_Model->add_user($data);
                     $details = $this->User_Model->edit_user($id);
                     $user_id = $details->user_id;
-
+}
                     $user = $this->User_Model->login($user_id, $encrypt_password);
                     //Create Session
                         $user_data = array(

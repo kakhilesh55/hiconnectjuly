@@ -15,6 +15,24 @@ class Manage_products extends CI_Controller {
     	redirect('manage_products/product_details');
     }
 
+
+ public function enquiry_details($id = NULL)
+	{
+	    
+				$result = $this->Manage_products_Model->edit_enqiries($id);
+				$data['enquiries'] = $result;
+				$data['main'] = 'enquiries';
+				if($edit_id)
+				{
+					$messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
+					$this->session->set_flashdata('item',$messge );
+				}
+				
+				$this->load->view('layout/main_view',$data);
+	}
+
+
+
     public function product_details($id = NULL)
 	{
 		$edit_id = $id;
@@ -34,6 +52,11 @@ class Manage_products extends CI_Controller {
 
 				$data = array(); 
             	$user_id = $this->session->userdata('id');
+     
+    
+            	
+            	
+            	
                	if(!empty($_FILES['image']['name'])){ 
                     $imageName = $_FILES['image']['name'];
                     // File upload configuration 
@@ -48,23 +71,12 @@ class Manage_products extends CI_Controller {
                     // Upload file to server 
                     if($this->upload->do_upload('image'))
                       $filename = $this->upload->data('file_name');
-                }
-                if(!empty($_FILES['video']['name'])){ 
-                  $imageName = $_FILES['video']['name'];
-                  // File upload configuration 
-                  $uploadPath = 'uploads/manage_products/'; 
-                  $config['upload_path'] = $uploadPath;  
-                  $config['allowed_types'] = 'jpg|jpeg|png|gif|mp4'; 
-                   
-                  // Load and initialize upload library 
-                  $this->load->library('upload', $config); 
-                  $this->upload->initialize($config); 
-                   
-                  // Upload file to server 
-                  if($this->upload->do_upload('video'))
-                    $filename1 = $this->upload->data('file_name');
-              }
-
+                      
+                
+      }
+     
+                
+               
 
 
 
@@ -80,12 +92,92 @@ class Manage_products extends CI_Controller {
                       'breadth' => $this->input->post('breadth'),
                       'height' => $this->input->post('height'),
                       'video' => $this->input->post('video'),
+                      'colour' => $this->input->post('clr'),
                         ];
                         if($filename)
                           $data['image']= $filename;
-                          $data['video']= $filename1;
+                         // $data['video']= $filename1;
                           // Insert files data into the database 
                            $insert =$this->Manage_products_Model->add_product($data);
+
+
+
+
+$pid = $this->db->insert_id();
+
+    $data = array(); 
+        $errorUploadType = $statusMsg = ''; 
+         
+        // If file upload form submitted 
+   
+             
+            // If files are selected to upload 
+            if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+                $filesCount = count($_FILES['files']['name']); 
+                for($i = 0; $i < $filesCount; $i++){ 
+                    $_FILES['file']['name']     = $_FILES['files']['name'][$i]; 
+                    $_FILES['file']['type']     = $_FILES['files']['type'][$i]; 
+                    $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
+                    $_FILES['file']['error']     = $_FILES['files']['error'][$i]; 
+                    $_FILES['file']['size']     = $_FILES['files']['size'][$i]; 
+                     
+                    // File upload configuration 
+                    $uploadPath = 'uploads/manage_products/'; 
+                    $config['upload_path'] = $uploadPath; 
+                    $config['allowed_types'] = 'jpg|jpeg|png|gif'; 
+                    //$config['max_size']    = '100'; 
+                    //$config['max_width'] = '1024'; 
+                    //$config['max_height'] = '768'; 
+                     
+                    // Load and initialize upload library 
+                    $this->load->library('upload', $config); 
+                    $this->upload->initialize($config); 
+                     
+                    // Upload file to server 
+                    if($this->upload->do_upload('file')){ 
+                        // Uploaded file data 
+                        $fileData = $this->upload->data(); 
+                        $uploadData[$i]['file_name'] = $fileData['file_name']; 
+                        $uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); 
+                           $uploadData[$i]['product_id'] = $pid; 
+                    }else{  
+                        $errorUploadType .= $_FILES['file']['name'].' | ';  
+                    } 
+                } 
+                 
+                $errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):''; 
+                if(!empty($uploadData)){ 
+                    // Insert files data into the database 
+                   // $insert = $this->file->insert($uploadData); 
+$insert = $this->db->insert_batch('files',$uploadData);
+                    // Upload status message 
+                    $statusMsg = $insert?'Files uploaded successfully!'.$errorUploadType:'Some problem occurred, please try again.'; 
+                }else{ 
+                    $statusMsg = "Sorry, there was an error uploading your file.".$errorUploadType; 
+                } 
+            }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                           if($insert){ 
                             //Set Message
@@ -161,7 +253,9 @@ class Manage_products extends CI_Controller {
                             'breadth' => $this->input->post('breadth'),
                             'height' => $this->input->post('height'),
                             'video' => $this->input->post('video'),
+                             'colour' => $this->input->post('clr'),
                 ];
+               
                 if(isset($filename)&& $filename!='')
                     $data['image']= $filename;
 				$this->Manage_products_Model->update_product($edit_id,$data);
@@ -189,5 +283,32 @@ class Manage_products extends CI_Controller {
     	redirect('manage_products/product_details');
     }
 
+	public function delete_enq($id)
+    {
+    	
+    	$this->Manage_products_Model->delete_enq($id);
+    	$messge = array('message' => 'Enquiry Deleted Successfully','class' => 'alert alert-danger align-center');
+		$this->session->set_flashdata('item',$messge );
+
+    	redirect('enquiries');
+    }
+    	public function delete_lead($id)
+    {
+    	
+    	$this->Manage_products_Model->delete_lead($id);
+    	$messge = array('message' => 'Enquiry Deleted Successfully','class' => 'alert alert-danger align-center');
+		$this->session->set_flashdata('item',$messge );
+
+    	redirect('enquiries/lead_list');
+    }
+public function dis_product($id)
+    {
+    
+    	$this->Manage_products_Model->dis_product($id);
+    	$messge = array('message' => 'Product Discontinued Successfully','class' => 'alert alert-danger align-center');
+		$this->session->set_flashdata('item',$messge );
+
+    	redirect('manage_products/product_details');
+    }
 }
 ?>

@@ -1,6 +1,7 @@
+ </section>
  <footer class="main-footer">
         <div class="footer-left">
-          <a href="https://weblyconnect.com/">Webly Connect</a></a>
+          <a href="https://weblyconnect.com/"></a></a>
         </div>
         <div class="footer-right">
         </div>

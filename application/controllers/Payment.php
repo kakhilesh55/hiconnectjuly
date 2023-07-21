@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once(APPPATH."views/razorpay/Razorpay.php");
+require_once("/home/u675218633/domains/hiconnect.co.in/public_html/application/views/razorpay/Razorpay.php");
 
 use Razorpay\Api\Api;
 class Payment extends CI_Controller {
@@ -20,6 +20,7 @@ class Payment extends CI_Controller {
     $this->load->model('cart_model');
 		$this->load->model('Manage_products_Model');
 		$val = $this->load->library('Numbertowordconvertsconver');
+		$this->load->view('razorpay/Razorpay.php');
     }
 
     public function index()
@@ -109,12 +110,48 @@ class Payment extends CI_Controller {
 
 	public function checkout()
 	{
+	  
+	  
 		$key_id="rzp_test_sb4P2iQF7Ww57i";
 		$secret="AXWo5YPh8teLk5Q745JoGf1u";
 		$api = new Api($key_id, $secret);
 
 //customer
+
 		$id=$this->input->post('cust');
+		
+		
+			$this->db->select('package.package_id,package.package as pk,users.*,orders.*,order_detail.*');
+			$this->db->from('users');
+			$this->db->join('orders', 'orders.user_id = users.id', 'left');
+			$this->db->join('coupon', 'coupon.coupon_id = orders.coupon_id', 'left');
+			$this->db->join('order_detail', 'order_detail.orderid = orders.order_id', 'left');
+			$this->db->join('package', 'package.package_id = order_detail.productid', 'left');
+			//$this->db->join('manage_products', 'order_detail.productid = manage_products.id', 'left');
+			$this->db->where('package.package !=""');
+			//$this->db->where('package.sale_price != ',0);
+			$this->db->where('users.user_id', $id);
+			$query = $this->db->get();
+		//	return $query->result_array();
+		
+		if(empty($query->result())){
+    
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		$data['shipping_address']=$this->input->post('address');
 $data['address']=$this->input->post('address');
 $data['pincode']=$this->input->post('pincode');
@@ -189,7 +226,11 @@ $this->User_Model->update_invoice_link1($order_id,$invoice_link1);
 $this->generateOrder($customer_data,$product_data,$total); 
 
 
-
+} else {
+    ?>
+    <script>alert("Already Exit");</script>
+    <?php
+}
 
 
 

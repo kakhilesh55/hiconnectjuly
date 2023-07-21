@@ -1,8 +1,8 @@
   <!-- ======= Hero Section ======= -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
-rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+rel="stylesheet" id="bootstrap-css">-->
   <section id="hero" class="pb-0 pt-0">
 
     <div class="container col-xl-9 ht-vh-full" data-aos="zoom-out" data-aos-delay="100">
@@ -14,8 +14,8 @@ rel="stylesheet" id="bootstrap-css">
             Share Your Info</h1>
           <h2>India's &nbsp; # 1 &nbsp; Digital<br>
             Business Card Solution</h2>
-            <a href="pricing.php" class="btn-red btn-hi sli-btn">Try It's Free</a><br>
-            <a href="#" class="btn-white btn-hi sli-btn">Buy Now</a>
+            <a href="<?php echo base_url(); ?>pricing" class="btn-red btn-hi sli-btn">Try It's Free</a><br>
+            <a href="<?php echo base_url(); ?>products" class="btn-white btn-hi sli-btn">Buy Now</a>
 </div>
 <div class="col-md-7 hi-vdo d-flex justify-content-center">
 		<div class="hi-vdo-abso align-self-center">
@@ -42,7 +42,7 @@ rel="stylesheet" id="bootstrap-css">
           <div class="card text-center border-0">
             <div class="card-body">
               <h4 class="card-title">1</h4>
-              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-01.png" alt="How it image">
+              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-01.svg" alt="How it image">
               <p class="card-text">Get a customized Hi Connect product that works best for you.</p>
               <a href="/how-it-works.php" class="btn btn-how">Read More</a>
             </div>
@@ -52,7 +52,7 @@ rel="stylesheet" id="bootstrap-css">
           <div class="card text-center border-0">
             <div class="card-body">
               <h4 class="card-title">2</h4>
-              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-02.png" alt="How it image">
+              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-02.svg" alt="How it image">
               <p class="card-text">Activate your Hi Connect product to your profile when it arrives.</p>
               <a href="/how-it-works.php" class="btn btn-how">Read More</a>
             </div>
@@ -62,7 +62,7 @@ rel="stylesheet" id="bootstrap-css">
           <div class="card text-center border-0">
             <div class="card-body">
               <h4 class="card-title">3</h4>
-              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-03.png" alt="How it image">
+              <img class="card-img-top pb-4 pt-4" src="<?php echo base_url(); ?>css1/images/how-it-03.svg" alt="How it image">
               <p class="card-text">Tap your card on any device to share your information.</p>
               <a href="/how-it-works.php" class="btn btn-how">Read More</a>
             </div>
@@ -73,7 +73,7 @@ rel="stylesheet" id="bootstrap-css">
   </section>
 
     <section id="tabs" class="tabs col-xl-9 container">
-      <div class="container" data-aos="fade-up">
+      <div class="container hi-home-tabs" data-aos="fade-up">
 
         <ul class="nav nav-tabs d-flex tablee">
           <li class="nav-item col-3">
@@ -91,7 +91,7 @@ rel="stylesheet" id="bootstrap-css">
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
               <i class="ri-sun-line"></i>
-              <h4 class="d-none d-lg-block">Export to Excel</h4>
+              <h4 class="d-none d-lg-block">Measure Results</h4>
             </a>
           </li>
           <li class="nav-item col-3">
@@ -110,7 +110,7 @@ rel="stylesheet" id="bootstrap-css">
 
                 <div class="tab-infos mb-5">
                   <h2>Share Easily</h2>
-                  <p>Instantly share your info with a tap, scan, or send with anyone using a QR code, email, text, and more. </p>
+                  <p>Instantly share your info with a tap, scan, or send to anyone through WhatsApp, text, email, and more.</p>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
@@ -118,7 +118,7 @@ rel="stylesheet" id="bootstrap-css">
                   </div>
                   <div class="tab-infoz">
                       <h3>Tap</h3>
-                      <p>Tap one of our smart products to an iPhone or Android to share your details contactless without using an app.</p>
+                      <p>Tap one of our SMART Products on an iPhone or Android to share your details contactless.  No app is required.</p>
                   </div>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
@@ -127,7 +127,7 @@ rel="stylesheet" id="bootstrap-css">
                   </div>
                   <div class="tab-infoz">
                       <h3>Scan</h3>
-                      <p>Use your in-app Hi Connect QR code with unlimited scans to share your digital business card with anyone. </p>
+                      <p>To share your digital business card with anyone, use your free HiConnect QR Code with unlimited scans. </p>
                   </div>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
@@ -136,16 +136,16 @@ rel="stylesheet" id="bootstrap-css">
                   </div>
                   <div class="tab-infoz">
                       <h3>Send</h3>
-                      <p>Send your digital business card with your unique URL via email, SMS, Airdrop, email signatures, and more.</p>
+                      <p>Easily share your virtual card with anyone using WhatsApp, email, text, and more, even if they don’t have the app.</p>
                   </div>
                 </div>
-                <div class="tab-btn pt-3">
+                <!--<div class="tab-btn pt-3">
                   <a href="#" class="btn-red btn-hi btn-sm-red bx-sh-n me-2">Buy Now</a>
                   <a href="#" class="btn-red-br btn-hi btn-sm-red bx-sh-n">For Teams</a>
-                </div>
+                </div>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/Share.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Share.svg" alt="" class="img-fluid">
               </div>
 
 
@@ -160,17 +160,16 @@ rel="stylesheet" id="bootstrap-css">
 
 
                 <div class="tab-infos mb-5">
-                  <h2>Share instantly (Second)</h2>
-                  <p>Instantly share your info with a tap, scan, or send. Share contact info, social media,
-                    websites, payment apps, files, videos and more. </p>
+                  <h2>Capture Leads</h2>
+                  <p>HiConnect digital business cards can be an effective way to capture leads and grow your business.</p>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon01.png" alt="">
                   </div>
                   <div class="tab-infoz">
-                      <h3>Tap</h3>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                      <h3>Smart web forms</h3>
+                      <p>Avoid missing any high-intent leads who visit your digital business card. Without writing a single line of code, HiConnect enables you to capture leads from your digital business card.</p>
                   </div>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
@@ -178,11 +177,11 @@ rel="stylesheet" id="bootstrap-css">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon02.png" alt="">
                   </div>
                   <div class="tab-infoz">
-                      <h3>Scan</h3>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                      <h3>Nurture promising leads</h3>
+                      <p>hiConnect lead management software tracks leads through the sales pipeline, ensuring effective communication and nurturing to convert them into potential buyers.</p>
                   </div>
                 </div>
-                <div class="tab-itemz d-flex align-items-center mb-4">
+                <!-- <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon03.png" alt="">
                   </div>
@@ -190,14 +189,14 @@ rel="stylesheet" id="bootstrap-css">
                       <h3>Send</h3>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                   </div>
-                </div>
-                <div class="tab-btn pt-3">
-                  <a href="#" class="get-started-btn">Buy Now</a>
-                  <a href="#" class="get-started-btn tab-b-btn">For Teams</a>
-                </div>
+                </div> -->
+                <!--<div class="tab-btn pt-3">
+                  <a href="#" class="btn-red btn-hi btn-sm-red bx-sh-n me-2">Buy Now</a>
+                  <a href="#" class="btn-red-br btn-hi btn-sm-red bx-sh-n">For Teams</a>
+                </div>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/Capture_leads.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Capture_leads.svg" alt="" class="img-fluid">
               </div>
 
 
@@ -213,17 +212,16 @@ rel="stylesheet" id="bootstrap-css">
 
 
                 <div class="tab-infos mb-5">
-                  <h2>Share instantly (Third)</h2>
-                  <p>Instantly share your info with a tap, scan, or send. Share contact info, social media,
-                    websites, payment apps, files, videos and more. </p>
+                  <h2>Measure Results</h2>
+                  <p>Sales activity reports can help you cut through the noise and figure out how your salespeople approach their deals.</p>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon01.png" alt="">
                   </div>
                   <div class="tab-infoz">
-                      <h3>Tap</h3>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                      <h3>Predict sales performance</h3>
+                      <p>Utilize forecast reports to quickly predict your teams' performance by taking a look at deal probability stages, quota accomplishments, and more.</p>
                   </div>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
@@ -231,11 +229,11 @@ rel="stylesheet" id="bootstrap-css">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon02.png" alt="">
                   </div>
                   <div class="tab-infoz">
-                      <h3>Scan</h3>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                      <h3>Manage teams’ performance</h3>
+                      <p>Create team and individual reports for your sales reps in hiConnect to keep track of their accomplishments after adding them and organizing them into teams.</p>
                   </div>
                 </div>
-                <div class="tab-itemz d-flex align-items-center mb-4">
+                <!-- <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon03.png" alt="">
                   </div>
@@ -243,14 +241,14 @@ rel="stylesheet" id="bootstrap-css">
                       <h3>Send</h3>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                   </div>
-                </div>
-                <div class="tab-btn pt-3">
-                  <a href="#" class="get-started-btn">Buy Now</a>
-                  <a href="#" class="get-started-btn tab-b-btn">For Teams</a>
-                </div>
+                </div> -->
+                <!--<div class="tab-btn pt-3">
+                  <a href="#" class="btn-red btn-hi btn-sm-red bx-sh-n me-2">Buy Now</a>
+                  <a href="#" class="btn-red-br btn-hi btn-sm-red bx-sh-n">For Teams</a>
+                </div>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/Export_to_excel.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Export_to_excel.svg" alt="" class="img-fluid">
               </div>
               </div>
             </div>
@@ -261,20 +259,19 @@ rel="stylesheet" id="bootstrap-css">
 
 
                 <div class="tab-infos mb-5">
-                  <h2>Share instantly (Fourth)</h2>
-                  <p>Instantly share your info with a tap, scan, or send. Share contact info, social media,
-                    websites, payment apps, files, videos and more. </p>
+                  <h2>Grow Faster</h2>
+                  <p>It's crucial to know your company's metrics inside and out and monitor your efforts closely to optimize your sales and marketing strategy.</p>
                 </div>
                 <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon01.png" alt="">
                   </div>
                   <div class="tab-infoz">
-                      <h3>Tap</h3>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                      <h3>View of  Performance</h3>
+                      <p>hiConnect's cross-module reporting will help you determine how marketing campaigns affect your sales results. You can also make reports to evaluate how well individuals or teams performed in relation to the sales targets that were set for them.</p>
                   </div>
                 </div>
-                <div class="tab-itemz d-flex align-items-center mb-4">
+                <!-- <div class="tab-itemz d-flex align-items-center mb-4">
                   <div class="tab-smi pe-4">
                     <img src="<?php echo base_url(); ?>css1/images/tab-icon02.png" alt="">
                   </div>
@@ -291,14 +288,14 @@ rel="stylesheet" id="bootstrap-css">
                       <h3>Send</h3>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                   </div>
-                </div>
-                <div class="tab-btn pt-3">
-                  <a href="#" class="get-started-btn">Buy Now</a>
-                  <a href="#" class="get-started-btn tab-b-btn">For Teams</a>
-                </div>
+                </div> -->
+                <!--<div class="tab-btn pt-3">
+                  <a href="#" class="btn-red btn-hi btn-sm-red bx-sh-n me-2">Buy Now</a>
+                  <a href="#" class="btn-red-br btn-hi btn-sm-red bx-sh-n">For Teams</a>
+                </div>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center d-flex justify-content-center align-items-center align-self-stretch" data-aos="fade-up" data-aos-delay="200">
-                <img src="<?php echo base_url(); ?>css1/images/Grow_faster.png" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>css1/images/Growfaster.svg" alt="" class="img-fluid">
               </div>
               </div>
             </div>
@@ -312,12 +309,12 @@ rel="stylesheet" id="bootstrap-css">
       <div class="container col-xl-9" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
           <div class="col-md-6 d-flex justify-content-center">
-            <img src="<?php echo base_url(); ?>css1/images/mobile-social.png" alt=""">
+            <img src="<?php echo base_url(); ?>css1/images/mobile-social.svg" alt=""">
           </div>
           <div class="col-md-6 align-items-center d-flex align-self-stretch">
             <div class="upgrade-details">
-            <h2 class="pb-3">Upgrade to Hi Connect to turn paper cards into digital contacts</h2>
-              <a href="pricing.php" class="btn-red btn-hi bx-sh-n btn-sm-red m-0">Get your free card</a>
+            <h2 class="pb-3">Upgrade to hiConnect to turn paper cards into digital contacts</h2>
+              <a href="<?php echo base_url(); ?>pricing" class="btn-red btn-hi bx-sh-n btn-sm-red m-0">Get Your FREE Card Now</a>
           </div>
           </div>
         </div>
@@ -369,12 +366,12 @@ rel="stylesheet" id="bootstrap-css">
 
       <div class="container-fluid text-center pb-5">
         <h2>Get a Hi Connect smart product</h2>
-        <div class="ratingz d-flex justify-content-center align-items-start">
+        <!-- <div class="ratingz d-flex justify-content-center align-items-start">
           <div class="starz d-flex align-items-center">
             <img src="<?php echo base_url(); ?>css1/images/starss.png" alt="" class="stars">
           </div>
           <div class="hi-rew d-flex align-items-center ps-4">224 Reviews</div>
-        </div>
+        </div> -->
         <p>Free Shipping on all Orders</p>
       </div>
 
@@ -411,13 +408,28 @@ rel="stylesheet" id="bootstrap-css">
                
                  <p class="name<?php echo $data['id'] ?> pdt-name" 
 rel="<?php echo $data['id'] ?>"><?php echo $data['product_name'] ?></p>
-<p class="prdt-price"><span>1500</span>₹<?php echo $data['sale_price'];?><i>33% Off</i></p>
+<p ><span class="prdt-price"><?php echo $data['regular_price'];?></span>₹<span class="prdt-price1"><?php echo $data['sale_price'];?></span><i> <?php $d=$data['regular_price']-$data['sale_price'];
+      if($d==0)
+      {
+          $disct=0.00; 
+      }
+      else
+      {
+      $ds=$d/$data['regular_price'];
+      $disct=$ds*100;
+      }
+     echo round($disct); ?>% Off</i></p>
 <p class="fr-dlvry">Free Delivery</p>
 <button type="button" class="hi-add-cart align-items-center" data-label="Add to Cart" onclick="javascript:addtocart(<?php echo $data['id'] ?>)"> 
-        <span class="hi-add-txt">ADD </span>     
-        <!--<span class="hi-add-price price<?php echo $data['id'] ?>" 
-rel="<?php echo $data['sale_price'] ?>"> </span>-->
-<svg class="_1KOMV2" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path class="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
+<div id="spinner name<?php echo $data['id'] ?>" class="spinner-border namee<?php echo $data['id'] ?>" role="status" style="display:none" rel="<?php echo $data['id'] ?>">
+  <span class="sr-only"></span>
+</div>
+        <span class="hi-add-txt add<?php echo $data['id'] ?>" rel="<?php echo $data['id'] ?>">ADD </span>     
+      <span class="hi-add-price price<?php echo $data['id'] ?>" 
+rel="<?php echo $data['sale_price'] ?>"> </span>
+<span class="hi-add-price1 price1<?php echo $data['id'] ?>" 
+rel="<?php echo $data['regular_price'] ?>"> </span>
+<svg class="_1KOMV2 bt bt<?php echo $data['id'] ?>" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path class="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
       </button>
 
 
@@ -425,6 +437,9 @@ rel="<?php echo $data['sale_price'] ?>"> </span>-->
                </div><!-- Card -->
              </div>
              </div>
+                <div style="display:none;" class="price-tag des<?php echo $data['id'] ?>" 
+rel="<?php echo $data['short_description']; ?>"><?php echo $data['short_description'];?></div>
+                
              <?php
   }
  ?>
@@ -433,6 +448,7 @@ rel="<?php echo $data['sale_price'] ?>"> </span>-->
                
            </div>
       </div>
+      
     </section>
 
 
@@ -695,19 +711,26 @@ Hi Connect QR codes can share with all iPhones and every Android that can read Q
   <script type="text/javascript">
     function addtocart(p_id)
     {
-  
+        var spinn   = $('.namee'+p_id).show();
+     var add   = $('.add'+p_id).hide();
+      var bt   = $('.bt'+p_id).hide();
         var price = $('.price'+p_id).attr('rel');
+         var price1 = $('.price1'+p_id).attr('rel');
         var image = $('.image'+p_id).attr('rel');
-      //  alert(price);
+         var des = $('.des'+p_id).attr('rel');
         var name  = $('.name'+p_id).text();
         var id    = $('.name'+p_id).attr('rel');
         var qty   = 1;
             $.ajax({
                     type: "POST",
                     url: "<?php echo site_url('welcome/add');?>",
-                    data: "id="+id+"&image="+image+"&name="+name+"&price="+price+"&qty="+qty,
+                    data: "id="+id+"&image="+image+"&name="+name+"&price="+price+"&qty="+qty+"&price1="+price1+"&des="+des,
                     success: function (response) {
                        $(".cartcount").text(response);
+                             var spinn   = $('.namee'+p_id).hide();
+                               var add   = $('.add'+p_id).show();
+      var bt   = $('.bt'+p_id).show();
+    
                     }
                 });
     }

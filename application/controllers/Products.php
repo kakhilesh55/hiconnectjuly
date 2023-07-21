@@ -24,6 +24,7 @@ class Products extends CI_Controller {
 	public function product_details_view($id)
 	{
 		$data['products'] = $this->Products_Model->edit_manageproduct($id);
+			$data['product_img'] = $this->Products_Model->edit_manageproductimg($id);
 		$data['products1'] = $this->cart_model->get_all();
 		$data['packs'] = $this->Manage_package_Model->get_package();
 	//	print_r($packs);
@@ -139,12 +140,24 @@ echo json_encode(array(
 		}
 			else
 			{
+			    $this->form_validation->set_rules('user_id', 'User ID', 'is_unique[users.user_id]');
+                $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]');
+                $this->form_validation->set_rules('phone', 'Phone', 'is_unique[users.phone]');
+                if($this->form_validation->run() === FALSE)
+                {
+                    $messge = array('message' => 'User ID or Email already exists.','class' => 'alert alert-danger align-center');
+                    $this->session->set_flashdata('item',$messge );
+                    redirect($url);
+                }
+                else
+                {
 				//Encrypt Password
 				$encrypt_password = md5($this->input->post('password'));
 				$data['name'] = $this->input->post('name'); 
+				$data['lname'] = $this->input->post('lname'); 
 				$data['email'] = $this->input->post('email');
 				$data['phone'] = $this->input->post('phone');
-				$data['user_id'] = $this->input->post('email');
+				$data['user_id'] = $this->input->post('name').Rand();
 				$data['password'] = $encrypt_password;
 				$data['package'] = 4;
 				$data['login_date'] = date('Y-m-d');
@@ -164,6 +177,7 @@ echo json_encode(array(
 					
 				));
 	}
+			}
 }
     public function product_details($id = NULL)
 	{

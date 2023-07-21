@@ -11,24 +11,30 @@ class Company extends CI_Controller {
     public function index()
     {
       redirect('company/company_details');
+      /*$user_id = $this->session->userdata('id');
+      $res = $this->Company_Model->get_company_by_user($user_id);
+      $data['tab'] = 'tab1';
+      $data['company_details'] = $result;
+      $this->load->view('users/company_info',$data);*/
     }
 
   public function company_details($id = NULL)
   {
-    
+    $data = array();
+    $data['tab'] = 'tab1';
     if ($this->input->post('action') == 'create') 
     {
       $this->form_validation->set_rules('company_name', 'Company Name', 'required');
       $this->form_validation->set_rules('business_nature', 'Nature of Business', 'required');
 
       if($this->form_validation->run() === FALSE){
+        $data['company_details'] = $this->Company_Model->get_company_by_user($user_id);
         $messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
         $this->session->set_flashdata('item',$messge );
-        $data['main'] = 'users/company_details';
+        $data['main'] = 'users/company_info';
         $this->load->view('layout/main_view',$data);
 
-      }else{
-            $data = array(); 
+      }else{ 
             $user_id = $this->session->userdata('id');
                if(!empty($_FILES['company_image']['name'])){ 
                     $imageName = $_FILES['company_image']['name']; 
@@ -50,6 +56,8 @@ class Company extends CI_Controller {
                           'company_name' => $this->input->post('company_name'), 
                           'year_start' => $this->input->post('established_year'),
                           'business_nature  ' => $this->input->post('business_nature'),
+                          'website' => $this->input->post('website'),
+                          'gstin  ' => $this->input->post('gstin'),
                           'description' => $this->input->post('description'),
                           'user_id' => $this->session->userdata('id'),
                           'date' => date('Y-m-d')
@@ -86,7 +94,7 @@ class Company extends CI_Controller {
 
         $result = $this->Company_Model->edit_company($id);
           $data['company_details'] = $result;
-          $data['main'] = 'users/company_details';
+          $data['main'] = 'users/company_info';
           $this->load->view('layout/main_view',$data);
         }else{
           $data = array(); 
@@ -120,6 +128,8 @@ class Company extends CI_Controller {
         $data = ['company_name' => $this->input->post('company_name'), 
                 'year_start' => $this->input->post('established_year'),
                 'business_nature  ' => $this->input->post('business_nature'),
+                'website' => $this->input->post('website'),
+                'gstin  ' => $this->input->post('gstin'),
                 'description' => $this->input->post('description')
                 ];
                 if(isset($filename)&& $filename!='')

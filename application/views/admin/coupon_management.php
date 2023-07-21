@@ -43,7 +43,17 @@
                           <option value="1" <?php if(isset($coupon->coupon_status)){echo ($coupon->coupon_status== 1)?'selected':'';} ?>>Active</option>
                         </select>
                       </div>
+                       <div class="form-group col-md-3">
+                        <label for="percentage">Description</label>
+                        <textarea class="form-control" id="description" name="description" required=""><?php echo isset($coupon->description)?$coupon->description:'';?></textarea>
+                      </div>
+                       <div class="form-group col-md-3">
+                        <label for="percentage">Show/Hide</label>
+                        <input type="checkbox" class="form-control" id="show" name="show" value="1" >
+                      </div>
+                      
                     </div>
+                     
                     </div>
                   <div class="card-footer">
                     <?php if(!empty($edit_id)){?>

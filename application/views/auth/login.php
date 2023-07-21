@@ -13,7 +13,7 @@
   </header>
   
 
-  <div id="app">
+  <div id="appf">
     <section class="section">
       <div class="container mt-5">
         <div class="row p-3">
@@ -48,6 +48,7 @@
                     <div class="invalid-feedback">
                       please fill in your password
                     </div>
+                     
                   </div>
 <div class="row mb-4 d-flex align-items-center justify-content-between">
       <!-- Checkbox -->
@@ -61,8 +62,10 @@
     </div>
   </div> 
                   <div class="form-group text-center">
-                    <input type="submit" name="submit" id="submit" class="btn-hi btn-red" value="Login">
+
                   </div>
+                                      <input type="submit" name="submit" id="submit" class="btn-hi btn-red" value="Login">
+
                 </form>
               </div>
             </div>

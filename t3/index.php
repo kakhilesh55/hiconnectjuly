@@ -14,8 +14,8 @@ $description = ($user_details['type']==1)?$user_details['about']:$company_detail
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="https://hiconnect.co.in/hiconnect/erp/assets/img/HiConnect-Icon.svg" rel="icon">
-  <link href="https://hiconnect.co.in/hiconnect/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://hiconnect.co.in/erp/assets/img/HiConnect-Icon.svg" rel="icon">
+  <link href="https://hiconnect.co.in/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
@@ -31,8 +31,8 @@ $description = ($user_details['type']==1)?$user_details['about']:$company_detail
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-<link href="https://hiconnect.co.in/hiconnect/t3/css/style.css" rel="stylesheet">
-<link href="https://hiconnect.co.in/hiconnect/t3/css/tooltip.css" rel="stylesheet">
+<link href="https://hiconnect.co.in/t3/css/style.css" rel="stylesheet">
+<link href="https://hiconnect.co.in/t3/css/tooltip.css" rel="stylesheet">
 
 </head>
 <?php
@@ -772,11 +772,11 @@ if($services_count>0){ ?>
       </div>
     </div>
 </footer><!-- End Footer -->
-<script src="https://hiconnect.co.in/hiconnect/t3/js/copy/clipboard.min.js"></script>
-<script src="https://hiconnect.co.in/hiconnect/t3/js/copy/demos.js"></script>
+<script src="https://hiconnect.co.in/t3/js/copy/clipboard.min.js"></script>
+<script src="https://hiconnect.co.in/t3/js/copy/demos.js"></script>
 <!--<script src="js/copy/snippets.js"></script>-->
-<script src="https://hiconnect.co.in/hiconnect/t3/js/copy/snippet-full.js"></script>
-<script src="https://hiconnect.co.in/hiconnect/t3/js/copy/tooltips.js"></script>
+<script src="https://hiconnect.co.in/t3/js/copy/snippet-full.js"></script>
+<script src="https://hiconnect.co.in/t3/js/copy/tooltips.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>                
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 <!--

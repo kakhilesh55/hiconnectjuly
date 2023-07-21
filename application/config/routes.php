@@ -58,8 +58,9 @@ $route['pricing'] = "front/pricing";
 $route['products'] = "front/products";
 $route['tutorial'] = "front/tutorial";
 $route['about'] = "front/about";
-$route['how'] = "front/how";
 
+
+$route['https://hiconnect.co.in'] = "https://hiconnect.co.in/home.php/";
 $route['admin/logout'] = "admin/logout";
 $route['userdashboard'] = 'users/dashboard';
 $route['cover'] = 'set_cover/';

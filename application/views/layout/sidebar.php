@@ -28,31 +28,44 @@
             <li class="dropdown <?php echo ($cur_page_path=="dashboard")?'active':'';?> ">
               <a href="<?php echo base_url(); ?>users/dashboard" class="nav-link"><i data-feather="grid"></i><span>Dashboard</span></a>
             </li>
-             <li class="dropdown <?php echo ($cur_page_path=='details'||$cur_page=='achievements'||$cur_page=='experiences'||$cur_page=='education'||$cur_page=='qrimages')?'active':'';?> ">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+             <li <?php echo ($cur_page_path=='details'||$cur_page=='achievements'||$cur_page=='experiences'||$cur_page=='education'||$cur_page=='qrimages')?'active':'';?> ">
+              <a href="<?php echo base_url(); ?>users/details"><i
                   data-feather="user"></i><span>My Profile</span></a>
-              <ul class="dropdown-menu">
+              <!--<ul class="dropdown-menu">
                 <?php if (in_array("Personal Details", $checked_arr)){ ?><li class="<?php echo ($cur_page_path=='details')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>users/details">My Info</a></li><?php } ?>
                 <?php if (in_array("Education", $checked_arr)){ ?><li class="<?php echo ($cur_page=='education')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>education/">Education</a></li><?php } ?>
                 <?php if (in_array("Experience", $checked_arr)){ ?><li class="<?php echo ($cur_page=='experiences')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>experiences/">Experience</a></li><?php } ?>
                 <?php if (in_array("Achievements", $checked_arr)){ ?><li class="<?php echo ($cur_page=='achievements')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>achievements/">Achievements</a></li><?php } ?>
                 <?php if (in_array("Generate QR Code", $checked_arr)){ ?><li class="<?php echo ($cur_page_path=='qrimages')?'active':'';?>" ><a class="nav-link" href="<?php echo base_url(); ?>qrimages">QR Code</a></li><?php } ?>
-                </ul>
+                </ul>-->
             </li>
-            <li><a class="nav-link" href="<?php echo base_url(); ?>users/scanner">Scanner</a></li>
+          <!--  <li><a class="nav-link" href="<?php echo base_url(); ?>users/scanner">Scanner</a></li>-->
             <li class="dropdown <?php echo ($cur_page=='company'||$cur_page=='contact'||$cur_page=='testimonials'||$cur_page=='services'||$cur_page=='products')?'active':'';?> ">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="layers"></i><span>Manage Company</span></a>
               <ul class="dropdown-menu">
                 <?php if (in_array("Company Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='company')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>company/">Company Info</a></li><?php } ?>
-                <?php if (in_array("Contact Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='contact')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>contact/">Contact Details</a></li><?php } ?>
-                <?php if (in_array("Testimonials", $checked_arr)){ ?><li class="<?php echo ($cur_page=='testimonials')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>testimonials/">Testimonials</a></li><?php } ?>
+               <!-- <?php if (in_array("Contact Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='contact')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>contact/">Contact Details</a></li><?php } ?>
+                <?php if (in_array("Testimonials", $checked_arr)){ ?><li class="<?php echo ($cur_page=='testimonials')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>testimonials/">Testimonials</a></li><?php } ?>-->
+                  <?php if (in_array("Products", $checked_arr)){ ?><li class="<?php echo ($cur_page=='products')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>products/product_details/"><span>Products</span></a></li><?php } ?>
                 <?php if (in_array("Services", $checked_arr)){ ?><li class="<?php echo ($cur_page=='services')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>services/"><span>Services</span></a></li><?php } ?>
-                <?php if (in_array("Products", $checked_arr)){ ?><li class="<?php echo ($cur_page=='products')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>products/"><span>Products</span></a></li><?php } ?>
+              
 
                 </ul>
             </li>
-            <?php if (in_array("Enquiries", $checked_arr)){ ?><li class="<?php echo ($cur_page=='enquiries')?'active':'';?>" ><a class="nav-link" href="<?php echo base_url(); ?>enquiries"><i data-feather="message-square"></i><span>My Contacts</span></a></li><?php } ?>
+            
+               <li class="dropdown <?php echo ($cur_page=='company'||$cur_page=='contact'||$cur_page=='testimonials'||$cur_page=='services'||$cur_page=='products')?'active':'';?> ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="layers"></i><span>My Contacts</span></a>
+              <ul class="dropdown-menu">
+                <?php if (in_array("Company Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='enquiries')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>enquiries/">Leads</a></li><?php } ?>
+                <?php if (in_array("Contact Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='enquiries/lead_list')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>enquiries/lead_list">Activities</a></li><?php } ?>
+              
+
+                </ul>
+            </li>
+            
+            
 
             <?php if (in_array("Social Links", $checked_arr)){ ?><li class="<?php echo ($cur_page=='social_link')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>social_link/"><i data-feather="facebook"></i><span>Social Links</span></a></li><?php } ?>
 
@@ -60,7 +73,11 @@
             
             <?php if (in_array("Payment Details", $checked_arr)){ ?><li class="<?php echo ($cur_page=='payment')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>payment/"><i data-feather="dollar-sign"></i><span>Payment</span></a></li><?php } ?>
 
-           <li class="dropdown <?php echo ($cur_page=='select_theme'||$cur_page=='set_cover'||$cur_page_path=='changepass')?'active':'';?> ">
+           <li style="position: absolute;
+left: 1.33%;
+
+top: 86.42%;
+bottom: 9.98%;" class="dropdown <?php echo ($cur_page=='select_theme'||$cur_page=='set_cover'||$cur_page_path=='changepass')?'active':'';?> ">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="settings"></i><span>Settings</span></a>
               <ul class="dropdown-menu">
@@ -71,7 +88,11 @@
      
               </ul>
             </li>
-            <?php if (in_array("Package", $checked_arr)){ ?><li class="<?php echo ($cur_page=='upgrade_package_product')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>pricing/"><i
+            <?php if (in_array("Package", $checked_arr)){ ?><li style="position: absolute;
+left: 1.33%;
+
+top: 90.42%;
+bottom: 10.98%;" class="<?php echo ($cur_page=='upgrade_package_product')?'active':'';?>"><a class="nav-link" href="<?php echo base_url(); ?>pricing/"><i
                   data-feather="trending-up"></i><span>Upgrade Account</span></a></li><?php } ?>
         
           </ul>

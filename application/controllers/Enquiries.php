@@ -10,21 +10,127 @@ class Enquiries extends CI_Controller {
         $this->load->model('Enquiry_Model'); 
         $this->load->library('excel');
     }
-
-    public function view_lead($id)
+      public function view_lead21()
     {
-       
+      $id=$_POST["user_id"];
         $data = array(); 
-        $errorUploadType = $statusMsg = ''; 
+      $output = array(); 
         $user_id = $this->session->userdata('id');
        
         // Get files data from the database 
-        $data['lead'] = $this->Enquiry_Model->view_lead($id);
-        $data['main'] = 'admin/view_lead';
-		$this->load->view('layout/main_view',$data); 
+        $data = $this->Enquiry_Model->getleads1($id);
+        foreach($data as $row)  
+           {  
+                $output['name'] = $row->name; 
+                $output['id'] = $row->id; 
+               $output['title'] = $row->title; 
+                      $output['comment'] = $row->comment;  
+                       $output['status'] = $row->status;  
+             $output['date'] = $row->date;  
+                 $output['id'] = $row->id;  
+                
+           }   
+      echo json_encode($output);
+      
+      
      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     }
-     public function index(){ 
+    public function view_lead1()
+    {
+      /* $id=$_POST["user_id"];
+        $data = array(); 
+      $output = array(); 
+        $user_id = $this->session->userdata('id');
+       
+        // Get files data from the database 
+        $data = $this->Enquiry_Model->getleads1($id);
+        foreach($data as $row)  
+           {  
+                $output['name'] = $row->name; 
+                $output['id'] = $row->id; 
+              
+                      $output['comment'] = $row->comment;  
+                       $output['status'] = $row->status;  
+             $output['date'] = $row->date;  
+                 $output['id'] = $row->id;  
+                
+           }   
+      echo json_encode($output);*/
+      
+      
+      $name = $_POST['name_startsWith'];
+     $user_id = $this->session->userdata('id');
+	$query = $this->db->query("SELECT name,id FROM lead where user_id='$user_id' and name LIKE '".$name."%'");
+	  $result = $query->result_array();
+	$data = array();
+	foreach($result as $row) {
+		$name = $row['name'].'|'.$row['id'];
+		array_push($data, $name);
+	}	
+	echo json_encode($data);exit;
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    }
+
+    public function view_lead()
+    {
+       $id=$_POST["user_id"];
+       //echo $id."hjhj";
+        $data = array(); 
+      $output = array(); 
+        $user_id = $this->session->userdata('id');
+       
+        // Get files data from the database 
+        $data = $this->Enquiry_Model->view_lead($id);
+        foreach($data as $row)  
+           {  
+                $output['name'] = $row->name; 
+                $output['id'] = $row->id; 
+                $output['lastname'] = $row->lastname;  
+                 $output['email'] = $row->email;  
+                  $output['phone'] = $row->phone;
+                   $output['name'] = $row->name;   
+                   $output['job_title'] = $row->job_title;  
+                    $output['company_name'] = $row->company_name;
+                     $output['lead_owner'] = $row->lead_owner;  
+                      $output['comments'] = $row->comments;  
+                       $output['status'] = $row->status;  
+             
+                
+           }   
+      echo json_encode($output);
+    }
+    
+        public function userListt(){
+    // POST data
+    $postData = $this->input->post();
+
+    // Get data
+    $data = $this->Enquiry_Model->getUserss($postData);
+
+    echo json_encode($data);
+  }
+    
+     public function ld(){ 
         $data = array(); 
         $errorUploadType = $statusMsg = ''; 
         $user_id = $this->session->userdata('id');
@@ -39,12 +145,111 @@ class Enquiries extends CI_Controller {
             $data['to_date'] = $to_date;
               // Get files data from the database 
             $data['enquiries'] = $this->Enquiry_Model->getRows($from_date,$to_date);
+          //  $data['enquiries1'] = $this->Enquiry_Model->getRows1($from_date,$to_date);
+
         }
     
        
         $data['main'] = 'enquiries';
 		$this->load->view('layout/main_view',$data);
     } 
+        public function index(){ 
+        $data = array(); 
+        $errorUploadType = $statusMsg = ''; 
+        $user_id = $this->session->userdata('id');
+         
+        // Get files data from the database 
+            $search = $this->input->post('sch');
+        $data['enquiries'] = $this->Enquiry_Model->getRows($search);
+                    $data['enquirie'] = $this->Enquiry_Model->getRows1();
+                     $data['enquiries1'] = $this->Enquiry_Model->getRows2();
+                     $data['enquiries2'] = $this->Enquiry_Model->getRows3();
+
+
+        if($this->input->post('search')){ 
+      
+            $search = $this->input->post('sch');
+        
+              // Get files data from the database 
+            $data['enquiries'] = $this->Enquiry_Model->getRows($search);
+                        $data['enquirie'] = $this->Enquiry_Model->getRows1($from_date,$to_date);
+
+        }
+    
+       
+        $data['main'] = 'ld';
+		$this->load->view('layout/main_view',$data);
+    } 
+      public function lead_list1(){ 
+        $data = array(); 
+        $errorUploadType = $statusMsg = ''; 
+        $user_id = $this->session->userdata('id');
+         
+        // Get files data from the database 
+        $data['leads'] = $this->Enquiry_Model->getleads();
+        
+        if($this->input->post('search')){ 
+            $from_date = $this->input->post('from_date');
+            $to_date = $this->input->post('to_date');
+            $data['from_date'] = $from_date;
+            $data['to_date'] = $to_date;
+              // Get files data from the database 
+            $data['enquiries'] = $this->Enquiry_Model->getleads($from_date,$to_date);
+        }
+    
+       
+        $data['main'] = 'leads';
+		$this->load->view('layout/main_view',$data);
+    } 
+      public function lead_list(){ 
+        $data = array(); 
+        $errorUploadType = $statusMsg = ''; 
+        $user_id = $this->session->userdata('id');
+         
+        // Get files data from the database 
+        $data['leads'] = $this->Enquiry_Model->getleads();
+         $data['leads1'] = $this->Enquiry_Model->getleadss();
+          $data['lea'] = $this->Enquiry_Model->getleads11();
+          $data['leads3'] = $this->Enquiry_Model->getleads2();
+        if($this->input->post('search')){ 
+            $from_date = $this->input->post('from_date');
+            $to_date = $this->input->post('to_date');
+            $data['from_date'] = $from_date;
+            $data['to_date'] = $to_date;
+             $sch = $this->input->post('sch');
+              // Get files data from the database 
+            $data['leads'] = $this->Enquiry_Model->getleads($sch);
+        }
+    
+       
+        $data['main'] = 'act';
+		$this->load->view('layout/main_view',$data);
+    } 
+    
+    
+    
+     public function test(){ 
+        $data = array(); 
+        $errorUploadType = $statusMsg = ''; 
+        $user_id = $this->session->userdata('id');
+         
+        // Get files data from the database 
+        $data['leads'] = $this->Enquiry_Model->getleads();
+        
+        if($this->input->post('search')){ 
+            $from_date = $this->input->post('from_date');
+            $to_date = $this->input->post('to_date');
+            $data['from_date'] = $from_date;
+            $data['to_date'] = $to_date;
+              // Get files data from the database 
+            $data['enquiries'] = $this->Enquiry_Model->getleads($from_date,$to_date);
+        }
+    
+       
+        $data['main'] = 'test';
+		$this->load->view('layout/main_view',$data);
+    }
+    
     public function  userList()
     {
         $postData = $this->input->post();
@@ -54,17 +259,125 @@ class Enquiries extends CI_Controller {
     
         echo json_encode($data);
     }
-public function add_enquiry()
+    
+    
+    
+    
+    
+    public function update_enquiry()
 {
     $data = array(); 
+   if($this->input->post('status')==1)
+   {
+       $status_icon='<button class="btn btn-info mr-2"><i class="far fa-eye mr-1"></i> New</button>';
+   }
+   else if($this->input->post('status')==2)
+   {
+           $status_icon='<button class="btn btn-primary mr-2"><i class="far fa-eye mr-1"></i> Follow Up</button>';
    
+   }
+    else if($this->input->post('status')==3)
+   {
+           $status_icon='<button class="btn btn-success mr-2"><i class="far fa-eye mr-1"></i> Won</button>';
+   
+   }
+    else if($this->input->post('status')==4)
+   {
+           $status_icon='<button class="btn btn-danger mr-2"><i class="far fa-eye mr-1"></i> Lost</button>';
+   
+   }
     $data = array('email' => $this->input->post('email'),
 						  'user_id' => $this->session->userdata('id'),
 						  'name' => $this->input->post('name'),
+						  'lastname' => $this->input->post('lname'),
+						  'job_title' => $this->input->post('job'),
+						  'company_name' => $this->input->post('cname'),
+						  'lead_owner' =>$this->session->userdata('id'),
+						  'phone' => $this->input->post('phone'),
+						  'comments' => $this->input->post('comment'),
+						  	  'status' => $this->input->post('status'),
+                          'date' =>  date('Y-m-d'),
+                          'status_button' =>  $status_icon,
+						  );
+						  $id=$this->input->post('cid');
+						  $this->db->where('id',$id);
+			$res=  $this->db->update('contact_form_info', $data);
+            redirect('enquiries');
+    
+}
+    
+    
+    
+    
+  public function update_lead()
+{
+    $data = array(); 
+  
+    $data = array(  'user_id' => $this->session->userdata('id'),
+						  'name' => $this->input->post('name'),
+						  'date' => $this->input->post('date'),
+						  'comment' => $this->input->post('comment'),
+					
+						  );
+						  $id=$this->input->post('userid');
+						  $this->db->where('id',$id);
+			$res=  $this->db->update('lead', $data);
+            redirect('enquiries/lead_list');
+    
+}
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+public function add_enquiry()
+{
+    $data = array(); 
+   if($this->input->post('status')==1)
+   {
+       $status_icon='<div class="badge badge-info">New</div>';
+   }
+   else if($this->input->post('status')==2)
+   {
+           $status_icon='<div class="badge badge-warning">In Won</div>';
+   
+   }
+    else if($this->input->post('status')==3)
+   {
+           $status_icon='<div class="badge badge-success hi-radius">Follow Up</div>';
+   
+   }
+    $this->db->where('email',$this->input->post('email'));
+    $query = $this->db->get('users');
+    if ($query->num_rows() > 0){
+       $type=1;
+    }
+    else{
+      $type=0;
+    }
+    $data = array('email' => $this->input->post('email'),
+						  'user_id' => $this->session->userdata('id'),
+						  'name' => $this->input->post('name'),
+						  'lastname' => $this->input->post('lname'),
+						  'job_title' => $this->input->post('job'),
+						  'company_name' => $this->input->post('cname'),
+						  'lead_owner' =>$this->session->userdata('id'),
 						  'phone	' => $this->input->post('phone'),
 						  'comments' => $this->input->post('comment'),
+						  	  'status' => $this->input->post('status'),
+						  	  'type'=>$type,
                           'date' =>  date('Y-m-d'),
-                         
+                          'status_button' =>  $status_icon,
 						  );
 			$res=  $this->db->insert('contact_form_info', $data);
             redirect('enquiries');
@@ -83,8 +396,10 @@ $type=$this->input->post('type');
 						  'customer_id' => $this->input->post('eid'),
 						  'type	' => $this->input->post('type'),
 						  'comment' => $this->input->post('comment'),
-                          'date' =>  date('Y-m-d'),
+                          'date' =>  $this->input->post('date'),
                           'status' => $this->input->post('status'),
+                          'priority' => $this->input->post('pr'),
+                          'title' => $this->input->post('title'),
 						  );
 			$res=  $this->db->insert('lead', $data);
 
@@ -139,21 +454,21 @@ $a4='<button class="btn btn-danger mr-2"><i class="far fa-eye mr-1"></i> Chat</b
           
             $this->db->where('id', $id);
 			$res = $this->db->update('contact_form_info', $data1);
-            redirect('enquiries');
+            redirect('enquiries/lead_list');
     
 }
 
 
 
- public function generatexls($from_date='',$to_date='') {
+ public function generatexls() {
         // create file name
         $fileName = 'data-'.time().'.xlsx';  
         // load excel library
         $this->load->library('excel');
-        $from_date = ($from_date!='')?$from_date:$this->input->post('from_date');
-        $to_date = ($to_date!='')?$to_date:$this->input->post('to_date');
+       // $from_date = ($from_date!='')?$from_date:$this->input->post('from_date');
+       // $to_date = ($to_date!='')?$to_date:$this->input->post('to_date');
 
-        $listInfo =  $this->Enquiry_Model->getRows($from_date,$to_date);
+        $listInfo =  $this->Enquiry_Model->getRows($from_date='',$to_date='');
         $objPHPExcel = new PHPExcel();
 
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1', 'From Date:'.$from_date);

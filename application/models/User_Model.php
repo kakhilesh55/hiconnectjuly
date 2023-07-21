@@ -3,7 +3,10 @@
 		
 		public function login($user_id, $encrypt_password){
 			
-			$this->db->where('user_id', $user_id);
+			//$this->db->where('user_id', $user_id);
+			$this->db->group_start();
+$this->db->where('user_id', $user_id)->or_where('phone', $user_id)->or_where('email', $user_id);
+$this->db->group_end();
 			$this->db->where('password', $encrypt_password);
 			$this->db->where('status', 1);
 
@@ -52,7 +55,30 @@
 			$query = $this->db->get('users');
 			return $query->result_array();
 		}
-
+		public function get_activiti(){
+		
+		
+			$date=date("Y-m-d");
+				$userid = $this->session->userdata('id');
+					$this->db->order_by('id');
+				$this->db->where('user_id', $userid);
+			
+	$this->db->where('date(date)', $date);
+			$query = $this->db->get('lead');
+			return $query->result_array();
+		}
+	public function get_notifications($user_id){
+		
+		
+			
+			//	$userid = $this->session->userdata('id');
+				
+		//	$sql="Select * from lead where user_id='$user_id'";   
+		$sql="SELECT comment as cm,notification_type FROM `lead` WHERE user_id='$user_id' union select comments as cm,notification_type from contact_form_info WHERE user_id='$user_id'";
+    $query = $this->db->query($sql);
+    return $query->result_array();
+		
+		}
 		public function edit_user($id){
 			$this->db->where('id', $id);
 			$query = $this->db->get('users');
@@ -138,7 +164,22 @@
 			$res = $query->row();
 			return $res;
 		}
-
+			public function get_views_enq($user_id){
+			
+		
+			    $this->db->where('user_id',$user_id);
+   
+    $result = $this->db->get('lead')->num_rows();
+    	return $result;
+		}
+	public function get_views_lead($user_id){
+			
+		
+			    $this->db->where('user_id',$user_id);
+   
+    $result = $this->db->get('contact_form_info')->num_rows();
+    	return $result;
+		}
 		 //send verification email to user's email id
 	    function sendEmail($to_email,$subject,$message)
 	    {

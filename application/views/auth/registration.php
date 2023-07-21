@@ -44,28 +44,35 @@ if(isset($_GET['coupon']) && $_GET['coupon']!='')
                   <?php }  ?>
               <div class="card-body">
                 <form method="POST" action="<?php echo $url; ?>" class="needs-validation" novalidate="">
-                  <div class="form-group">
+                  <div class="form-outline mb-4">
                     <label for="name">Name</label>
                     <input id="name" type="text" class="form-control" name="name" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Please fill in your full name
                     </div>
                   </div>
-                  <div class="form-group">
+                    <div class="form-outline mb-4">
+                    <label for="name">Last Name</label>
+                    <input id="lname" type="text" class="form-control" name="lname" tabindex="1" required autofocus>
+                    <div class="invalid-feedback">
+                      Please fill in your full name
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
                     <label for="email">Email</label>
                     <input id="email" type="text" class="form-control" name="email" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Please fill in your full email
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-outline mb-4">
                     <label for="phone">Phone</label>
                     <input id="phone" type="text" class="form-control" name="phone" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Please fill in your full phone
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-outline mb-4">
                     <label for="password">Password</label>
                     <input id="password1" type="password" class="form-control pwstrength" data-indicator="pwindicator"
                       name="password1" tabindex="2" required>
@@ -77,14 +84,20 @@ if(isset($_GET['coupon']) && $_GET['coupon']!='')
                       <div class="label"></div>
                     </div>
                   </div>
-                 <!-- <div class="form-group">
+                 <div class="form-outline mb-4">
                     <label for="password-confirm">Confirm Password</label>
                     <input id="password2" type="password" class="form-control" name="password2"
                       tabindex="2" required>
                       <div class="invalid-feedback">
                       Please fill in your Confirm Password
                     </div>
-                  </div>-->
+                  </div>
+                    <div class="form-group">
+                    <div class="custom-control custom-checkbox rstr-chk">
+<input type="checkbox" id="test" name="test" value="Bike">
+  <label for="vehicle1">By continuing, you agree to our <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Terms of Service</a></label><br>
+                    </div>
+                  </div>
                   <div class="form-group">
                     <input type="hidden" name="package" id="package" value="<?php echo $package;?>">
                     <?php if(isset($product) && $product!='') { ?>

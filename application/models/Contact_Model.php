@@ -2,15 +2,20 @@
 	class Contact_Model extends CI_Model{
 		
 		public function add_contact(){
-			$data = array('email' => $this->input->post('email'),
-						  'user_id' => $this->session->userdata('id'),
-						  'mob1' => $this->input->post('mob1'),
-						  'mob2	' => $this->input->post('mob2'),
-						  'mob3' => $this->input->post('mob3'),
-						  'whatsapp1' => $this->input->post('whatsapp1'),
-						  'whatsapp2	' => $this->input->post('whatsapp2'),
-						  'whatsapp3' => $this->input->post('whatsapp3')
-						  );
+            $data = ['email1' => $this->input->post('email1'),
+              'email2' => $this->input->post('email2'),
+              'email3' => $this->input->post('email3'),
+              'user_id' => $this->session->userdata('id'),
+              'phone1' => $this->input->post('phone1'),
+              'phone2' => $this->input->post('phone2'),
+              'phone3' => $this->input->post('phone3'),
+              'address1' => $this->input->post('address1'),
+              'address2' => $this->input->post('address2'),
+              'city' => $this->input->post('city'),
+              'state' => $this->input->post('state'),
+              'zipcode' => $this->input->post('zipcode'),
+              'country' => $this->input->post('country')
+              ];
 			$res=  $this->db->insert('contact_details', $data);
 		}
 
@@ -26,15 +31,28 @@
 			return $query->row();
 		}
 
+		public function get_contact_dt($user_id){
+			$this->db->where('user_id', $user_id);
+			$query = $this->db->get('contact_details');
+			doLog($this->db->last_query());
+			return $query->result();
+		}
+
 		public function update_contact_details($id){
-			$data = array('email' => $this->input->post('email'),
-						  'mob1' => $this->input->post('mob1'),
-						  'mob2	' => $this->input->post('mob2'),
-						  'mob3' => $this->input->post('mob3'),
-						  'whatsapp1' => $this->input->post('whatsapp1'),
-						  'whatsapp2	' => $this->input->post('whatsapp2'),
-						  'whatsapp3' => $this->input->post('whatsapp3')
-						  );
+			$data = ['email1' => $this->input->post('email1'),
+              'email2' => $this->input->post('email2'),
+              'email3' => $this->input->post('email3'),
+              'user_id' => $this->session->userdata('id'),
+              'phone1' => $this->input->post('phone1'),
+              'phone2' => $this->input->post('phone2'),
+              'phone3' => $this->input->post('phone3'),
+              'address1' => $this->input->post('address1'),
+              'address2' => $this->input->post('address2'),
+              'city' => $this->input->post('city'),
+              'state' => $this->input->post('state'),
+              'zipcode' => $this->input->post('zipcode'),
+              'country' => $this->input->post('country')
+              ];
 			$this->db->where('contact_id', $id);
 			$res = $this->db->update('contact_details', $data);
 		}

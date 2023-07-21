@@ -119,3 +119,192 @@ WHERE `company_id` IS NULL
 17-02-2023, 12:54 - SELECT *
 FROM `company`
 WHERE `company_id` IS NULL
+23-02-2023, 10:02 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+25-02-2023, 05:37 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+25-02-2023, 05:37 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+25-02-2023, 05:39 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+28-02-2023, 04:30 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+09-03-2023, 19:09 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+10-03-2023, 06:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+10-03-2023, 06:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+11-03-2023, 04:21 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+11-03-2023, 04:25 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+11-03-2023, 04:26 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+16-03-2023, 11:52 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+16-03-2023, 19:29 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-03-2023, 04:22 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-03-2023, 04:23 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-03-2023, 04:24 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+17-03-2023, 04:24 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+25-03-2023, 05:58 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+27-03-2023, 11:17 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+31-03-2023, 10:09 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 04:40 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 04:44 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 04:51 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 07:23 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 08:45 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+03-04-2023, 08:46 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 08:47 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 08:54 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 10:30 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 10:31 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 10:31 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+03-04-2023, 11:06 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+04-04-2023, 10:31 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+04-04-2023, 10:32 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+04-04-2023, 10:34 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+04-04-2023, 10:35 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+04-04-2023, 10:36 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+04-04-2023, 11:11 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+05-04-2023, 06:05 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+06-04-2023, 06:25 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+06-04-2023, 07:04 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+06-04-2023, 07:05 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+06-04-2023, 10:42 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+07-04-2023, 06:02 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+12-04-2023, 10:20 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+14-04-2023, 08:05 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+17-04-2023, 05:00 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+20-04-2023, 08:24 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+20-04-2023, 08:25 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+20-04-2023, 08:48 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+20-04-2023, 08:50 - SELECT *
+FROM `company`
+WHERE `company_id` = '11'
+20-04-2023, 09:35 - SELECT *
+FROM `company`
+WHERE `company_id` = '10'
+30-05-2023, 05:52 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+02-06-2023, 02:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+09-06-2023, 04:54 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+15-06-2023, 07:40 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+23-06-2023, 05:27 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+23-06-2023, 05:27 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+27-06-2023, 05:11 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+06-07-2023, 04:34 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+06-07-2023, 04:40 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+06-07-2023, 12:19 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL
+06-07-2023, 17:37 - SELECT *
+FROM `company`
+WHERE `company_id` IS NULL

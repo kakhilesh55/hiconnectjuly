@@ -9,7 +9,7 @@
 		public function edit_company($id){
 			$this->db->where('company_id', $id);
 			$query = $this->db->get('company');
-			doLog($this->db->last_query());
+			//doLog($this->db->last_query());
 			return $query->row();
 		}
 

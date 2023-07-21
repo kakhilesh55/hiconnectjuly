@@ -1,11 +1,87 @@
 <?php $edit_id = $this->uri->segment(3); ?>
   <div class="main-content">
+       <section class="hi-pfl-view">
+ <div class="card">
+<div class="card-body">
+    <?php 
+  
+                         if(empty($social_links))
+                         {
+        ?>
+    
+<div class="position-relative">
+<div class="d-flex align-items-center justify-content-center">
+	<div class="text-center">
+									<img src="<?php echo base_url(); ?>assets/img/users/No-Items.png"/>
+
+		<h3>No Items</h3>
+		<p>Items added to the task will appear here</p>
+	</div>
+</div>
+<div class="hi-add-plus">
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddActivity">Add Activities</button>
+</div>
+<?php
+}
+?>
+<div class="modal fade" id="AddActivity" tabindex="-1" role="dialog" aria-labelledby="formModal"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+	<h5 class="modal-title" id="formModal">Add Social Media Links</h5>
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	  <span aria-hidden="true">&times;</span>
+	</button>
+  </div>
+  <div class="modal-body">
+  <form name="social_links" method="post" action="<?= base_url('social_link/social_links') ?>">
+    
+    <div class="form-group">
+
+  </div>
+  <div class="form-group">
+  <div class="form-floating">
+      <select id="social_link_type" name="social_link_type" class="form-control">
+                           <?php 
+                         if(isset($social_link_types) && count($social_link_types)):
+                          foreach($social_link_types as $social_link_type) : 
+                          ?>
+                          <option value="<?php echo $social_link_type['social_link_id'];?>"  <?php if(isset($social_link->social_link_type)){echo ($social_link->social_link_type== $social_link_type['social_link_id'])?'selected':'';} ?>><?php echo ucfirst($social_link_type['social_link_type']);?></option>
+                           <?php  
+                        endforeach; 
+                         endif; ?>
+                        </select>
+	</div>
+  </div>
+  <div class="form-group">
+  <div class="form-floating">
+                         <input type="text" class="form-control" id="link" name="link" value="<?php echo isset($social_link->link)?$social_link->link:'';?>" required="">
+
+	</div>
+  </div>
+  
+  
+
+  
+
+
+
+  <div class="form-group text-right">
+  <button type="submit" class="btn btn-lbl">Cancel</button>
+  <button name="submit" id="submit"   class="btn btn-lbl" value="<?php echo isset($edit_id)?'UPDATE':'ADD';?>">Submit</button>
+  </div>
+</form>
+  </div>
+</div>
+</div>
+</div>
         <section class="section">
           <div class="row ">
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                   <div class="card-header">
-                    <h4>Social Links</h4>
+              
                   </div>
                    <?php if($this->session->flashdata('item')) {
                     $message = $this->session->flashdata('item');
@@ -14,7 +90,7 @@
                     <?php echo $message['message']; ?>
                   </div>
                   <?php }  ?>
-                 <form name="social_links" method="post" action="<?= base_url('social_link/social_links') ?>">
+               <!--  <form name="social_links" method="post" action="<?= base_url('social_link/social_links') ?>">
                   <div class="card-body">
                     <div class="form-row">
                       <div class="form-group col-md-6">
@@ -44,7 +120,12 @@
                           <?php } ?>
                    <input type="submit" name="submit" id="submit" class="btn btn-primary" value="<?php echo isset($edit_id)?'UPDATE':'ADD';?>">
                   </div>
-                </form>
+                </form>-->
+                   <?php 
+  
+                         if(!empty($social_links))
+                         {
+        ?>
                 <div class="row">
               <div class="col-12">
                   <div class="card-body">
@@ -99,3 +180,6 @@
               </div>
             </section>
           </div>
+          <?php
+                         }
+                         ?>
