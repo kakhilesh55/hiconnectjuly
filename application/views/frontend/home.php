@@ -14,7 +14,7 @@ rel="stylesheet" id="bootstrap-css">-->
             Share Your Info</h1>
           <h2>India's &nbsp; # 1 &nbsp; Digital<br>
             Business Card Solution</h2>
-            <a href="<?php echo base_url(); ?>pricing" class="btn-red btn-hi sli-btn">Try It's Free</a><br>
+            <a href="<?php echo base_url()."auth/registration?package=10"?>" class="btn-red btn-hi sli-btn">Try It's Free</a><br>
             <a href="<?php echo base_url(); ?>products" class="btn-white btn-hi sli-btn">Buy Now</a>
 </div>
 <div class="col-md-7 hi-vdo d-flex justify-content-center">
