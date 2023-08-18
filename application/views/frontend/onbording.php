@@ -839,7 +839,7 @@ Shipping Address</div>
   <div class="clicking mt-2 mb-2">Clicking on ‘Continue’ will not deduct any money</div>
    <div class="hi-fixd d-flex justify-content-between">
      <a href="#" class="btn-white btn-hi sli-btn flo-left"  onclick="tab2()">BACK</a>
-     <input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn m-0 flo-right">Submit</button>
+     <input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn m-0 flo-right">
  <?php /* <a href="#" class="btn-red btn-hi sli-btn m-0 flo-right" onclick="checkval()">Continue</a>*/ ?>
   </div>
 </div>  
