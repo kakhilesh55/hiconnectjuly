@@ -104,10 +104,7 @@ class Auth extends CI_Controller
 
 
 
-
-
-
-  public function login1(){
+         public function login1(){
           
         
                  $user_id = $this->input->post('user_id');
@@ -141,46 +138,17 @@ class Auth extends CI_Controller
                         $this->session->set_userdata($user_data);
                        
                         
-                       	echo json_encode(array(
-					"count"=> $user->id,
-					
-				));
+                        echo json_encode(array(
+                    "count"=> $user->id,
+                    
+                ));
                    
                 
-               	
-					
+                
+                    
         }
             
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function logout()
     {
@@ -335,7 +303,7 @@ class Auth extends CI_Controller
         }                   
     }
 
-     public function registration()
+   /* public function registration()
     {
         if($this->input->post('submit'))
         {
@@ -357,15 +325,13 @@ class Auth extends CI_Controller
                 $url.= "&coupon=".$coupon;
             
             $this->form_validation->set_rules('name', 'Name', 'required');
-             $this->form_validation->set_rules('lname', 'Last Name', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'required');
             $this->form_validation->set_rules('password1', 'Password', 'required');
-            $this->form_validation->set_rules('password2', 'Confirm Password', 'required');
+            //$this->form_validation->set_rules('password2', 'Confirm Password', 'required');
             $this->form_validation->set_rules('package', 'Package', 'required');
             if($this->input->post('product') && $this->input->post('product')!=0)
                 $this->form_validation->set_rules('product', 'Product', 'required');
-                  $this->form_validation->set_rules('test', 'Please Check Terms and Conditions', 'required');
             if($this->form_validation->run() === FALSE){
                 $messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
                 $this->session->set_flashdata('item',$messge );
@@ -385,15 +351,12 @@ class Auth extends CI_Controller
                     //Encrypt Password
                     $encrypt_password = md5($this->input->post('password1'));
                     $data['name'] = $this->input->post('name'); 
-                      $data['lname'] = $this->input->post('lname'); 
                     $data['email'] = $this->input->post('email');
                     $data['phone'] = $this->input->post('phone');
                     $data['user_id'] = $this->input->post('email');
                     $data['password'] = $encrypt_password;
                     $data['card_id'] = $this->input->post('card_id');
                     $data['user_level'] = 3;
-                    $data['login_date'] = date('Y-m-d');
-				$data['login_ip'] =$this->input->ip_address();
                     $data['register_date'] = date('Y-m-d');
                     $data['added_by'] = 0;
                     $data['status'] = 1;
@@ -412,12 +375,10 @@ class Auth extends CI_Controller
                     else
                         $data['coupon_id'] = 0;
                     // insert form data into database
-                    if(isset($_POST['test']))
-                    {
                     $id = $this->User_Model->add_user($data);
                     $details = $this->User_Model->edit_user($id);
                     $user_id = $details->user_id;
-}
+
                     $user = $this->User_Model->login($user_id, $encrypt_password);
                     //Create Session
                         $user_data = array(
@@ -489,7 +450,7 @@ class Auth extends CI_Controller
                         //$message = 'Dear '.$name.',<br /><br />Congratulations, your account has been successfully created. <br /><br /> You have to Login and add your details using the following credentials. <br/><br/> Login details. <br /><br /> <a href="https://card.weblyconnect.com/erp/"> https://card.weblyconnect.com/erp/</a> <br /> User ID: ' . $user_id . '<br /> Password: ' . $password . '<br /><br />Thanks<br />Digital Card';
 
                         // send email
-                        if ($this->User_Model->sendEmail($to_email,$subject,$message))
+                       /* if ($this->User_Model->sendEmail($to_email,$subject,$message))
                         {
                             // successfully sent mail
                             //$messge = array('message' => 'Successfully Registered. An activation link sent to your registered email id. Click the link to activate your account.','class' => 'alert alert-success align-center');
@@ -529,9 +490,200 @@ class Auth extends CI_Controller
                 $product = $_GET['product'];
         }
 
-    }
+    }*/
+    public function registration()
+    {
+        if($this->input->post('submit'))
+        {
 
-    public function activate(){
+            if(isset($_GET['package']))
+                $package = $_GET['package'];
+            if(isset($_GET['product']))
+                $product = $_GET['product'];
+            if(isset($_GET['coupon']))
+                $coupon = $_GET['coupon'];
+
+            $url = "auth/registration?package=".$package;
+            if(isset($_GET['product']) && $_GET['product']!='')
+                $url.= "&product=".$product;
+            if(isset($_GET['coupon']) && $_GET['coupon']!='')
+                $url.= "&coupon=".$coupon;
+            
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+            $this->form_validation->set_rules('phone', 'Phone', 'required|regex_match[/^[0-9]{10}$/]');
+            $this->form_validation->set_rules('password1', 'Password', 'required');
+            $this->form_validation->set_rules('password2', 'Confirm Password', 'required|matches[password1]');
+            $this->form_validation->set_rules('accept_terms', 'Accept Terms', 'required');
+            $this->form_validation->set_rules('package', 'Package', 'required');
+            if($this->input->post('product') && $this->input->post('product')!=0)
+                $this->form_validation->set_rules('product', 'Product', 'required');
+            if($this->form_validation->run() === FALSE){
+                //$messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
+                //$this->session->set_flashdata('item',$messge );
+                $this->load->view('layout/auth_header');
+                $this->load->view('auth/registration');
+                $this->load->view('layout/auth_footer');
+               // redirect($url);
+            }else{
+                        $this->form_validation->set_rules('user_id', 'User ID', 'is_unique[users.user_id]');
+                        $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]');
+                        $this->form_validation->set_rules('card_id', 'Card ID', 'is_unique[users.card_id]');
+                        if($this->form_validation->run() === FALSE)
+                        {
+                            $messge = array('message' => 'User ID or Email already exists.','class' => 'alert alert-danger align-center');
+                            $this->session->set_flashdata('item',$messge );
+                            $this->load->view('layout/auth_header');
+                            $this->load->view('auth/registration');
+                            $this->load->view('layout/auth_footer');
+                        }
+                        
+                            else
+                            {
+                                //Encrypt Password
+                                $encrypt_password = md5($this->input->post('password1'));
+                                $data['name'] = $this->input->post('name'); 
+                                $data['lname'] = $this->input->post('lname'); 
+                                $data['email'] = $this->input->post('email');
+                                $data['phone'] = $this->input->post('phone');
+                                $data['user_id'] = $this->input->post('email');
+                                $data['password'] = $encrypt_password;
+                                $data['card_id'] = $this->input->post('card_id');
+                                $data['user_level'] = 3;
+                                $data['login_date'] = date('Y-m-d');
+                                $data['login_ip'] =$this->input->ip_address();
+                                $data['register_date'] = date('Y-m-d');
+                                $data['added_by'] = 0;
+                                $data['status'] = 1;
+                                $data['type'] = 1;
+                                $data['package'] = $this->input->post('package');
+                                if($this->input->post('product'))
+                                    $data['product'] = $this->input->post('product');
+                                else
+                                    $data['product'] = 0;
+                                //generate simple random code
+                                $set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                                $code = substr(str_shuffle($set), 0, 12);
+                                $data['code'] = $code;
+                                if($this->input->post('coupon'))
+                                    $data['coupon_id'] = $this->input->post('coupon');
+                                else
+                                    $data['coupon_id'] = 0;
+                                // insert form data into database
+                                if(isset($_POST['accept_terms']))
+                                {
+                                    $id = $this->User_Model->add_user($data);
+                                    $details = $this->User_Model->edit_user($id);
+                                    $user_id = $details->user_id;
+                                    $user = $this->User_Model->login($user_id, $encrypt_password);
+                                    //Create Session
+                                    $user_data = array(
+                                           'id' => $user->id,
+                                            'user_id' => $user->user_id,
+                                            'username' => $user->name,
+                                            'password' => $user->password,
+                                            'user_level' => $user->user_level,
+                                            'card_id' => $user->card_id,
+                                            'login' => true
+                                    );
+                                    $this->session->set_userdata($user_data);
+                                }
+                                if ($id)
+                                {
+                                    $dat['package'] = $this->input->post('package');
+                                    if($this->input->post('product'))
+                                        $dat['product'] = $this->input->post('product');
+                                    else
+                                        $data['product'] = 0;
+                                    //generate simple random code
+                                    $set = '123456789';
+                                    $order_code = substr(str_shuffle($set), 0, 12);
+                                    $dat['order_no'] = 'order_'.$order_code;
+                                    $dat['invoice_no'] = 'inv_'.$order_code; 
+                                    if($this->input->post('coupon'))
+                                        $data['coupon_id'] = $this->input->post('coupon');
+                                    else
+                                        $data['coupon_id'] = 0;
+                                    //$dat['invoice_link'] = $invoice_link;
+                                    $dat['user_id'] = $id;
+                                    $dat['order_date'] = date('Y-m-d');
+                                    $dat['invoice_date'] = date('Y-m-d');
+                                    $dat['status'] = 1;
+                                    //insert data to orders table
+                                    $order_id = $this->User_Model->add_to_order($dat);
+
+                                    //generate invoice and update invoice link in orders table
+                                    $invoice_link  = $this->generatePDFFile($id); 
+                                    $this->User_Model->update_invoice_link($order_id,$invoice_link);
+
+                                    //mail configuration
+                                    $to_email = $this->input->post('email');
+                                    $name = $this->input->post('name');
+                                    $user_id = $this->input->post('phone');
+                                    $password = $this->input->post('password1');
+
+                                    $subject = 'HiConnect Confirmation Email';
+                                    $message =  "
+                                    <html>
+                                    <body>
+                                        <h2>Almost done!</h2>
+                                        <p>Please validate your email address to complete your Hi-Connect account registration.</p>
+                                        <a href='".base_url()."auth/activate/".$id."/".$code."'><button align='center' style='background-color:#BE1919;padding:5px;color:#fff;'>Validate Email Address</button></a>
+                                        <p>Dear ".$name.",</p>
+                                        <p>Tanks for registering, we highly recommend all our active users to validate their email to enable us serve you better with our improving features.</p>
+                                        <p>Ignoring this will lead to temporarily put your account on hold until verification is completed.</p>
+                                        <br /><p>Thanks,</p>
+                                        <p>The Hi-Connect Team</p>
+                                    </body>
+                                    </html>
+                                    ";
+
+                                    // send email
+                                   if ($this->User_Model->sendEmail($to_email,$subject,$message))
+                                    {
+                                        $messge = array('message' => 'You are now logged in.','class' => 'alert alert-success align-center');
+                                        $this->session->set_flashdata('item', $messge);
+                                        redirect('users/dashboard');
+                                    
+                                    }
+                                    else
+                                    {
+                                        // error
+                                        $messge = array('message' => $this->email->print_debugger(),'class' => 'alert alert-danger align-center');
+                                        $this->session->set_flashdata('item',$messge );
+                                        $this->load->view('layout/auth_header');
+                                        $this->load->view('auth/registration');
+                                        $this->load->view('layout/auth_footer');
+                                    }
+                                    redirect('users/dashboard');
+                                }
+                                else
+                                {
+                                    // error
+                                    $messge = array('message' => 'Oops! Error. Please try again later!!!','class' => 'alert alert-danger align-center');
+                                    $this->session->set_flashdata('item',$messge );
+                                    $this->load->view('layout/auth_header');
+                                    $this->load->view('auth/registration');
+                                    $this->load->view('layout/auth_footer');
+                                }
+                            }
+            }
+        }
+        else
+        {
+            $this->load->view('layout/auth_header');
+            $this->load->view('auth/registration');
+            $this->load->view('layout/auth_footer');
+            if(isset($_GET['package']))
+                $package = $_GET['package'];
+            if(isset($_GET['product']))
+                $product = $_GET['product'];
+        }
+
+    } 
+
+     public function activate(){
         $id =  $this->uri->segment(3);
         $code = $this->uri->segment(4);
  
