@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once("/home/u675218633/domains/hiconnect.co.in/public_html/application/views/razorpay/Razorpay.php");
+require_once("application/views/razorpay/Razorpay.php");
 
 use Razorpay\Api\Api;
 class Payment extends CI_Controller {
@@ -106,19 +106,37 @@ class Payment extends CI_Controller {
     	redirect('payment/payment_details');
     }
 
-
+public function checkout6()
+	{
+		echo "test";
+	}
 
 	public function checkout()
 	{
-	  
-	  
-		$key_id="rzp_test_sb4P2iQF7Ww57i";
-		$secret="AXWo5YPh8teLk5Q745JoGf1u";
-		$api = new Api($key_id, $secret);
+		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required');
+		$this->form_validation->set_rules('state', 'State', 'required');
+		if($this->form_validation->run() === FALSE)
+		{
+			$array = array(
+		    'error'   => true,
+		    'address_error' => form_error('address'),
+		    'pincode_error' => form_error('pincode'),
+		    'state_error' => form_error('state')
+		   );
+			
+		echo json_encode($array);
+			//$this->load->view('');
+		}
+	  else
+	  {
+	  	$key_id="rzp_test_sb4P2iQF7Ww57i";
+			$secret="AXWo5YPh8teLk5Q745JoGf1u";
+			$api = new Api($key_id, $secret);
 
-//customer
+			//customer
 
-		$id=$this->input->post('cust');
+			$id=$this->input->post('cust');
 		
 		
 			$this->db->select('package.package_id,package.package as pk,users.*,orders.*,order_detail.*');
@@ -135,108 +153,99 @@ class Payment extends CI_Controller {
 		//	return $query->result_array();
 		
 		if(empty($query->result())){
-    
+			$data['shipping_address']=$this->input->post('address');
+			$data['address']=$this->input->post('address');
+			$data['pincode']=$this->input->post('pincode');
+			$data['state']=$this->input->post('state');
+			$data['nearby']=$this->input->post('nearby');
+			$this->User_Model->update_user_details($id,$data);
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		$data['shipping_address']=$this->input->post('address');
-$data['address']=$this->input->post('address');
-$data['pincode']=$this->input->post('pincode');
-$data['state']=$this->input->post('state');
-$data['nearby']=$this->input->post('nearby');
-$this->User_Model->update_user_details($id,$data);
+			$total=$this->input->post('tot');
+			$customer=$this->input->post('cust');
 
+			$customer_data = $this->User_Model->edit_user($customer);
+			if($this->input->post('package'))
 
+			$dat['package'] = $this->input->post('package');
+			else
+			$dat['package'] =0;
+			$prd= $this->input->post('pdt');
+			if($this->input->post('pdt'))
+			{
+				$dat['product'] = $this->input->post('pdt');
+				$product_data= $this->Manage_products_Model->edit_product($prd);
+			}	
+			else
+				$data['product'] = 0;
 
-$total=$this->input->post('tot');
-$customer=$this->input->post('cust');
-
-$customer_data = $this->User_Model->edit_user($customer);
-if($this->input->post('package'))
-
-$dat['package'] = $this->input->post('package');
-else
-$dat['package'] =0;
-$prd= $this->input->post('pdt');
-if($this->input->post('pdt'))
-{
-	$dat['product'] = $this->input->post('pdt');
-	$product_data= $this->Manage_products_Model->edit_product($prd);
-}	
-else
-	$data['product'] = 0;
-
-$set = '123456789';
-$order_code = substr(str_shuffle($set), 0, 12);
-$dat['order_no'] = 'order_'.$order_code;
-$dat['invoice_no'] = 'inv_'.$order_code; 
-if($this->input->post('coupon'))
-	$data['coupon_id'] = $this->input->post('coupon');
-else
-	$data['coupon_id'] = 0;
-	$id=$this->input->post('cust');
-$amt=$this->input->post('amt');
-$dat['user_id'] =$id;
-$dat['order_date'] = date('Y-m-d');
-$dat['invoice_date'] = date('Y-m-d');
-$dat['status'] = 1;
-$dat['cpn_amt'] = $amt;
-$dat['coupon_id'] = $this->input->post('coupon');
+			$set = '123456789';
+			$order_code = substr(str_shuffle($set), 0, 12);
+			$dat['order_no'] = 'order_'.$order_code;
+			$dat['invoice_no'] = 'inv_'.$order_code; 
+			if($this->input->post('coupon'))
+				$data['coupon_id'] = $this->input->post('coupon');
+			else
+				$data['coupon_id'] = 0;
+				$id=$this->input->post('cust');
+			$amt=$this->input->post('amt');
+			//	$amt=1;
+			$dat['user_id'] =$id;
+			$dat['order_date'] = date('Y-m-d');
+			$dat['invoice_date'] = date('Y-m-d');
+			$dat['status'] = 1;
+			$dat['cpn_amt'] = $amt;
+			$dat['coupon_id'] = $this->input->post('coupon');
 
 
-$order_id = $this->User_Model->add_to_order($dat);
-if ($cart = $this->cart->contents()){
-  foreach ($cart as $item){
-  $order_detail = array(
-      'orderid' => $order_id,
-      'productid' => $item['id'],
-      'quantity' => $item['qty'],
-      'price' => $item['price']
-      );
-  // Insert product imformation with order detail, store in cart also store in database.
-  $prd=$item['id'];
-  $product_data= $this->Manage_products_Model->edit_product($prd);
- 
-  $cust_id = $this->cart_model->insert_order_detail($order_detail);
-    }
-  }
-  
-  $this->cart->destroy();
+			$order_id = $this->User_Model->add_to_order($dat);
+			if ($cart = $this->cart->contents()){
+			  foreach ($cart as $item){
+			  $order_detail = array(
+			      'orderid' => $order_id,
+			      'productid' => $item['id'],
+			      'quantity' => $item['qty'],
+			      'price' => $item['price']
+			      );
+			  // Insert product imformation with order detail, store in cart also store in database.
+			  $prd=$item['id'];
+			  $product_data= $this->Manage_products_Model->edit_product($prd);
+			 
+			  $cust_id = $this->cart_model->insert_order_detail($order_detail);
+			    }
+			  }
+			  
+			  $this->cart->destroy();
 
-//generate invoice and update invoice link in orders table
-$invoice_link  = $this->generatePDFFile($id); 
-$this->User_Model->update_invoice_link($order_id,$invoice_link);
+			//generate invoice and update invoice link in orders table
+			$invoice_link  = $this->generatePDFFile($id); 
+			$this->User_Model->update_invoice_link($order_id,$invoice_link);
 
-$invoice_link1  = $this->generatePDFFile1($id); 
-$this->User_Model->update_invoice_link1($order_id,$invoice_link1);
-//print_r($total);
-$this->generateOrder($customer_data,$product_data,$total); 
-
-
-} else {
-    ?>
-    <script>alert("Already Exit");</script>
-    <?php
-}
-
-
-
-		$order=$api->order->create(array('receipt' => '123', 'amount' => $total, 'currency' => 'INR', 'notes'=> array('key1'=> 'value3','key2'=> 'value2')));
-		
+			$invoice_link1  = $this->generatePDFFile1($id); 
+			$this->User_Model->update_invoice_link1($order_id,$invoice_link1);
+			//print_r($total);
+			$this->generateOrder($customer_data,$product_data,$total); 
+$order=$api->order->create(array('receipt' => '123', 'amount' => $total, 'currency' => 'INR', 'notes'=> array('key1'=> 'value3','key2'=> 'value2')));
+		doLog($order);
 		$this->load->view('frontend/razorpay-checkout',['customer_data'=>$customer_data,'order'=>$order,'key'=>$key_id,'secret'=>$secret]);
+
+/*$array = array(
+		    'count'   => 1
+		   );
+			echo json_encode($array);*/
+		} 
+
+		else {
+		    ?>
+		    <script>alert("Already Exit");</script>
+		    <?php
+		}
+
+
+
+		
+
+	  }
+	  
 	
 	}
 	public function generatePDFFile($id) {
