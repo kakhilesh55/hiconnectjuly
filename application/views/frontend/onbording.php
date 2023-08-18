@@ -30,19 +30,19 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url(); ?>assets1/css/style.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>css1/style.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>css1/cart.css" rel="stylesheet">
-	<style>
-	  .tabs .ac{
-	        display:none!important;
-	    }
-	    .fd{
+  <link href="<?php echo base_url(); ?>css1/cart.css" rel="stylesheet">
+  <style>
+    .tabs .ac{
+          display:none!important;
+      }
+      .fd{
     display: block!important;
     width: 100%;
     margin-top: 0.25rem;
     font-size: .875em;
     color: #dc3545;
 }
-	</style>
+  </style>
 </head>
 
 <body>
@@ -193,11 +193,11 @@ Estimated Delivery by Monday, 01st Aug</div>
 
 
   <div class="hi-cart-intro d-flex justify-content-between">
-		<div class="product-image p-2 pe-0 d-flex col-10">
-			<div class=" d-flex align-self-start crt-img">
-				<img src="<?php echo base_url(); ?>uploads/manage_products/<?php echo $data['image'] ?>" 
+    <div class="product-image p-2 pe-0 d-flex col-10">
+      <div class=" d-flex align-self-start crt-img">
+        <img src="<?php echo base_url(); ?>uploads/manage_products/<?php echo $data['image'] ?>" 
                                                 alt="<?php echo $data['id'] ?>" class="stars">
-			</div>
+      </div>
       <div class="product-detailz pt-3 pe-2 ps-2 col-9">
         <div class="d-flex justify-content-between pb-2">
           <div class="hico-product pe-2"><a href="https://hiconnect.co.in//Products/product_details_view/<?php echo $data['id']; ?>"><?php echo $data['name'] ?></a></div>
@@ -212,8 +212,8 @@ Estimated Delivery by Monday, 01st Aug</div>
           <div><strong>$25</strong></div>
         </div>-->
       </div>
-		</div>
-		
+    </div>
+    
     <div class="hi-product-price pt-3 pb-3 col-2">
       <h2 class="price<?php echo $data['rowid'] ?> "><?php echo $data['price'];?></h2>
        <p class="price<?php echo $data['rowid'] ?> "><?php echo $data['price1']; ?></p>
@@ -235,7 +235,7 @@ Estimated Delivery by Monday, 01st Aug</div>
         <a href="#"  onclick="javascript:deleteproduct('<?php echo $data['rowid'] ?>')"><img class="delete-item" src="<?php echo base_url(); ?>css1/images/delete-item.svg"></a>
       </div>
     </div>
-	</div>
+  </div>
   <!--<div class="text-right text-muted hi-free-d p-3">
     Free Delivery
   </div>-->
@@ -254,18 +254,18 @@ Estimated Delivery by Monday, 01st Aug</div>
 
 <div class="col-lg-4 col-md-6 pricebox" style="display:none;">
             <div class="box" data-aos="fade-up" data-aos-delay="100">
-			<div class="pricing-card-header">
-				<div class="pricing-plan-name name<?php echo $package['package_id'] ?>" 
+      <div class="pricing-card-header">
+        <div class="pricing-plan-name name<?php echo $package['package_id'] ?>" 
 rel="<?php echo $package['package_id'] ?>"><?php echo $package['package'];?></div>
-				<div class="pricing-plan-type">FOR Individuals</div>
-			</div>
-			<div class="pricing-card-price">
-				<div class="price-per-month team">
-					<div class="price-tag price<?php echo $package['package_id'] ?>" 
+        <div class="pricing-plan-type">FOR Individuals</div>
+      </div>
+      <div class="pricing-card-price">
+        <div class="price-per-month team">
+          <div class="price-tag price<?php echo $package['package_id'] ?>" 
 rel="<?php echo $package['sale_price'] ?>"><?php echo "₹".$package['sale_price'];?></div>
 
 
-	<div style="display:none;" class="price-tag price1<?php echo $package['package_id'] ?>" 
+  <div style="display:none;" class="price-tag price1<?php echo $package['package_id'] ?>" 
 rel="<?php echo $package['regular_price'] ?>"><?php echo "₹".$package['regular_price'];?></div>
 
 
@@ -278,11 +278,11 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 
 
 
-					<div class="full-black team">per card<br>per month</div>
-				</div>
-					<!--<div class="trialz">30-day free trial included<br>3 card minimum, billed annually<br></div>-->
-			</div>
-			<div class="pricing-card-button">
+          <div class="full-black team">per card<br>per month</div>
+        </div>
+          <!--<div class="trialz">30-day free trial included<br>3 card minimum, billed annually<br></div>-->
+      </div>
+      <div class="pricing-card-button">
 
         <?php if($package['sale_price']>0) { ?> <a href="#" onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"  class="button w-button" > Try it now</a><?php } 
                                     else { ?>
@@ -291,8 +291,8 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
                                 <?php } ?>
 
 
-				</div>
-				<?php $descriptions = explode("\n",$package['description']); ?>
+        </div>
+        <?php $descriptions = explode("\n",$package['description']); ?>
 
               <ul>
 <?php foreach ($descriptions as $description) { 
@@ -303,12 +303,12 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
           </div>
 
   <div class="hi-cart-intro d-flex justify-content-between">
-		<div class="product-image hi-onboard pe-0 d-flex">
-			<div class=" d-flex align-self-start">
-			</div>
+    <div class="product-image hi-onboard pe-0 d-flex">
+      <div class=" d-flex align-self-start">
+      </div>
       <div class="product-detailz pt-3 pe-3 ps-3">
         <div class="d-flex justify-content-between pb-2">
-          <div class="hico-product pe-2"><a href="http://tezcode.com/hiconnect//Products/product_details_view/<?php echo $data['id']; ?>">	<?php echo $package['package'];?></a></div>
+          <div class="hico-product pe-2"><a href="http://tezcode.com/hiconnect//Products/product_details_view/<?php echo $data['id']; ?>">  <?php echo $package['package'];?></a></div>
           <!--<div class="hi-edit">
             <a href="#ProductEdit" role="button" class="hic-edit" data-bs-toggle="modal">Edit</a>
           </div>-->
@@ -320,8 +320,8 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
           <div><strong>$25</strong></div>
         </div>-->
       </div>
-		</div>
-		
+    </div>
+    
     <div class="hi-product-price hi-onprice pt-3 pb-3 ps-0">
       <h2 class="price<?php echo $data['rowid'] ?> "><?php echo "₹".$package['sale_price'];?></h2>
        <p class="price<?php echo $data['rowid'] ?> "><?php echo "₹".$package['regular_price'];?></p>
@@ -332,7 +332,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
          <a href="#"  onclick="javascript:addtocart(<?php echo $package['package_id'] ?>)"   >ADD TO CART</a>
       </div>
     </div>
-	</div>
+  </div>
   <!--<div class="text-right text-muted hi-free-d p-3">
     Free Delivery
   </div>-->
@@ -350,11 +350,11 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
   </div>
   <div class="pt-2 pdt-grand">
     <div class="cpn-success d-flex align-items-center ">
-	<i class='bx bxs-badge-check' ></i>
-	<span>Your coupon was successfully applied</span></div>
-	<div class="cpn-error d-flex align-items-center ">
-	<i class='bx bxs-x-circle'></i>
-	<span>Your coupon was invalid</span></div>
+  <i class='bx bxs-badge-check' ></i>
+  <span>Your coupon was successfully applied</span></div>
+  <div class="cpn-error d-flex align-items-center ">
+  <i class='bx bxs-x-circle'></i>
+  <span>Your coupon was invalid</span></div>
   </div>
 </div>-->
 
@@ -362,14 +362,14 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 </div>
 <div class="col-md-5 br-rigt mt-4 ps-4">
 <section id="hi-bill" class="p-0">
-	<div id="hi-hello">
+  <div id="hi-hello">
     <div class="d-flex justify-content-between hi-cost pt-3">
       <div>
         <h5>Order Summary</h5>
       </div>
       <div>
-		<!--<a href="#PlanEdit" role="button" class="hic-edit" data-bs-toggle="modal">Edit</a>-->
-	  </div>
+    <!--<a href="#PlanEdit" role="button" class="hic-edit" data-bs-toggle="modal">Edit</a>-->
+    </div>
     </div>
     <div class="hi-coupon d-flex justify-content-between">
       <div class="product-image">
@@ -379,7 +379,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       </div>
       <div class="add product-detailz align-self-center pe-3" >
         <div class="pb-2" >
-          <div class="hi-apply ps-2">Apply Coupons</div>	
+          <div class="hi-apply ps-2">Apply Coupons</div>  
         </div>
       </div>
       <div class="add1 hi-getit  align-self-center" id="add1">
@@ -394,7 +394,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       
        <div class="product-detailz d-flex align-self-center pe-3 rm" id="b" style="display:none!important;">
         <div class="pb-2">
-          <div class="hi-apply ps-2">Remove Coupons</div>	
+          <div class="hi-apply ps-2">Remove Coupons</div> 
         </div>
       </div>
       <div class="hi-getit d-flex align-self-center rm1" id="a" style="display:none!important;">
@@ -424,7 +424,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       </div>
       <div id="cp" class="product-detailz d-flex align-self-center pe-3" >
         <div class="pb-2">
-          <div class="hi-apply ps-2">1 Coupon Applied</div>	
+          <div class="hi-apply ps-2">1 Coupon Applied</div> 
           <!--<p class="ps-2">You saved additional &#x20b9;100</p>-->
         </div>
       </div>
@@ -438,36 +438,36 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
 
 
 
-		<div class="hi-billing p-3">
+    <div class="hi-billing p-3">
       <h2>Product Details </h2>
-			<div class="d-flex justify-content-between hi-cost">
-				<div>Total MRP</div>
-				<div class="grandtotal" id="new">₹</div>
-			</div>
-			<div class="d-flex justify-content-between hi-cost">
-				<div>Discount on MRP</div>
-				<div><h3 id="mrpdis"><?php echo  $dism;?></h3></div>
-			</div>
       <div class="d-flex justify-content-between hi-cost">
-				<div>Coupon Discount</div>
-				<div><h4 id="discount_amount">₹</h4></div>
-			</div>
+        <div>Total MRP</div>
+        <div class="grandtotal" id="new">₹</div>
+      </div>
       <div class="d-flex justify-content-between hi-cost">
-				<div>Delivery Charge</div>
-				<div class="d-flex"><h3>₹0</h3></div>
-			</div>
+        <div>Discount on MRP</div>
+        <div><h3 id="mrpdis"><?php echo  $dism;?></h3></div>
+      </div>
+      <div class="d-flex justify-content-between hi-cost">
+        <div>Coupon Discount</div>
+        <div><h4 id="discount_amount">₹</h4></div>
+      </div>
+      <div class="d-flex justify-content-between hi-cost">
+        <div>Delivery Charge</div>
+        <div class="d-flex"><h3>₹0</h3></div>
+      </div>
       <div class="d-flex justify-content-between hi-costs">
-				<div>Total Amount </div>
-				<div id="grandtotal1" class="grandtotal"></div>
-			</div>
-		</div>
-	</div>
+        <div>Total Amount </div>
+        <div id="grandtotal1" class="grandtotal"></div>
+      </div>
+    </div>
+  </div>
 </section>
 <div class="card-t-price text-center pb-3 pt-1">
  <div class="hi-fixd d-flex justify-content-between">
      <a href="javascript:window.history.go(-1);" class="btn-white btn-hi sli-btn flo-left">BACK</a>
-	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="conti()">CONTINUE</a>
-	</div>
+  <a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="conti()">CONTINUE</a>
+  </div>
 </div>
 <div class="hi-nice">
   <svg class="uxicon-svg-container" height="24" width="24" role="img"><use fill="currentColor" xlink:href="#svg-container-gd-the-go"></use></svg>
@@ -491,11 +491,11 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
       Enter Delivery Pin Codec
     </div>        
                     <button type="button" class="btn-close tpbtnz close-btnz" data-bs-dismiss="modal">
-					<i class='bx bx-x-circle'></i>
-					</button>
+          <i class='bx bx-x-circle'></i>
+          </button>
                 <div class="modal-body p-0">
 <div class="plan-editz pricing pt-5 pd-topv pe-4 ps-4">
-<div class="pb-4 check-pin">				
+<div class="pb-4 check-pin">        
     <input type="text" id="pin" name="pin" class="coupon-pin" placeholder="Enter Pin Code">
     <button class="pin-coupon" onclick="javascript:pincheck()">CHECK</button>
     <span class="invalid-feedback" id="invalid-feedback1">
@@ -527,7 +527,7 @@ rel="<?php echo $package['description'] ?>"><?php echo $package['description'];?
     </div>
           <div class="modal-body p-0">
 <div class="plan-editz pricing p-4 pb-3">
-  <div class="check-pin mt-4">				
+  <div class="check-pin mt-4">        
     <input type="text" id="coupon_code" class="coupon-pin" placeholder="Enter Coupon Code">
     <button class="pin-coupon" onclick="getcoupon1(coupon_code.value)">CHECK</button>  
  </div>
@@ -600,61 +600,48 @@ Already have an account? <button onclick="asd(1)" class="already-acc">Login Now<
     <h3>Create your Hi-Connect account</h3>
     <p>Hey, Enter your details to register your account</p>
 </div>
-<form method="POST" name="onboarding" class="needs-validation" novalidate="">
+<span id="success_message"></span>
+<form method="POST" name="onboarding" id="registration_form">
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="text" required="" id="name" class="form-control" placeholder="First Name" tabindex="1" required autofocus/>
-     <span class="invalid-feedback" id="invalid-feedback2">
-                 
-                    </span>
+    <input type="text" id="name" name="name" class="form-control" placeholder="First Name" tabindex="1" value="<?php echo $this->input->post('name'); ?>" required autofocus/>
+    <span id="name_error" class="text-danger"></span>
   </div>
 <div class="form-outline mb-4">
-    <input type="text" required="" id="lname" name="lname" class="form-control" placeholder="Last Name" required />
-     <span class="invalid-feedback" id="invalid-feedback3">
-                     
-                    </span>
+    <input type="text" id="lname" name="lname" class="form-control" placeholder="Last Name" value="<?php echo $this->input->post('lname'); ?>" required/>
+    <span id="lname_error" class="text-danger"></span>
   </div>
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="email" id="email" placeholder="Email" class="form-control" required/>
-    <span class="invalid-feedback" id="invalid-feedback4">
-                     
-                    </span>
+    <input type="email" id="email" placeholder="Email" class="form-control" value="<?php echo $this->input->post('email'); ?>" required/>
+    <span id="email_error" class="text-danger"></span>
   </div>
   <div class="form-outline mb-4">
-    <input type="text" id="phone" placeholder="Phone" name="phone" class="form-control" required />
-      <span class="invalid-feedback" id="invalid-feedback5">
-                     
-                    </span>
+    <input type="text" id="phone" placeholder="Phone" name="phone" class="form-control"  value="<?php echo $this->input->post('phone'); ?>" required />
+    <span id="phone_error" class="text-danger"></span>
   </div>
   <div class="form-outline mb-4">
-    <input type="password" required id="password1" placeholder="Password" class="form-control" />
-    <span class="invalid-feedback" id="invalid-feedback6">
-                     
-                    </span>
+    <input type="password" name="password1" id="password1" value="<?php echo $this->input->post('password1'); ?>" placeholder="Password" class="form-control" required />
+    <span id="password1_error" class="text-danger"></span>
   </div>
   <div class="form-outline mb-4">
-    <input type="password" required id="form2Example2" placeholder="Confirm Password" class="form-control" />
-    <span class="invalid-feedback" id="invalid-feedback7">
-                     
-                    </span>
+    <input type="password" id="password2" name="password2" value="<?php echo $this->input->post('password2'); ?>" placeholder="Confirm Password" class="form-control" required/>
+    <span id="password2_error" class="text-danger"></span>
   </div>
   <!-- Submit button -->
-  <div class="form-group">
-                    <div class="custom-control custom-checkbox rstr-chk">
-<input type="checkbox" id="vehicle1" name="test" value="1">
-  <label for="vehicle1">By continuing, you agree to our <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Terms of Service</a></label><br>
-  <span class="invalid-feedback" id="invalid-feedback8">
-                     
-                    </span>
-                    </div>
-                  </div>
+  <div class="form-outline mb-4">
+    <div class="custom-control custom-checkbox rstr-chk">
+      <input type="checkbox" id="accept_terms" name="accept_terms" value="<?php echo $this->input->post('accept_terms'); ?>" required />
+      <label for="accept_terms">By continuing, you agree to our <a href="<?php echo base_url(); ?>Front/privacy" target="_blank">Privacy Policy</a> and <a href="<?php echo base_url(); ?>Front/terms" target="_blank">Terms of Service</a></label>
+    </div>
+    <span id="accept_terms_error" class="text-danger"></span>
+  </div>
 <div class="card-t-price text-center pb-3 pt-1">
  <div class="hi-fixd d-flex justify-content-between">
      <a href="#" class="btn-white btn-hi sli-btn flo-left" onclick="tab1()">BACK</a>
-	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="sub()">CONTINUE</a>
-	
-	</div>
+  <a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="sub()">CONTINUE</a>
+  
+  </div>
 </div>
   <!-- Register buttons -->
   
@@ -678,13 +665,13 @@ Already have an account? <button onclick="asd(1)" class="already-acc">Login Now<
 function asd(a)
 {
     if(a==1){
-		document.getElementById("hi-register").style.display="none";
-		document.getElementById("hi-login").style.display="block"; 
-	  }
-	  if(a==2){
-		document.getElementById("hi-login").style.display="none";
-		document.getElementById("hi-register").style.display="block"; 
-	  }
+    document.getElementById("hi-register").style.display="none";
+    document.getElementById("hi-login").style.display="block"; 
+    }
+    if(a==2){
+    document.getElementById("hi-login").style.display="none";
+    document.getElementById("hi-register").style.display="block"; 
+    }
 }
 </script>
 <section id="hi-login" class="pb-0">
@@ -692,7 +679,7 @@ function asd(a)
         <div class="row">
           <div class="already">
 Don't have an account? <button onclick="asd(2)" class="already-acc">Register Now</button>
-          </div>		
+          </div>    
 <div class="login-fm">
   <div class="login-intro">
     <h3>Welcome Back!</h3>
@@ -715,9 +702,9 @@ Don't have an account? <button onclick="asd(2)" class="already-acc">Register Now
   <!-- Submit button -->
  <div class="hi-fixd d-flex justify-content-between">
      <a href="#" class="btn-white btn-hi sli-btn flo-left"  onclick="tab1()">BACK</a>
-	<a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="subb()">CONTINUE</a>
-	
-	</div>
+  <a href="#" class="btn-red btn-hi sli-btn bxs-none flo-right" onclick="subb()">CONTINUE</a>
+  
+  </div>
 </form>
 </div>
 </div>
@@ -727,9 +714,9 @@ Don't have an account? <button onclick="asd(2)" class="already-acc">Register Now
 
 
             </div>
-			
-			
-			
+      
+      
+      
 <div class="tab-pane hi-tabs tr" id="tab-38">
 
 <section id="hi-cart-price">
@@ -748,36 +735,37 @@ Shipping Address</div>
 
 <?php
 
-	$user_id = $this->session->userdata('user_id');
-	        $this->db->select('*'); 
-	        $this->db->from('users'); 
-	        $this->db->where('user_id', $user_id);
-	       $query = $this->db->get(); 
-	            $result1 = $query->result_array(); 
-	            foreach($result1 as $result)
-	            {
-	            $addr=$result['shipping_address'];
-	           
-	            $state=$result['state'];
-	            $pincode=$result['pincode'];
-	            $nearby=$result['nearby'];
-	            }
+  $user_id = $this->session->userdata('user_id');
+          $this->db->select('*'); 
+          $this->db->from('users'); 
+          $this->db->where('user_id', $user_id);
+         $query = $this->db->get(); 
+              $result1 = $query->result_array(); 
+              foreach($result1 as $result)
+              {
+              $addr=$result['shipping_address'];
+             
+              $state=$result['state'];
+              $pincode=$result['pincode'];
+              $nearby=$result['nearby'];
+              }
 ?>
-<form method="POST" name="onboarding"  action="<?php echo base_url() ?>Payment/checkout"  class="needs-validation" novalidate="">
+<form method="POST" name="onboarding" action="<?php echo base_url()?>payment/checkout">
 
 
 <div class="form-full pb-4">
-<textarea class="address-edit" name="address">
-<?php if($this->session->userdata('user_id')!="") echo $this->session->userdata('shipping_address');?></textarea> 
+  <textarea class="address-edit" name="address" id="address" required >
+  <?php if($this->session->userdata('user_id')!="") echo $this->session->userdata('shipping_address');?></textarea>
+  <span id="address_error" class="text-danger"><?php echo form_error('address'); ?></span> 
 </div>
 <div class="form-full">  
   <div class="form-outline form-fifty mb-4 pe-2">
-    <input type="text" id="form2Example2" placeholder="Pin Code" name="pincode" class="form-control" value="<?php if($this->session->userdata('pincode')!="") echo $this->session->userdata('pincode');?>" required/>
+    <input type="text" id="pincode" placeholder="Pin Code" name="pincode" class="form-control" value="<?php if($this->session->userdata('pincode')!="") echo $this->session->userdata('pincode');?>" required/>
+    <span id="pincode_error" class="text-danger"><?php echo form_error('pincode'); ?></span>
   </div>
   <div class="form-outline form-fifty mb-4 ps-2">
-   <!-- <input type="text" required id="form2Example2" placeholder="State" name="state" class="form-control" value="<?php if($this->session->userdata('state')!="") echo $this->session->userdata('state');?>" />-->
-     <select class="form-control" id="inputState" placeholder="State" name="state" class="form-control" >
-                        <option value="SelectState">Select State</option>
+     <select class="form-control" id="inputState" placeholder="State" name="state" class="form-control" required >
+                        <option value="">Select State</option>
                         <option value="Andra Pradesh" <?php if($this->session->userdata('state') == "Andra Pradesh") { ?> selected="selected"<?php } ?>>Andra Pradesh</option>
                         <option value="Madya Pradesh"  <?php if($this->session->userdata('state') == "Madya Pradesh") { ?> selected="selected"<?php } ?>>Madya Pradesh</option>
                         <option value="Arunachal Pradesh" <?php if($this->session->userdata('state') == "Arunachal Pradesh") { ?> selected="selected"<?php } ?>>Arunachal Pradesh</option>
@@ -817,6 +805,7 @@ Shipping Address</div>
                         <option value="Lakshadeep">Lakshadeep</option>
                         <option value="Pondicherry">Pondicherry</option>
                       </select>
+                      <span id="state_error" class="text-danger"><?php echo form_error('state'); ?></span>
   </div>
   
 </div>
@@ -824,8 +813,8 @@ Shipping Address</div>
 <input type="hidden" id="tot1" name="tot" >
 <input type="hidden" id="coupon" name="coupon" >
 <input type="hidden" id="amt" name="amt" >
-	<div class="form-outline mb-4">
-    <input type="text"  tabindex="1" required autofocus id="form2Example2" required placeholder="Nearby" class="form-control" name="nearby" value="<?php if($this->session->userdata('nearby')!="") echo $this->session->userdata('nearby');?>"/>
+  <div class="form-outline mb-4">
+    <input type="text"  tabindex="1" autofocus id="nearby" placeholder="Nearby" class="form-control" name="nearby" value="<?php if($this->session->userdata('nearby')!="") echo $this->session->userdata('nearby');?>"/>
   </div>
   <!-- Submit button -->
   <!-- Register buttons -->
@@ -850,9 +839,10 @@ Shipping Address</div>
   <div class="clicking mt-2 mb-2">Clicking on ‘Continue’ will not deduct any money</div>
    <div class="hi-fixd d-flex justify-content-between">
      <a href="#" class="btn-white btn-hi sli-btn flo-left"  onclick="tab2()">BACK</a>
-	<input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn m-0 flo-right" value="Continue">
-	</div>
-</div>	
+     <input type="submit" name="submit" id="submit" class="btn-red btn-hi sli-btn m-0 flo-right">Submit</button>
+ <?php /* <a href="#" class="btn-red btn-hi sli-btn m-0 flo-right" onclick="checkval()">Continue</a>*/ ?>
+  </div>
+</div>  
 </div>
 
 
@@ -862,14 +852,14 @@ Shipping Address</div>
 
 </section>
 </div>
-			
-		
-			
+      
+    
+      
 
           <div class="tab-pane hi-tabs" id="tab-4">
-				<h2>Share instantly (Fourth)</h2>
-			</div>
-			
+        <h2>Share instantly (Fourth)</h2>
+      </div>
+      
 </div>
 </div>
 </section><!-- End Tabs Section -->
@@ -1152,8 +1142,6 @@ $.ajax({
                 }
                 else
                 {
-                   // alert(data['count']);
-                    //$('[href="#tab-26"]').tab('hide');
                     $('[href="#tab-38"]').tab('show');
                    document.getElementById("t2").classList.add("ac");
 var numVa = document.getElementById("grandtotal1").innerHTML;
@@ -1250,6 +1238,13 @@ var numVa = document.getElementById("grandtotal1").innerHTML;
                // document.getElementById("total_sale_pricefinal").innerHTML =  numVal1.toFixed(2);
                // document.getElementById("total_sale_pricefinal1").innerHTML = numVal1.toFixed(2);
                document.getElementById('tot').value= numVal1;
+               document.getElementById("tab-2").classList.remove("active");
+                        document.getElementById("tab-38").classList.add("active");
+                        document.getElementById("t3").classList.add("active");
+                        document.getElementById("t2").classList.remove("active");
+                        //document.getElementById("tab1").classList.remove("active");
+                        document.getElementById("tab2").classList.remove("active");
+                        document.getElementById("tab3").classList.add("active");
                 callback(custid);
               
                   
@@ -1305,85 +1300,120 @@ function callback(response) {
       
       function sub()
       {
-        
-      
-var name= $("#name").val();
-var lname= $("#lname").val();
-                var password= $("#password1").val();
-                var email= $("#email").val();
-                var phone= $("#phone").val();
-                    var term= $("#vehicle1").val();
-                    
-              if(name!="" && email!="" && password!="" && phone!="")
-              
-             
-             {
-     
-   // alert("trr");
-   // $('[href="#tab-38"]').tab('show');
-
+        var name= $("#name").val();
+        var lname= $("#lname").val();
+        var password1= $("#password1").val();
+        var password2= $("#password2").val();
+        var email= $("#email").val();
+        var phone= $("#phone").val();
+        var accept_terms = $("#accept_terms").is(":checked");
+        var formdata = "name=" + name+ "&lname=" + lname + "&email=" + email + "&phone=" + phone + "&password1=" + password1+ "&password2=" + password2+ "&accept_terms=" + accept_terms;
                 $.ajax({
 
                     type: "POST",
                     url: "<?php echo base_url() ?>Products/newregister",
-                    data: "name=" + name+ "&password=" + password+"&email="+email+ "&phone="+phone+"&lname="+lname,
+                    data: formdata,
                     dataType: "json",
                     success: function(data) {
-                   var custid=data['count'];
-               
-                    var numVa = document.getElementById("grandtotal1").innerHTML;
-               // var numVa = document.getElementById("grandtotal").innerText;
-         //alert(numVal1);
-              var numVal1 =Number(numVa) ;
-              var numVal11 = document.getElementById("grandtotal1").innerHTML;
-              var numVal111 =Number(numVal11) ;
+                    if(data.error)
+                    {
+                       if(data.name_error != '')
+                       {
+                        $('#name_error').html(data.name_error);
+                       }
+                       else
+                       {
+                        $('#name_error').html('');
+                       }
+                        if(data.lname_error != '')
+                       {
+                        $('#lname_error').html(data.lname_error);
+                       }
+                       else
+                       {
+                        $('#lname_error').html('');
+                       }
+                       if(data.email_error != '')
+                       {
+                        $('#email_error').html(data.email_error);
+                       }
+                       else
+                       {
+                        $('#email_error').html('');
+                       }
+                       if(data.phone_error != '')
+                       {
+                        $('#phone_error').html(data.phone_error);
+                       }
+                       else
+                       {
+                        $('#phone_error').html('');
+                       }
+                       if(data.password1_error != '')
+                       {
+                        $('#password1_error').html(data.password1_error);
+                       }
+                       else
+                       {
+                        $('#password1_error').html('');
+                       }
+                       if(data.password2_error != '')
+                       {
+                        $('#password2_error').html(data.password2_error);
+                       }
+                       else
+                       {
+                        $('#password2_error').html('');
+                       }
+                       if(data.accept_terms_error != '')
+                       {
+                        $('#accept_terms_error').html(data.accept_terms_error);
+                       }
+                       else
+                       {
+                        $('#accept_terms_error').html('');
+                       }
+                    }
+                    if(data.count)
+                    {
+                     $('#name_error').html('');
+                     $('#lname_error').html('');
+                     $('#email_error').html('');
+                     $('#phone_error').html('');
+                     $('#password1_error').html('');
+                     $('#password2_error').html('');
+                     $('#accept_terms_error').html('');
+                     $('#registration_form')[0].reset();
+                        var custid=data['count'];
+                        
+                        var numVa = document.getElementById("grandtotal1").innerHTML;
+                        var numVal1 =Number(numVa) ;
+                        var numVal11 = document.getElementById("grandtotal1").innerHTML;
+                        var numVal111 =Number(numVal11) ;
 
-              var am=document.getElementById("discount_amount").innerHTML; 
-              var am1 =Number(am) ;
+                        var am=document.getElementById("discount_amount").innerHTML; 
+                        var am1 =Number(am) ;
 
-              document.getElementById("tot1").value=numVal111;
-              document.getElementById('cust').value= custid;
-              document.getElementById('amt').value= am1;
+                        document.getElementById("tot1").value=numVal111;
+                        document.getElementById('cust').value= custid;
+                        document.getElementById('amt').value= am1;
               
-               document.getElementById("tot").innerHTML =  numVal1.toFixed(2);
-                document.getElementById("total_sale_pricefinal").innerHTML =  numVal1.toFixed(2);
-                document.getElementById("total_sale_pricefinal1").innerHTML = numVal1.toFixed(2);
-                document.getElementById('tot').value= numVal1;
+                        document.getElementById("tot").innerHTML =  numVal1.toFixed(2);
+                        //document.getElementById("total_sale_pricefinal").innerHTML =  numVal1.toFixed(2);
+                        //document.getElementById("total_sale_pricefinal1").innerHTML = numVal1.toFixed(2);
+                        document.getElementById('tot').value= numVal1;
      
-                    e.preventDefault();
+                         document.getElementById("tab-2").classList.remove("active");
+                        document.getElementById("tab-38").classList.add("active");
+                        document.getElementById("t3").classList.add("active");
+                        document.getElementById("t2").classList.remove("active");
+                        //document.getElementById("tab1").classList.remove("active");
+                        document.getElementById("tab2").classList.remove("active");
+                        document.getElementById("tab3").classList.add("active");
+                       
+                      }
                     }
                 });
- document.getElementById("tab-2").classList.remove("active");
-              document.getElementById("tab-38").classList.add("active");
-                document.getElementById("t3").classList.add("active");
-                 document.getElementById("t2").classList.remove("active");
-              document.getElementById("tab1").classList.remove("active");
-                document.getElementById("tab2").classList.remove("active");
-              document.getElementById("tab3").classList.add("active");
-      
-             }
-           
-      else
-      {
-             $("#invalid-feedback2").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback2").innerHTML="Please fill the Filed";
- 
-    $("#invalid-feedback3").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback3").innerHTML="Please fill the Filed";
- 
- 
-    $("#invalid-feedback4").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback4").innerHTML="Please fill the Filed";
- 
-    $("#invalid-feedback5").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback5").innerHTML="Please fill the Filed";
- 
-    $("#invalid-feedback6").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback6").innerHTML="Please fill the Filed";
- 
-    $("#invalid-feedback7").removeClass('invalid-feedback').addClass('fd');
- document.getElementById("invalid-feedback7").innerHTML="Please fill the Filed";
-      }
       }
 </script>
 
@@ -1468,7 +1498,66 @@ $("#ent").html("Change Address");
 });
 </script>
 <script>
-    
+    function checkval()
+    {
+        var address= $("#address").val();
+        var pincode= $("#pincode").val();
+        var state= $("#inputState").val();
+        var user_id = $("#cust").val();
+        var nearby = $("#nearby").val();
+        var tot = $("#tot1").val();
+        var package = $("#package").val();
+        var pdt = $("#pdt").val();
+        var coupon = $("#coupon").val();
+        var amt = $("#amt").val();
+
+        var formdata = "address=" + address+ "&pincode=" + pincode + "&state=" + state+ "&cust=" + user_id + "&nearby=" + nearby + "&tot=" + tot + "&coupon=" + coupon+ "&amt=" + amt;
+        alert(formdata);// "&package=" + package + "&pdt=" + pdt +
+                $.ajax({
+
+                    type: "POST",
+                    url: "<?php echo base_url()?>payment/checkout",
+                    data: formdata,
+                    dataType: "json",
+                    success: function(data) {
+                    if(data.error)
+                    {
+                      alert('dddd');
+                       if(data.address_error != '')
+                       {
+                        $('#address_error').html(data.address_error);
+                       }
+                       else
+                       {
+                        $('#address_error').html('');
+                       }
+                        if(data.pincode_error != '')
+                       {
+                        $('#pincode_error').html(data.pincode_error);
+                       }
+                       else
+                       {
+                        $('#pincode_error').html('');
+                       }
+                       if(data.state_error != '')
+                       {
+                        $('#state_error').html(data.state_error);
+                       }
+                       else
+                       {
+                        $('#state_error').html('');
+                       }
+                    document.getElementById("tab-2").classList.remove("active");
+                        document.getElementById("tab-38").classList.add("active");
+                        document.getElementById("t3").classList.add("active");
+                        document.getElementById("t2").classList.remove("active");
+                        //document.getElementById("tab1").classList.remove("active");
+                        document.getElementById("tab2").classList.remove("active");
+                        document.getElementById("tab3").classList.add("active");
+                    }
+                    }
+                }); 
+    }
 </script>
   <!-- ======= Footer======-->
   <footer id="footer">
