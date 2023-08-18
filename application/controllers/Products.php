@@ -105,6 +105,7 @@ echo json_encode(array(
 	}
 	public function checklog()
 	{
+
 		$user_id = $this->session->userdata('id');
 		if($user_id=="")
 		{
@@ -127,32 +128,43 @@ echo json_encode(array(
 
 	public function newregister()
 	{
+		
 		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('phone', 'Phone', 'required');
+            $this->form_validation->set_rules('lname', 'Last Name', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+             $this->form_validation->set_rules('phone', 'Phone', 'required|is_unique[users.phone]|regex_match[/^[0-9]{10}$/]');
+            $this->form_validation->set_rules('password1', 'Password', 'required');
+            $this->form_validation->set_rules('password2', 'Confirm Password', 'required|matches[password1]');
+            $this->form_validation->set_rules('accept_terms', 'Accept Terms', 'required');
+		$this->form_validation->set_rules('user_id', 'User ID', 'is_unique[users.user_id]');
 		
-		
+		 $accept = $this->input->post('accept_terms');
+		    if($accept == 'false')
+		    {
+		    	$term_error = 'Please accept terms and condition';
+		    }
+		    else
+		    {
+		    	$term_error = '';
+		    }
 	
-		if($this->form_validation->run() === FALSE){
-			$messge = array('message' => 'Please fill the mandatory fields','class' => 'alert alert-danger align-center');
-			$this->session->set_flashdata('item',$messge );
-			redirect($url);
+		if($this->form_validation->run() === FALSE || $accept == 'false'){
+		   
+			$array = array(
+		    'error'   => true,
+		    'name_error' => form_error('name'),
+		    'lname_error' => form_error('lname'),
+		    'email_error' => form_error('email'),
+		    'phone_error' => form_error('phone'),
+		    'password1_error' => form_error('password1'),
+		    'password2_error' => form_error('password2'),
+		    'accept_terms_error' => $term_error
+		   );
 		}
 			else
 			{
-			    $this->form_validation->set_rules('user_id', 'User ID', 'is_unique[users.user_id]');
-                $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]');
-                $this->form_validation->set_rules('phone', 'Phone', 'is_unique[users.phone]');
-                if($this->form_validation->run() === FALSE)
-                {
-                    $messge = array('message' => 'User ID or Email already exists.','class' => 'alert alert-danger align-center');
-                    $this->session->set_flashdata('item',$messge );
-                    redirect($url);
-                }
-                else
-                {
 				//Encrypt Password
-				$encrypt_password = md5($this->input->post('password'));
+				$encrypt_password = md5($this->input->post('password1'));
 				$data['name'] = $this->input->post('name'); 
 				$data['lname'] = $this->input->post('lname'); 
 				$data['email'] = $this->input->post('email');
@@ -171,13 +183,14 @@ echo json_encode(array(
 				$set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 				$code = substr(str_shuffle($set), 0, 12);
 				$data['code'] = $code;
-				$id = $this->User_Model->add_user($data);
-				echo json_encode(array(
-					"count"=>$id,
-					
-				));
-	}
+				if($accept == 'true')
+                {
+                    $id = $this->User_Model->add_user($data);
+					$array = array('count'=>$id);					
+				}
+    			
 			}
+			echo json_encode($array);
 }
     public function product_details($id = NULL)
 	{
