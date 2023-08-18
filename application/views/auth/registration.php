@@ -43,42 +43,32 @@ if(isset($_GET['coupon']) && $_GET['coupon']!='')
                   </div>
                   <?php }  ?>
               <div class="card-body">
-                <form method="POST" action="<?php echo $url; ?>" class="needs-validation" novalidate="">
+                <form method="POST" action="<?php echo $url; ?>"  id="registration_form">
                   <div class="form-outline mb-4">
                     <label for="name">Name</label>
-                    <input id="name" type="text" class="form-control" name="name" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your full name
-                    </div>
+                    <input id="name" type="text" class="form-control" name="name" value="<?php echo $this->input->post('name'); ?>" tabindex="1" required autofocus>
+                    <span id="name_error" class="text-danger"><?php echo form_error('name'); ?></span>
                   </div>
                     <div class="form-outline mb-4">
                     <label for="name">Last Name</label>
-                    <input id="lname" type="text" class="form-control" name="lname" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your full name
-                    </div>
+                    <input id="lname" type="text" class="form-control" name="lname" value="<?php echo $this->input->post('lname'); ?>" tabindex="1" required autofocus>
+                    <span id="lname_error" class="text-danger"><?php echo form_error('lname'); ?></span>
                   </div>
                   <div class="form-outline mb-4">
                     <label for="email">Email</label>
-                    <input id="email" type="text" class="form-control" name="email" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your full email
-                    </div>
+                    <input id="email" type="text" class="form-control" name="email" value="<?php echo $this->input->post('email'); ?>" tabindex="1" required autofocus>
+                     <span id="email_error" class="text-danger"><?php echo form_error('email'); ?></span>
                   </div>
                   <div class="form-outline mb-4">
                     <label for="phone">Phone</label>
-                    <input id="phone" type="text" class="form-control" name="phone" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your full phone
-                    </div>
+                    <input id="phone" type="text" class="form-control" name="phone" tabindex="1" value="<?php echo $this->input->post('phone'); ?>" required autofocus>
+                    <span id="phone_error" class="text-danger"><?php echo form_error('phone'); ?></span>
                   </div>
                   <div class="form-outline mb-4">
                     <label for="password">Password</label>
                     <input id="password1" type="password" class="form-control pwstrength" data-indicator="pwindicator"
-                      name="password1" tabindex="2" required>
-                    <div class="invalid-feedback">
-                      Please fill in your Password
-                    </div>
+                      name="password1" tabindex="2" value="<?php echo $this->input->post('password1'); ?>" required>
+                    <span id="password1_error" class="text-danger"><?php echo form_error('password1'); ?></span>
                     <div id="pwindicator" class="pwindicator">
                       <div class="bar"></div>
                       <div class="label"></div>
@@ -86,17 +76,16 @@ if(isset($_GET['coupon']) && $_GET['coupon']!='')
                   </div>
                  <div class="form-outline mb-4">
                     <label for="password-confirm">Confirm Password</label>
-                    <input id="password2" type="password" class="form-control" name="password2"
+                    <input id="password2" type="password" class="form-control" name="password2" value="<?php echo $this->input->post('password2'); ?>"
                       tabindex="2" required>
-                      <div class="invalid-feedback">
-                      Please fill in your Confirm Password
-                    </div>
+                      <span id="password2_error" class="text-danger"><?php echo form_error('password2'); ?></span>
                   </div>
                     <div class="form-group">
-                    <div class="custom-control custom-checkbox rstr-chk">
-<input type="checkbox" id="test" name="test" value="Bike">
-  <label for="vehicle1">By continuing, you agree to our <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Terms of Service</a></label><br>
+                      <div class="custom-control custom-checkbox rstr-chk">
+                        <input type="checkbox" id="accept_terms" name="accept_terms" value="1" class="form-check-input" required>
+                        <label for="accept_terms">By continuing, you agree to our <a href="<?php echo base_url(); ?>Front/privacy" target="_blank">Privacy Policy</a> and <a href="<?php echo base_url(); ?>Front/terms" target="_blank">Terms of Service</a></label><br>
                     </div>
+                    <span id="acceptterms_error" class="text-danger"><?php echo form_error('accept_terms'); ?></span>
                   </div>
                   <div class="form-group">
                     <input type="hidden" name="package" id="package" value="<?php echo $package;?>">
@@ -132,4 +121,10 @@ if(isset($_GET['coupon']) && $_GET['coupon']!='')
           });
 
     </script>
+ <style>
+  .text-danger p{
+    color: #fc544b !important
+  }
+ </style>
+
  
